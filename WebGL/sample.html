@@ -20,7 +20,9 @@
         
         var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
         
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var num = Math.random();
+        
+        var geometry = new THREE.BoxGeometry(num, num, num);
         var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:true });
         var box = new THREE.Mesh(geometry, material);
         
