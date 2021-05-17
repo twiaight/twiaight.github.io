@@ -31,6 +31,7 @@
         box.rotation.y = 1;
         scene.add(box);
         
+        /*
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(1, 1, 1);
         
@@ -39,6 +40,10 @@
         
         scene.add(directionalLight1);
         scene.add(directionalLight2);
+        */
+        
+        const light = new THREE.PointLight(0xffffff, 2, 50, 1.0);
+        scene.add(light);
         
         var update = function() {
           requestAnimationFrame(update);
