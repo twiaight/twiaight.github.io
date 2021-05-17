@@ -20,7 +20,7 @@
         
         var scene = new THREE.Scene();
         
-        var camera = new THREE.PerdpectiveCamera(45, width/height, 1, 1000);
+        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
         
         var geometry = new THREE.BoxGeometry(1, 1, 1);
         var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
@@ -30,7 +30,7 @@
         scene.add(box);
         
         var directionalLight = new THREE.DirectionalLight(0xffffff);
-        directionalLidght.position.set(1, 1, 1);
+        directionalLight.position.set(1, 1, 1);
         
         scene.add(directionalLight);
       }
