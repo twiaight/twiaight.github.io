@@ -31,16 +31,16 @@
         box.rotation.y = 1;
         scene.add(box);
         
-        /*
+        
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
-        directionalLight1.position.set(1, 1, 1);
+        directionalLight1.position.set(100, 0, 0);
         
         var directionalLight2 = new THREE.DirectionalLight(0xffffff);
-        directionalLight2.position.set(-1, 1, 1);
+        directionalLight2.position.set(0, 100, 0);
         
         scene.add(directionalLight1);
         scene.add(directionalLight2);
-        */
+        
         
         const light = new THREE.PointLight(0xffffff, 5.0, 100, 1.0);
         light.position.set(0, 0, 0);
