@@ -42,7 +42,7 @@
         scene.add(directionalLight2);
         */
         
-        const light = new THREE.PointLight(0xffffff, 2, 50, 1.0);
+        const light = new THREE.RectAreaLight(0xffffff, 5.0, 20, 20);
         scene.add(light);
         
         var update = function() {
