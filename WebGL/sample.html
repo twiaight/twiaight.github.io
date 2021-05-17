@@ -24,6 +24,8 @@
         var box = new THREE.Mesh(geometry, material);
         
         box.position.z = -5;
+        box.rotation.x = 1;
+        box.rotation.y = 1;
         scene.add(box);
         
         var directionalLight = new THREE.DirectionalLight(0xffffff);
