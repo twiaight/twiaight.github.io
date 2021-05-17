@@ -43,6 +43,7 @@
         */
         
         const light = new THREE.RectAreaLight(0xffffff, 5.0, 20, 20);
+        light.position.set(1, 1, 1);
         scene.add(light);
         
         var update = function() {
