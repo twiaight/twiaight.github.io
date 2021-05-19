@@ -32,6 +32,13 @@
         box.rotation.y = 1;
         scene.add(box);
         
+        var geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+        var material = new THREE.MeshPhongMaterial({ color:0xaaaaaa, wireframe:false });
+        var ground = new THREE.Mesh(geometry, material);
+        
+        scene.add(ground);
+        
+        
         
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.position.set(0, 0, 4);
