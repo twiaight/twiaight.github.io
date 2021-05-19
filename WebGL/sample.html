@@ -29,13 +29,16 @@
         
         box.position.z = -5;
         box.rotation.x = 1;
-        box.rotation.y = 1;
+        box.rotation.y = Math.PI/2;
         scene.add(box);
         
         var geometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
         var material = new THREE.MeshPhongMaterial({ color:0xaaaaaa, wireframe:false });
         var ground = new THREE.Mesh(geometry, material);
         
+        ground.position.z = -5;
+        ground.position.y = -10;
+        ground.rotation.y = 
         scene.add(ground);
         
         
