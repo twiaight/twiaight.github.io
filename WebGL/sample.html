@@ -51,8 +51,8 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          // ground.routation.x += 0.01;
-          ground.position.z -= 0.01;
+          ground.routation.x += 0.01;
+          // ground.position.z -= 0.01;
           renderer.render(scene, camera);
         };
         update();
