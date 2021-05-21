@@ -38,8 +38,8 @@
         */
         
         const boxes = new THREE.Group();
-        const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-        const material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });  
+        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+        var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });  
         const limit = 10;
         for ( let i=0; i<limit; i++ ) {
           var box = new THREE.Mesh(geometry, material);
