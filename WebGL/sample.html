@@ -24,11 +24,12 @@
         //var num = Math.random();
         
         //var geometry = new THREE.BoxGeometry(num, num, num);
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
         var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });
         var box = new THREE.Mesh(geometry, material);
         
         box.position.z = 0;
+        box.position.y = 0.3;
         box.rotation.x = 20*(Math.PI/180);
         box.rotation.y = 20*(Math.PI/180);
         scene.add(box);
