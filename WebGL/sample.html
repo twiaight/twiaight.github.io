@@ -53,8 +53,8 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          // ground.routation.x += 0.01;
-          ground.rotation.z += 0.1*(Math.PI/180);
+          ground.rotation.x += 0.01;
+          // ground.rotation.z += 0.1*(Math.PI/180);
           renderer.render(scene, camera);
         };
         update();
