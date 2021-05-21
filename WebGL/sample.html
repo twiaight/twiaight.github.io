@@ -32,7 +32,7 @@
         box.rotation.y = 1;
         //scene.add(box);
         
-        var geometry = new THREE.PlaneGeometry(100, 100, 10, 10);
+        var geometry = new THREE.PlaneGeometry(10, 10, 10, 10);
         var material = new THREE.MeshPhongMaterial({ color:0xaaaaaa, wireframe:false });
         var ground = new THREE.Mesh(geometry, material);
         
@@ -51,7 +51,7 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          ground.routation.x += 0.01;
+          // ground.routation.x += 0.01;
           // ground.position.z -= 0.01;
           renderer.render(scene, camera);
         };
