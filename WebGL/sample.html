@@ -30,7 +30,7 @@
         box.position.z = 0;
         box.rotation.x = 1;
         box.rotation.y = 1;
-        //scene.add(box);
+        scene.add(box);
         
         var geometry = new THREE.PlaneGeometry(1.5, 1.5, 10, 10);
         var material = new THREE.MeshPhongMaterial({ color:0xcccccc, wireframe:false });
@@ -49,6 +49,15 @@
         directionalLight1.position.set(0, 0, 4);
         
         scene.add(directionalLight1);
+        
+        
+        directionalLight1.castShadow = true;
+
+        box.castShadow = true;
+
+        ground.receiveShadow = true;
+
+        renderer.shadowMapEnabled = true;
         
         
         var update = function() {
