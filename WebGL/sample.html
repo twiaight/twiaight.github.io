@@ -58,13 +58,13 @@
           renderer.render(scene, camera);
         };
         update();
+        
+        document.open();
+        document.write(ground.rotation.x);
+        document.close();
       }
       
       window.addEventListener( 'DOMContentLoaded', init );
-      
-      document.open();
-      document.write(ground.rotation.x);
-      document.close();
     
     </script>
     
