@@ -47,7 +47,8 @@
         
         
         
-        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        // var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        var directionalLight1 = new THREE.PointLight(0xffffff, 1, 0, 1);
         directionalLight1.position.set(0, 0, 4);
         
         scene.add(directionalLight1);
