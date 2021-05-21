@@ -15,6 +15,7 @@
         var renderer = new  THREE.WebGLRenderer();
         renderer.setSize(width, height);
         document.body.appendChild(renderer.domElement);
+        renderer.shadowMap.enabled = true;
         
         var scene = new THREE.Scene();
         
@@ -55,12 +56,8 @@
         
         
         directionalLight1.castShadow = true;
-
         box.castShadow = true;
-
         ground.receiveShadow = true;
-
-        renderer.shadowMapEnabled = true;
         
         
         var update = function() {
