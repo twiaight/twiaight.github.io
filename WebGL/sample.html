@@ -38,7 +38,7 @@
         
         // ground.position.z = 0;
         // ground.position.y = -1;
-        // ground.rotation.x += Math.PI;
+        ground.rotation.y = Math.PI/4;
         scene.add(ground);
         
         
@@ -51,7 +51,7 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          ground.routation.x += 0.01;
+          // ground.routation.x += 0.01;
           // ground.position.z -= 0.01;
           renderer.render(scene, camera);
         };
