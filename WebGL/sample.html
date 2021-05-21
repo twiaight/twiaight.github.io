@@ -34,7 +34,7 @@
         box.rotation.y = 20*(Math.PI/180);
         scene.add(box);
         
-        var geometry = new THREE.PlaneGeometry(1.5, 1.5, 10, 10);
+        var geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
         var material = new THREE.MeshPhongMaterial({ color:0xcccccc, wireframe:false });
         var ground = new THREE.Mesh(geometry, material);
         
