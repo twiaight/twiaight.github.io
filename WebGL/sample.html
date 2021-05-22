@@ -92,6 +92,7 @@
         
         var update = function() {
           requestAnimationFrame(update);
+          pointLight.position.y += 0.001;
           renderer.render(scene, camera);
         };
         update();
