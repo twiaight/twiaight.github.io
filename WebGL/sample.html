@@ -45,14 +45,17 @@
           
           boxes.add(box);
         }
+        boxes.castShadow = true;
+        boxes.reciveShadow = true;
         scene.add(boxes);
         
         var geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
         var material = new THREE.MeshStandardMaterial({ color:0xcccccc, wireframe:false, roughness:0.0 });
         var ground = new THREE.Mesh(geometry, material);
         
-        // ground.rotation.x = -70*(Math.PI/180);
         ground.rotation.x = -90*(Math.PI/180);
+        
+        ground.receiveShadow = true;
         scene.add(ground);
         
         
@@ -77,25 +80,31 @@
         var pointLight = new THREE.PointLight(0xffcccc, 3, 0, 1);
         pointLight.position.set(0, 0.01, 0);
         
+        directionalLight.castShadow = true;
         scene.add(directionalLight);
+        
+        pointLight.castShadow = true;
         scene.add(pointLight);
         
         const lightHelper = new THREE.PointLightHelper(pointLight);
         // scene.add(lightHelper);
         
-        directionalLight.castShadow = true;
-        pointLight.castShadow = true;
-        boxes.castShadow = true;
-        boxes.reciveShadow = true;
-        ground.receiveShadow = true;
+        
+        
+        
+        
         
         
         var update = function() {
           requestAnimationFrame(update);
+          
           if ( pointLight.position.y < 1 ){
             pointLight.position.y += 0.001;
             sphere.position.y += 0.001
+          } else {
+            
           }
+          
           renderer.render(scene, camera);
         };
         update();
