@@ -67,7 +67,7 @@
         // scene.add(torusKnot);
         
         var geometry = new THREE.SphereGeometry(0.02, 30, 30);
-        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.35, transparent:true });
+        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0., transparent:true });
         var sphere = new THREE.Mesh(geometry, material);
         
         sphere.position.set(0, 0.01, 0);
@@ -88,13 +88,7 @@
         
         const lightHelper = new THREE.PointLightHelper(pointLight);
         // scene.add(lightHelper);
-        
-        
-        
-        
-        
-        
-        
+           
         var update = function() {
           requestAnimationFrame(update);
           
