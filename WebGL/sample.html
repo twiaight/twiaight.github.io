@@ -38,6 +38,7 @@
           const randomX = 3*(Math.random()-0.5)/2;
           const randomZ = 3*(Math.random()-0.5)/2;
           const oneSide = Math.random()/10;
+          const degree = Math.random()*20;
           var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
           var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
           
@@ -48,7 +49,7 @@
             box.position.x = randomX + num;
             box.position.y = (oneSide/2) + (oneSide*j);
             box.position.z = randomZ + num;
-            box.rotation.y = (20+num)*(Math.PI/180);
+            box.rotation.y = (degree+num*10)*(Math.PI/180);
 
             boxes.add(box);
           }
