@@ -44,7 +44,7 @@
           
           for ( let j=0; j<limit; j++ ) {
             var box = new THREE.Mesh(geometry, material);
-            var num = ( (Math.random()-0.5)/100 ) * oneSide;
+            var num = ( (Math.random()*oneSide ) - oneSide/2;
 
             box.position.x = randomX + num;
             box.position.y = (oneSide/2) + (oneSide*j);
