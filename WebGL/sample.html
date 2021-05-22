@@ -45,14 +45,15 @@
         
         const boxes = new THREE.Group();
         const limit = 10;
-        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+        const oneSide = 0.1;
+        var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
         var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
         for ( let i=0; i<limit; i++ ) {
           var box = new THREE.Mesh(geometry, material);
           var num = Math.random()/10;
           
           box.position.x = num;
-          box.position.y = 0.1*i;
+          box.position.y = (oneSide/2) + (oneSide*i);
           box.position.z = 0;
           box.rotation.y = 20*(Math.PI/180);
           
@@ -78,15 +79,15 @@
         // scene.add(torusKnot);
         
         var geometry = new THREE.SphereGeometry(0.5, 30, 30);
-        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.5, transparent:true });
+        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.8, transparent:true });
         var sphere = new THREE.Mesh(geometry, material);
-        sphere.position.set(0, 0.1, 0.5);
+        sphere.position.set(0, 0.5, 0.5);
         
         // var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         var directionalLight = new THREE.DirectionalLight(0xdddddd, 1);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffffff, 2, 0, 1);
+        var pointLight = new THREE.PointLight(0xffffff, 2, 15, 1);
         pointLight.position.set(0, 0.5, 0.5);
         
         scene.add(directionalLight);
