@@ -78,7 +78,6 @@
         wall.rotation.y = +90*(Math.PI/180);
         walls.add(wall);
         
-        
         walls.receiveShadow = true;
         scene.add(walls);
         
@@ -105,7 +104,7 @@
         pointLight.position.set(0, 0.01, 0);
         
         directionalLight.castShadow = true;
-        //scene.add(directionalLight);
+        scene.add(directionalLight);
         
         pointLight.castShadow = true;
         scene.add(pointLight);
