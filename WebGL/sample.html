@@ -40,7 +40,7 @@
         const boxes = new THREE.Group();
         const limit = 10;
         var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-        var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false, roughness:0.0});  
+        var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false});  
         for ( let i=0; i<limit; i++ ) {
           var box = new THREE.Mesh(geometry, material);
           var num = Math.random()/10;
@@ -57,7 +57,7 @@
         scene.add(boxes);
         
         var geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
-        var material = new THREE.MeshPhongMaterial({ color:0xcccccc, wireframe:false });
+        var material = new THREE.MeshPhongMaterial({ color:0xcccccc, wireframe:false, roughness:0.0 });
         var ground = new THREE.Mesh(geometry, material);
         
         ground.rotation.x = -70*(Math.PI/180);
@@ -65,7 +65,7 @@
         
         
         var geometry = new THREE.TorusKnotGeometry(10, 1, 99, 8, 20, 8);
-        var marterial = new THREE.MeshPhongMaterial({ color:0xffffff, wiregframe:true });
+        var marterial = new THREE.MeshPhongMaterial({ color:0xffffff, wireframe:true });
         var torusKnot = new THREE.Mesh(geometry, material);
         
         torusKnot.position.set(0, 0.5, 0.5);
