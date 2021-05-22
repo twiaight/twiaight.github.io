@@ -88,7 +88,8 @@
         
         const lightHelper = new THREE.PointLightHelper(pointLight);
         // scene.add(lightHelper);
-           
+        
+        var radius = 0.0;
         var update = function() {
           requestAnimationFrame(update);
           
@@ -96,7 +97,10 @@
             pointLight.position.y += 0.001;
             sphere.position.y += 0.001
           } else {
-            
+            if ( radius < 1.0 ) radius += 0.001;
+            const time = Date.now() / 500;
+            pointLight.position.x = radius * Math.cos(time);
+            pointLight.position.z = radius * Math.sin(time);
           }
           
           renderer.render(scene, camera);
