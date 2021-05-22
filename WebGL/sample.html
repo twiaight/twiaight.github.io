@@ -79,6 +79,7 @@
         scene.add(directionalLight);
         scene.add(pointLight);
         
+        directionalLight.castShadow = true;
         pointLight.castShadow = true;
         box.castShadow = true;
         ground.receiveShadow = true;
