@@ -74,7 +74,7 @@
         directionalLight.position.set(0, 0, 2);
         
         var pointLight = new THREE.PointLight(0xffffff, 1, 10, 1);
-        pointLight.position.set(0, 0, 1);
+        pointLight.position.set(0, 0.5, 0.5);
         
         scene.add(directionalLight);
         scene.add(pointLight);
@@ -87,8 +87,6 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          // ground.rotation.x += 0.01;
-          // ground.rotation.z += 0.1*(Math.PI/180);
           renderer.render(scene, camera);
         };
         update();
