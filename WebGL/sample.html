@@ -50,9 +50,9 @@
         var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
         for ( let i=0; i<limit; i++ ) {
           var box = new THREE.Mesh(geometry, material);
-          var num = Math.random()/10;
+          var num = (Math.random()-0.5)/10;
           
-          box.position.x = num-0.5;
+          box.position.x = num;
           box.position.y = (oneSide/2) + (oneSide*i);
           box.position.z = 0;
           box.rotation.y = 20*(Math.PI/180);
