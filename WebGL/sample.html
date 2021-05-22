@@ -59,14 +59,28 @@
         ground.receiveShadow = true;
         scene.add(ground);
         
+        const walls = new THREE.Group();
         
         var wall = new THREE.Mesh(geometry, material);
-        
         wall.position.z = -1;
         wall.position.y =  1;
+        walls.add(wall);
         
-        wall.receiveShadow = true;
-        scene.add(wall);
+        var wall = new THREE.Mesh(geometry, material);
+        wall.position.x = +1;
+        wall.position.y =  1;
+        geometry.rotation.y = -90*(Math.PI/180);
+        walls.add(wall);
+        
+        var wall = new THREE.Mesh(geometry, material);
+        wall.position.x = -1;
+        wall.position.y =  1;
+        geometry.rotation.y = +90*(Math.PI/180);
+        walls.add(wall);
+        
+        
+        walls.receiveShadow = true;
+        scene.add(walls);
         
         
         var geometry = new THREE.TorusKnotGeometry(0.1, 1, 99, 8, 20, 8);
