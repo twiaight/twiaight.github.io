@@ -81,7 +81,7 @@
         pointLight.position.set(0, 0.01, 0);
         
         directionalLight.castShadow = true;
-        scene.add(directionalLight);
+        //scene.add(directionalLight);
         
         pointLight.castShadow = true;
         scene.add(pointLight);
@@ -98,9 +98,11 @@
             sphere.position.y += 0.001
           } else {
             if ( radius < 1.0 ) radius += 0.001;
-            const time = Date.now() / 500;
+            const time = Date.now() / 1000;
             pointLight.position.x = radius * Math.cos(time);
             pointLight.position.z = radius * Math.sin(time);
+            sphere.position.x = radius * Math.cos(time);
+            sphere.position.z = radius * Math.sin(time);
           }
           
           renderer.render(scene, camera);
