@@ -12,10 +12,11 @@
         
         var width = 800, height = 600;
         
-        var renderer = new  THREE.WebGLRenderer();
+        var renderer = new  THREE.WebGLRenderer({antialias:true});
         renderer.setSize(width, height);
         document.body.appendChild(renderer.domElement);
         renderer.shadowMap.enabled = true;
+        renderer.setPixelRatio(window.devicePixelRatio);
         
         var scene = new THREE.Scene();
         
@@ -64,7 +65,7 @@
         scene.add(ground);
         
         
-        var geometry = new THREE.TorusKnotGeometry(2, 1, 99, 8, 20, 8);
+        var geometry = new THREE.TorusKnotGeometry(0.1, 1, 99, 8, 20, 8);
         var marterial = new THREE.MeshPhongMaterial({ color:0xffffff, wireframe:true });
         var torusKnot = new THREE.Mesh(geometry, material);
         
