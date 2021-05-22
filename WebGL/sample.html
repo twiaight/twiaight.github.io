@@ -37,7 +37,7 @@
           
           const randomX = 3*(Math.random()-0.5)/2;
           const randomZ = 3*(Math.random()-0.5)/2;
-          const oneSide = Math.random();
+          const oneSide = Math.random()/10;
           var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
           var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
           
