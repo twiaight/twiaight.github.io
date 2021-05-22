@@ -79,6 +79,9 @@
         scene.add(directionalLight);
         scene.add(pointLight);
         
+        const lightHelper = new THREE.PointLightHelper(light);
+        scene.add(lightHelper);
+        
         directionalLight.castShadow = true;
         pointLight.castShadow = true;
         box.castShadow = true;
