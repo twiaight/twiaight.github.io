@@ -78,20 +78,20 @@
         torusKnot.position.set(0, 0.5, 1);
         // scene.add(torusKnot);
         
-        var geometry = new THREE.SphereGeometry(0.5, 30, 30);
-        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.8, transparent:true });
+        var geometry = new THREE.SphereGeometry(0.05, 30, 30);
+        var material = new THREE.MeshPhongMaterial({ color:0xffffff, opacity:0.8, transparent:true });
         // var material = new THREE.MeshPhongMaterial({ color:0xaaaaff });
         var sphere = new THREE.Mesh(geometry, material);
         
-        sphere.position.set(0, 0.5, 0.5);
+        sphere.position.set(0, 1, 1);
         scene.add(sphere);
         
         // var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         var directionalLight = new THREE.DirectionalLight(0xdddddd, 1);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffffff, 2, 15, 1);
-        pointLight.position.set(0, 0.5, 0.5);
+        var pointLight = new THREE.PointLight(0xffcccc, 5, 3, 1);
+        pointLight.position.set(0, 1, 1);
         
         scene.add(directionalLight);
         scene.add(pointLight);
