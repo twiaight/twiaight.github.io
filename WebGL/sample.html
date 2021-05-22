@@ -76,6 +76,10 @@
         torusKnot.position.set(0, 0.5, 1);
         // scene.add(torusKnot);
         
+        var geometry = new THREE.SphereGeometry(0.1, 30, 30);
+        var material = new THREE.MeshPhongMaterial({ color:0xaaaaaa, opacity:0.5, transparent:true });
+        var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(1, 1, 5);
         
         // var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         var directionalLight = new THREE.DirectionalLight(0xdddddd, 1);
