@@ -28,21 +28,7 @@
         var axes = new THREE.AxesHelper(20);
         scene.add(axes);
         
-        /*
-        var num = Math.random();
-        
-        //var geometry = new THREE.BoxGeometry(num, num, num);
-        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-        var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });
-        var box = new THREE.Mesh(geometry, material);
-        
-        box.position.z = 0;
-        box.position.y = 0.1;
-        box.rotation.x = 20*(Math.PI/180);
-        box.rotation.y = 20*(Math.PI/180);
-        scene.add(box); 
-        */
-        
+        /* "boxes" as "box group" */
         const boxes = new THREE.Group();
         const limit = 10;
         const oneSide = 0.1;
@@ -59,7 +45,6 @@
           
           boxes.add(box);
         }
-        
         scene.add(boxes);
         
         var geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
@@ -80,18 +65,17 @@
         
         var geometry = new THREE.SphereGeometry(0.05, 30, 30);
         var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.04, transparent:true });
-        // var material = new THREE.MeshPhongMaterial({ color:0x000000 });
         var sphere = new THREE.Mesh(geometry, material);
         
-        sphere.position.set(0, 0, 0);
+        sphere.position.set(0, 0.01, 0);
         scene.add(sphere);
         
-        // var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        
         var directionalLight = new THREE.DirectionalLight(0xdddddd, 1);
         directionalLight.position.set(0, 0, 2);
         
         var pointLight = new THREE.PointLight(0xffcccc, 3, 0, 1);
-        pointLight.position.set(0, 0, 0);
+        pointLight.position.set(0, 0.01, 0);
         
         scene.add(directionalLight);
         scene.add(pointLight);
