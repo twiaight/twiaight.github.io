@@ -64,11 +64,11 @@
         scene.add(ground);
         
         
-        var geometry = new THREE.TorusKnotGeometry(10, 1, 99, 8, 20, 8);
+        var geometry = new THREE.TorusKnotGeometry(2, 1, 99, 8, 20, 8);
         var marterial = new THREE.MeshPhongMaterial({ color:0xffffff, wireframe:true });
         var torusKnot = new THREE.Mesh(geometry, material);
         
-        torusKnot.position.set(0, 0.5, 0.5);
+        torusKnot.position.set(0, 0.5, 1);
         scene.add(torusKnot);
         
         
@@ -76,7 +76,7 @@
         var directionalLight = new THREE.DirectionalLight(0xdddddd, 1);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffffff, 1, 10, 1);
+        var pointLight = new THREE.PointLight(0xffffff, 2, 10, 1);
         pointLight.position.set(0, 0.5, 1);
         
         scene.add(directionalLight);
