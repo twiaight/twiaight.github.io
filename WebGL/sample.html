@@ -69,13 +69,13 @@
         var wall = new THREE.Mesh(geometry, material);
         wall.position.x = +1;
         wall.position.y =  1;
-        geometry.rotation.y = -90*(Math.PI/180);
+        wall.rotation.y = -90*(Math.PI/180);
         walls.add(wall);
         
         var wall = new THREE.Mesh(geometry, material);
         wall.position.x = -1;
         wall.position.y =  1;
-        geometry.rotation.y = +90*(Math.PI/180);
+        wall.rotation.y = +90*(Math.PI/180);
         walls.add(wall);
         
         
