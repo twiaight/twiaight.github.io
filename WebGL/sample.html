@@ -32,23 +32,32 @@
         /* "boxes" as "box group" */
         const boxes = new THREE.Group();
         const limit = 10;
-        const oneSide = 0.1;
-        var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
-        var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
+        
         for ( let i=0; i<limit; i++ ) {
-          var box = new THREE.Mesh(geometry, material);
-          var num = (Math.random()-0.5)/10;
           
-          box.position.x = num;
-          box.position.y = (oneSide/2) + (oneSide*i);
-          box.position.z = -0.7;
-          box.rotation.y = (20+num)*(Math.PI/180);
+          const randomX = 3*(Math.random()-0.5)/2;
+          const randomZ = 3*(Math.random()-0.5)/2;
+          const oneSide = Math.random();
+          var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
+          var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
           
-          boxes.add(box);
+          for ( let j=0; j<limit; j++ ) {
+            var box = new THREE.Mesh(geometry, material);
+            var num = (Math.random()-0.5)/10;
+
+            box.position.x = randomX + num;
+            box.position.y = (oneSide/2) + (oneSide*j);
+            box.position.z = randomZ + num;
+            box.rotation.y = (20+num)*(Math.PI/180);
+
+            boxes.add(box);
+          }
         }
+        
         boxes.castShadow = true;
         boxes.reciveShadow = true;
         scene.add(boxes);
+        
         
         var geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
         var material = new THREE.MeshStandardMaterial({ color:0xcccccc, wireframe:false, roughness:0.0 });
