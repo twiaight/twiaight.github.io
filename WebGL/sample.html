@@ -39,9 +39,9 @@
         
         const boxes = new THREE.Group();
         const limit = 10;
+        var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+        var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });  
         for ( let i=0; i<limit; i++ ) {
-          var geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
-          var material = new THREE.MeshPhongMaterial({ color:0x0000ff, wireframe:false });  
           var box = new THREE.Mesh(geometry, material);
           var num = Math.random()/10;
           
