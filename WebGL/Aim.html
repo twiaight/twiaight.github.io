@@ -73,8 +73,8 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          delta = clock.getDelta();
-          fps.update(delta);
+          // delta = clock.getDelta();
+          // fps.update(delta);
           renderer.render(scene, camera);
         };
         update();
