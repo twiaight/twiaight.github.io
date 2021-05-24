@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Sample</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.js"></script>
-    <script src="FirstPersonControls.js"></script>
+    <!-- <script src="FirstPersonControls.js"></script> -->
   </head>
   <body>
+
     
-    <hr>
     <script>
       var mouseX = 0, mouseY = 0; 
       var width = 800, height = 600;
@@ -33,6 +33,10 @@
         var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
         camera.position.z = 2.5;
         camera.position.y = 0.5;
+        
+        var mouse = new THREE.Vector2(0, 0);
+        mouse.x = 1;
+        mouse.y = 2;
         
         /*
         var clock = new THREE.Clock();
@@ -89,7 +93,7 @@
       });
     
     </script>
-    <hr>
+
     <button class="start" type="bottun">スタート</button>
     
     <!-- ↓書かなくていい↓ -->
