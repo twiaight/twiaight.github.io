@@ -279,7 +279,7 @@ https://github.com/mrdoob/three.js/blob/master/LICENSE
 					if ( this.lookVertical ) lat -= this.mouseY * actualLookSpeed * verticalLookRatio;
 					lat = Math.max( - 85, Math.min( 85, lat ) );
 					let phi = 90 - lat*(Math.PI/180);
-					const theta =  lon*(Math.PI/180);
+					const theta = lon*(Math.PI/180);
 
 					if ( this.constrainVertical ) {
 
