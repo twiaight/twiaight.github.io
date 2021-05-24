@@ -50,13 +50,16 @@
             box.position.y = (oneSide/2) + (oneSide*j);
             box.position.z = randomZ + num;
             box.rotation.y = (degree+num*10)*(Math.PI/180);
+            
+            box.castShadow = true;
+            box.reciveShadow = true;
 
             boxes.add(box);
           }
         }
         
-        boxes.castShadow = true;
-        boxes.reciveShadow = true;
+        // boxes.castShadow = true;
+        // boxes.reciveShadow = true;
         scene.add(boxes);
         
         
