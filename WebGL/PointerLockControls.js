@@ -4,8 +4,6 @@ Copyright © 2010-2021 three.js authors
 Released under the MIT license
 https://github.com/mrdoob/three.js/blob/master/LICENSE
 */
-
-
 import {
 	Euler,
 	EventDispatcher,
