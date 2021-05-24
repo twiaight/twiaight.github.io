@@ -7,7 +7,7 @@
   </head>
   <body>
     
-    <script>
+    <script type="module">
       import { FirstPersonControls } from './WebGL/lib/FirstPersonControls.js';
         
       var init = function() {
@@ -26,7 +26,7 @@
         camera.position.z = 2.5;
         camera.position.y = 0.5;
         
-        var fps = new THREE.FirstPersonControls(camera, renderer.domElement);
+        var fps = new FirstPersonControls(camera, renderer.domElement);
         fps.noFly = true;
         fps.lookVertical = true;
         
