@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Sample</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.module.js"></script>
     <!-- <script src="FirstPersonControls.js"></script> -->
     <script src="PointerLockControls.js"></script>
   </head>
   <body>
 
     
-    <script>
+    <script type="module">
+      import { PointerLockControls } from './PointerLockControls.js';
+      
       var mouseX = 0, mouseY = 0; 
       var width = 800, height = 600;
       
@@ -39,7 +41,7 @@
         mouse.x = 1;
         mouse.y = 2;
         
-        var controls = new THREE.PointerLockControls(camera, document.body ); 
+        var controls = new PointerLockControls(camera, document.body ); 
         
         /*
         var clock = new THREE.Clock();
