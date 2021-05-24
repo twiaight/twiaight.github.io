@@ -15,8 +15,12 @@
       
       var canvas = document.querySelector('canvas');
       
+      body.requestPointerLock = body.requestPointerLock || body.mozRequestPointerLock || body.webkitRequestPointerLock;
+      body.requestPointerLock();
+      /*
       canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
       canvas.requestPointerLock();
+      */
       canvas.onclick = function() { canvas.requestPointerLock(); };
       
       document.exitPointerLock = document.exitPointerLock || document.mozExitPointerLock;
