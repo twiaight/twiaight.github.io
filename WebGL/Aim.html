@@ -81,9 +81,9 @@
       
       window.addEventListener( 'DOMContentLoaded', init );
       window.addEventListener( 'mousemove', e => {
-        mouse.x = +e.clientX - (width/2);
-        mouse.y = -e.clientY - (height/2);
-        console.log.println(e.clientX, mouse.x);
+        mouse.width = +e.clientX - (width/2);
+        mouse.height = -e.clientY - (height/2);
+        console.log.println(e.clientX, mouse.width);
       });
     
     </script>
