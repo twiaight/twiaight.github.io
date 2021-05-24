@@ -12,6 +12,9 @@
     <script>
       var mouseX = 0, mouseY = 0; 
       var width = 800, height = 600;
+      
+      canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
+      canvas.requestPointerLock();
         
       var init = function() {
         
@@ -80,11 +83,14 @@
           // fps.update(delta);
           renderer.render(scene, camera);
         };
-        update();
-        
+        update(); 
       }
       
+      var function
+      
       window.addEventListener( 'DOMContentLoaded', init );
+      start.addEventListener( 'click',  )
+      
       window.addEventListener( 'mousemove', e => {
         mouseX = +e.clientX - (width/2);
         mouseY = -e.clientY - (height/2);
