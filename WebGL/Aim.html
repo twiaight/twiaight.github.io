@@ -36,6 +36,7 @@
         var fps = new THREE.FirstPersonControls(camera, renderer.domElement);
         fps.noFly = true;
         fps.lookVertical = true;
+        fps.enables = true;
         
         /* Axis -> x:RED / y:GREEN / z:BLUE */
         var axes = new THREE.AxesHelper(20);
@@ -58,7 +59,6 @@
         
         var update = function() {
           requestAnimationFrame(update);
-          fps.update();
           renderer.render(scene, camera);
         };
         update();
