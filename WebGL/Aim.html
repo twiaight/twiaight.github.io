@@ -12,6 +12,13 @@
   
       var init = function() {
         
+        /* 参考文献
+        https://irukanobox.blogspot.com/2016/04/threejs_3.html
+        https://irukanobox.blogspot.com/2016/11/threejs3d.html
+        https://qiita.com/mczkzk/items/b8a59bfb272a05cb7109
+        https://qiita.com/te26/items/5204fa0d220de2df6295
+        */
+        
         var width = 800, height = 600;
         
         var renderer = new  THREE.WebGLRenderer({antialias:true});
@@ -51,6 +58,7 @@
         
         var update = function() {
           requestAnimationFrame(update);
+          fps.update();
           renderer.render(scene, camera);
         };
         update();
