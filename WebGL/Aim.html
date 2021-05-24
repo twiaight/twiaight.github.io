@@ -9,7 +9,9 @@
   <body>
     
     <script>
-       
+      var mouse = THREE.Vector2(0, 0); 
+      var width = 800, height = 600;
+        
       var init = function() {
         
         /* 参考文献
@@ -18,8 +20,6 @@
         https://qiita.com/mczkzk/items/b8a59bfb272a05cb7109
         https://qiita.com/te26/items/5204fa0d220de2df6295
         */
-        
-        var width = 800, height = 600;
         
         var renderer = new  THREE.WebGLRenderer({antialias:true});
         renderer.setSize(width, height);
@@ -49,9 +49,7 @@
         fps.lookVertical = true;
         fps.constrainVertical = false;
         */
-        
-        var mouse = THREE.Vector2(0, 0);    
-        
+       
         /* Axis -> x:RED / y:GREEN / z:BLUE */
         var axes = new THREE.AxesHelper(20);
         scene.add(axes);
