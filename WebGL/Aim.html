@@ -13,21 +13,6 @@
       var mouseX = 0, mouseY = 0; 
       var width = 800, height = 600;
       
-      var canvas = document.querySelector('canvas');
-      
-      body.requestPointerLock = body.requestPointerLock || body.mozRequestPointerLock || body.webkitRequestPointerLock;
-      body.requestPointerLock();
-      /*
-      canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
-      canvas.requestPointerLock();
-      */
-      canvas.onclick = function() { canvas.requestPointerLock(); };
-      
-      document.exitPointerLock = document.exitPointerLock || document.mozExitPointerLock;
-      
-      document.addEventListener('pointerlockchange', lockChangeAlert, false);
-      document.addEventListener('mozpointerlockchange', lockChangeAlert, false);
-        
       var init = function() {
         
         /* 参考文献
@@ -52,6 +37,8 @@
         var mouse = new THREE.Vector2(0, 0);
         mouse.x = 1;
         mouse.y = 2;
+        
+        var controls = new THREE.PointerLockControls(camera, document.body ); 
         
         /*
         var clock = new THREE.Clock();
