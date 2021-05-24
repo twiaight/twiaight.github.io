@@ -5,7 +5,6 @@ Released under the MIT license
 https://github.com/mrdoob/three.js/blob/master/LICENSE
 */
 
-
 /*
 import {
 	Euler,
