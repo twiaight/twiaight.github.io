@@ -331,8 +331,8 @@ https://github.com/mrdoob/three.js/blob/master/LICENSE
 
 				_spherical.setFromVector3( _lookDirection );
 
-				lat = 90 - THREE.MathUtils.radToDeg( _spherical.phi );
-				lon = THREE.MathUtils.radToDeg( _spherical.theta );
+				lat = 90 - _spherical.phi * 180/Math.PI;
+				lon = _spherical.theta * 180/Math.PI;
 
 			}
 
