@@ -83,6 +83,7 @@
       window.addEventListener( 'mousemove', e => {
         mouseX = +e.clientX - (width/2);
         mouseY = -e.clientY - (height/2);
+        e.clientX = 0;
         console.log(e.clientX, mouseX);
       });
     
