@@ -31,6 +31,7 @@
         https://qiita.com/te26/items/5204fa0d220de2df6295
         https://mdn.github.io/dom-examples/pointer-lock/
         
+        https://sbcode.net/threejs/pointerlock-controls/
         https://threejs.org/examples/misc_controls_pointerlock.html
         */
         
@@ -50,25 +51,25 @@
         mouse.x = 1;
         mouse.y = 2;
         
-        var controls = new PointerLockControls(camera, document.body ); 
+        var controls = new PointerLockControls(camera, document.body );
         
-        
+        /*
         var clock = new THREE.Clock();
         var delta = 0;
         var fps = new FirstPersonControls(camera, renderer.domElement);
         
-        /*
+        
         fps.noFly = true;
         fps.lookVertical = true;
         fps.enables = true;
         fps.lookSpeed = 1;
-        */
+        
         fps.lookSpeed = 0.1;
         fps.movementSpeed = 1;
         fps.noFly = true;
         fps.lookVertical = true;
         fps.constrainVertical = false;
-        
+        */
        
         /* Axis -> x:RED / y:GREEN / z:BLUE */
         var axes = new THREE.AxesHelper(20);
@@ -101,7 +102,7 @@
       // var function
       
       window.addEventListener( 'DOMContentLoaded', init );
-    
+      
     </script>
 
     <!-- <button class="start" type="bottun">スタート</button> -->
