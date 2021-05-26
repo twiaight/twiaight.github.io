@@ -31,7 +31,6 @@
 
 
     init();
-    update(); 
     
     function init() {
 
@@ -120,9 +119,8 @@
 
       directionalLight.castShadow = true;
       scene.add(directionalLight);
-    }
-    
-    function update() {
+      
+      function update() {
         requestAnimationFrame(update);
         // const time = performence.now();
         // const delta = ( time - prevTime ) / 1000;
@@ -141,6 +139,11 @@
 
         renderer.render(scene, camera);
       };
+      
+      update();
+    }
+    
+    
     
     window.addEventListener( 'DOMContentLoaded', init );
 
