@@ -5,11 +5,6 @@ Released under the MIT license
 https://github.com/mrdoob/three.js/blob/master/LICENSE
 */
 
-import { Euler } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-import { EventDispatcher } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-import { Vector3 } from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-
-
 const _euler = new Euler( 0, 0, 0, 'YXZ' );
 const _vector = new Vector3();
 
