@@ -9,8 +9,9 @@
   <script type="module" src="PointerLockControls.js"></script>
 </head>
 <body>
-
-  <div id="instructions"></div>
+  <div id="blocker">
+    <div id="instructions"></div>
+  </div>
 
   <script type="module">
 
@@ -60,7 +61,17 @@
 
       var controls = new PointerLockControls(camera, document.body );
       const instructions = document.getElementById( 'instructions' );
+      const blocker = document.getElementById( 'blocker' );
+      
       instructions.addEventListener( 'click', function () { controls.lock(); } );
+      controls.addEventListener( 'lock', function () {
+					instructions.style.display = 'none';
+					blocker.style.display = 'none';
+				} );
+			controls.addEventListener( 'unlock', function () {
+					blocker.style.display = 'block';
+					instructions.style.display = '';
+				} );
       
       controls.getObject().position.y = 50;
       controls.getObject().position.x = 100;
