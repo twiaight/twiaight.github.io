@@ -59,9 +59,10 @@
       mouse.y = 2;
 
       var controls = new PointerLockControls(camera, document.body );
-      scene.add( controls.getObject() );
       const instructions = document.getElementById( 'instructions' );
       instructions.addEventListener( 'click', function () { controls.lock(); } );
+      
+      scene.add( controls.getObject() );
 
 
       //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
