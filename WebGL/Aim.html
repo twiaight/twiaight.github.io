@@ -24,11 +24,11 @@
     var mouseX = 0, mouseY = 0; 
     var width = 800, height = 600;
     var prevTime = 0;
-	  var verocity = new THREE.Vector3();
-    
+    var verocity = new THREE.Vector3();
+
     var clock = new THREE.Clock();
-    
-    
+
+
     init();
 
     function init() {
@@ -63,20 +63,20 @@
       var controls = new PointerLockControls(camera, document.body );
       const instructions = document.getElementById( 'instructions' );
       const blocker = document.getElementById( 'blocker' );
-      
+
       instructions.addEventListener( 'click', function () { controls.lock(); } );
       controls.addEventListener( 'lock', function () {
-					instructions.style.display = 'none';
-					blocker.style.display = 'none';
-				} );
-			controls.addEventListener( 'unlock', function () {
-					blocker.style.display = 'block';
-					instructions.style.display = '';
-				} );
-      
+          instructions.style.display = 'none';
+          blocker.style.display = 'none';
+        } );
+      controls.addEventListener( 'unlock', function () {
+          blocker.style.display = 'block';
+          instructions.style.display = '';
+        } );
+
       controls.getObject().position.y = 50;
       controls.getObject().position.x = 100;
-      
+
       scene.add( controls.getObject() );
 
 
@@ -123,7 +123,7 @@
         requestAnimationFrame(update);
         // const time = performence.now();
         // const delta = ( time - prevTime ) / 1000;
-        
+
         //Get the controller object
         var control = controls.getObject();
         //Get refresh time
@@ -133,9 +133,9 @@
         control.translateX( velocity.x * delta );
         control.translateY( velocity.y * delta );
         control.translateZ( velocity.z * delta );
-        
+
         //prevTime = time;
-        
+
         renderer.render(scene, camera);
       };
       update(); 
