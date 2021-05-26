@@ -22,11 +22,11 @@
 
     var mouseX = 0, mouseY = 0; 
     var width = 800, height = 600;
-
+    var prevTime = 0;
+    
     var clock = new THREE.Clock();
-    var delta = 0;
-
-
+    
+    
     init();
 
     function init() {
@@ -61,6 +61,9 @@
       var controls = new PointerLockControls(camera, document.body );
       const instructions = document.getElementById( 'instructions' );
       instructions.addEventListener( 'click', function () { controls.lock(); } );
+      
+      controls.getObject().position.y = 50;
+      controls.getObject().position.x = 100;
       
       scene.add( controls.getObject() );
 
@@ -106,8 +109,21 @@
 
       var update = function() {
         requestAnimationFrame(update);
-        //delta = clock.getDelta();
-        //fps.update(delta);
+        // const time = performence.now();
+        // const delta = ( time - prevTime ) / 1000;
+        
+        //Get the controller object
+        var control = controls.getObject();
+        //Get refresh time
+        var delta = clock.getDelta();
+
+        //Move the controller according to the speed value
+        control.translateX( velocity.x * delta );
+        control.translateY( velocity.y * delta );
+        control.translateZ( velocity.z * delta );
+        
+        //prevTime = time;
+        
         renderer.render(scene, camera);
       };
       update(); 
