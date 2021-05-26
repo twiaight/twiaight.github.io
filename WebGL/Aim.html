@@ -24,8 +24,10 @@
       
       var clock = new THREE.Clock();
       var delta = 0;
-      
-      var init = function() {
+			
+			init();
+			
+      function init() {
         
         /* 参考文献
         https://irukanobox.blogspot.com/2016/04/threejs_3.html
@@ -57,6 +59,8 @@
         var controls = new PointerLockControls(camera, document.body );
         scene.add( controls.getObject() );
         const instructions = document.getElementById( 'instructions' );
+				instructions.addEventListener( 'click', function () { controls.lock(); } );
+      
 
         //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
         
@@ -105,9 +109,8 @@
         };
         update(); 
       }
-      window.addEventListener( 'DOMContentLoaded', init );
-			instructions.addEventListener( 'click', function () { controls.lock(); } );
-      
+      // window.addEventListener( 'DOMContentLoaded', init );
+			
 	  </script>
 
     <!-- <button class="start" type="bottun">スタート</button> -->
