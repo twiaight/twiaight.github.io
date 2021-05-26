@@ -1,125 +1,125 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <title>Sample</title>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
-    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js"></script>
-    <!-- <script src="FirstPersonControls.js"></script> -->
-    <script type="module" src="PointerLockControls.js"></script>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Sample</title>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
+  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js"></script>
+  <!-- <script src="FirstPersonControls.js"></script> -->
+  <script type="module" src="PointerLockControls.js"></script>
+</head>
+<body>
 
-    <div id="instructions"></div>
-		
-    <script type="module">
-      
-      import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
-      
-      import { PointerLockControls } from './PointerLockControls.js';
-      
+  <div id="instructions"></div>
 
-      
-      var mouseX = 0, mouseY = 0; 
-      var width = 800, height = 600;
-      
+  <script type="module">
+
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+
+    import { PointerLockControls } from './PointerLockControls.js';
+
+
+
+    var mouseX = 0, mouseY = 0; 
+    var width = 800, height = 600;
+
+    var clock = new THREE.Clock();
+    var delta = 0;
+
+
+    init();
+
+    function init() {
+
+      /* 参考文献
+      https://irukanobox.blogspot.com/2016/04/threejs_3.html
+      https://irukanobox.blogspot.com/2016/11/threejs3d.html
+      https://qiita.com/mczkzk/items/b8a59bfb272a05cb7109
+      https://qiita.com/te26/items/5204fa0d220de2df6295
+      https://mdn.github.io/dom-examples/pointer-lock/
+
+      https://sbcode.net/threejs/pointerlock-controls/
+      https://threejs.org/examples/misc_controls_pointerlock.html
+      */
+
+      var renderer = new  THREE.WebGLRenderer({antialias:true});
+      renderer.setSize(width, height);
+      document.body.appendChild(renderer.domElement);
+
+      renderer.shadowMap.enabled = true;
+
+      var scene = new THREE.Scene();
+
+      var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
+      camera.position.z = 2.5;
+      camera.position.y = 0.5;
+
+      var mouse = new THREE.Vector2(0, 0);
+      mouse.x = 1;
+      mouse.y = 2;
+
+      var controls = new PointerLockControls(camera, document.body );
+      scene.add( controls.getObject() );
+      const instructions = document.getElementById( 'instructions' );
+      instructions.addEventListener( 'click', function () { controls.lock(); } );
+
+
+      //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
+
+      /*
       var clock = new THREE.Clock();
       var delta = 0;
-			
-			
-			init();
-			
-      function init() {
-        
-        /* 参考文献
-        https://irukanobox.blogspot.com/2016/04/threejs_3.html
-        https://irukanobox.blogspot.com/2016/11/threejs3d.html
-        https://qiita.com/mczkzk/items/b8a59bfb272a05cb7109
-        https://qiita.com/te26/items/5204fa0d220de2df6295
-        https://mdn.github.io/dom-examples/pointer-lock/
-        
-        https://sbcode.net/threejs/pointerlock-controls/
-        https://threejs.org/examples/misc_controls_pointerlock.html
-        */
-        
-        var renderer = new  THREE.WebGLRenderer({antialias:true});
-        renderer.setSize(width, height);
-        document.body.appendChild(renderer.domElement);
-        
-        renderer.shadowMap.enabled = true;
-        
-        var scene = new THREE.Scene();
-        
-        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
-        camera.position.z = 2.5;
-        camera.position.y = 0.5;
-        
-        var mouse = new THREE.Vector2(0, 0);
-        mouse.x = 1;
-        mouse.y = 2;
-        
-        var controls = new PointerLockControls(camera, document.body );
-        scene.add( controls.getObject() );
-        const instructions = document.getElementById( 'instructions' );
-				instructions.addEventListener( 'click', function () { controls.lock(); } );
-      
+      var fps = new FirstPersonControls(camera, renderer.domElement);
 
-        //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
-        
-        /*
-        var clock = new THREE.Clock();
-        var delta = 0;
-        var fps = new FirstPersonControls(camera, renderer.domElement);
-        
-        
-        fps.noFly = true;
-        fps.lookVertical = true;
-        fps.enables = true;
-        fps.lookSpeed = 1;
-        
-        fps.lookSpeed = 0.1;
-        fps.movementSpeed = 1;
-        fps.noFly = true;
-        fps.lookVertical = true;
-        fps.constrainVertical = false;
-        */
-       
-        /* Axis -> x:RED / y:GREEN / z:BLUE */
-        var axes = new THREE.AxesHelper(20);
-        scene.add(axes);
-        
-        
-        var geometry = new THREE.SphereGeometry(1, 10, 10);
-        var material = new THREE.MeshPhongMaterial({ color:0xffffff });
-        var sphere = new THREE.Mesh(geometry, material);
-        
-        scene.add(sphere);
-        
-       
-        var directionalLight = new THREE.DirectionalLight(0xdddddd, 0.3);
-        directionalLight.position.set(0, 0, 2);
-      
-        directionalLight.castShadow = true;
-        scene.add(directionalLight);
-        
-        
-        var update = function() {
-          requestAnimationFrame(update);
-          //delta = clock.getDelta();
-          //fps.update(delta);
-          renderer.render(scene, camera);
-        };
-        update(); 
-      }
-      // window.addEventListener( 'DOMContentLoaded', init );
-			
-	  </script>
 
-    <!-- <button class="start" type="bottun">スタート</button> -->
-    
-    <!-- ↓書かなくていい↓ -->
-    <!-- <canvas width="800" height="600" style="width: 800px; height: 600px;"></canvas> -->
+      fps.noFly = true;
+      fps.lookVertical = true;
+      fps.enables = true;
+      fps.lookSpeed = 1;
 
-  </body>
-  
+      fps.lookSpeed = 0.1;
+      fps.movementSpeed = 1;
+      fps.noFly = true;
+      fps.lookVertical = true;
+      fps.constrainVertical = false;
+      */
+
+      /* Axis -> x:RED / y:GREEN / z:BLUE */
+      var axes = new THREE.AxesHelper(20);
+      scene.add(axes);
+
+
+      var geometry = new THREE.SphereGeometry(1, 10, 10);
+      var material = new THREE.MeshPhongMaterial({ color:0xffffff });
+      var sphere = new THREE.Mesh(geometry, material);
+
+      scene.add(sphere);
+
+
+      var directionalLight = new THREE.DirectionalLight(0xdddddd, 0.3);
+      directionalLight.position.set(0, 0, 2);
+
+      directionalLight.castShadow = true;
+      scene.add(directionalLight);
+
+
+      var update = function() {
+        requestAnimationFrame(update);
+        //delta = clock.getDelta();
+        //fps.update(delta);
+        renderer.render(scene, camera);
+      };
+      update(); 
+    }
+    // window.addEventListener( 'DOMContentLoaded', init );
+
+  </script>
+
+  <!-- <button class="start" type="bottun">スタート</button> -->
+
+  <!-- ↓書かなくていい↓ -->
+  <!-- <canvas width="800" height="600" style="width: 800px; height: 600px;"></canvas> -->
+
+</body>
+
 </html>
