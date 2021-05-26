@@ -56,8 +56,8 @@
         
         var controls = new PointerLockControls(camera, document.body );
         scene.add( controls.getObject() );
-        
-        document.getElementById('myCanvas').addEventListener('click', function() { controld.lock(); });
+        controls.lock();
+        //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
         
         /*
         var clock = new THREE.Clock();
