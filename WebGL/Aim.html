@@ -58,12 +58,6 @@
         scene.add( controls.getObject() );
         const instructions = document.getElementById( 'instructions' );
 
-				instructions.addEventListener( 'click', function () {
-
-					controls.lock();
-
-				} );
-
         //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
         
         /*
@@ -112,10 +106,9 @@
         update(); 
       }
       window.addEventListener( 'DOMContentLoaded', init );
+			instructions.addEventListener( 'click', function () { controls.lock(); } );
       
-    </script>
-    
-    <canvas id="myCanvas"></canvas>
+	  </script>
 
     <!-- <button class="start" type="bottun">スタート</button> -->
     
