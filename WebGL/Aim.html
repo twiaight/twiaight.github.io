@@ -56,7 +56,14 @@
         
         var controls = new PointerLockControls(camera, document.body );
         scene.add( controls.getObject() );
-        controls.lock();
+        const instructions = document.getElementById( 'instructions' );
+
+				instructions.addEventListener( 'click', function () {
+
+					controls.lock();
+
+				} );
+
         //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
         
         /*
