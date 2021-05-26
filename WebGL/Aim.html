@@ -57,6 +57,8 @@
         var controls = new PointerLockControls(camera, document.body );
         scene.add( controls.getObject() );
         
+        document.getElementById('myCanvas').addEventListener('click', function() { controld.lock(); });
+        
         /*
         var clock = new THREE.Clock();
         var delta = 0;
@@ -102,12 +104,11 @@
         };
         update(); 
       }
-      
-      // var function
-      
       window.addEventListener( 'DOMContentLoaded', init );
       
     </script>
+    
+    <canvas id="myCanvas"></canvas>
 
     <!-- <button class="start" type="bottun">スタート</button> -->
     
