@@ -138,7 +138,7 @@
         
         
         geometry = new THREE.ConeGeometry( 0.15, 0.3, 30 );
-        material = new THREE.MeshBasicMaterial({ color: 0x55ff55, wireframe:false });
+        material = new THREE.MeshStandardMaterial({ color: 0x55ff55, wireframe:false });
         var cone = new THREE.Mesh( geometry, material );
         
         cone.position.set(mis, 0.5, 0);
@@ -194,6 +194,9 @@
         var now = 0;
         const x_num = 250;
         var count;
+        
+        var speed_1 = 0.005; // Default 0.001
+        var speed_2 = 0.01; // Default 0.002
         
         /* アニメーション */
         var update = function() {
@@ -252,7 +255,7 @@
             case 4:
               mode_1.position.x += 0.01;
               mode_3.position.x += 0.01;
-              if ( mode_1.position.x >= 3 ) {
+              if ( mode_1.position.x >= 0 ) {
                 mode = 1;
                 radius = 0.0;
                 sign = 1;
