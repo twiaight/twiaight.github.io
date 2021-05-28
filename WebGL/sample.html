@@ -35,6 +35,7 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
+        /* mode = 1 */
         /* "boxes" as "box group" */
         const boxes = new THREE.Group();
         const limit = 10;
@@ -62,8 +63,6 @@
             boxes.add(box);
           }
         }
-
-        scene.add(boxes);
         
         
         /* "walls" as "wall group & ground" */
@@ -76,7 +75,6 @@
         ground.rotation.x = -90*(Math.PI/180);
         
         ground.receiveShadow = true;
-        scene.add(ground);
         
         
         var wall = new THREE.Mesh(geometry, material);
@@ -97,9 +95,16 @@
         walls.add(wall);
         
         walls.receiveShadow = true;
-        scene.add(walls);
         
         
+        const mode_1 = new THREE.Group();
+        mode_1.add(boxes);
+        mode_1.add(ground);
+        mode_1.add(walls);
+        
+        scene.add(mode_1);
+        
+        /* ライト (スフィアはポイントライトの位置を可視化する役割) */
         geometry = new THREE.SphereGeometry(0.02, 30, 30);
         material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.45, transparent:true });
         var sphere = new THREE.Mesh(geometry, material);
@@ -120,7 +125,6 @@
         pointLight.castShadow = true;
         scene.add(pointLight);
         
-        //scene.remove(sphere);
 
         /* アニメーション用 */
         var mode = 1;
@@ -149,10 +153,8 @@
               }
               break;
             case 2:
-              boxes.position.x -= 0.01;
-              walls.position.x -= 0.01;
-              ground.position.x -= 0.01;
-              if ( mode.x < -3 ) mode = 3;
+              mode_1.position.x -= 0.01;
+              if ( mode_1.position.x < -3 ) mode = 3;
               break;
             case 3:
               break;
