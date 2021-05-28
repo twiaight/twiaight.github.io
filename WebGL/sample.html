@@ -139,8 +139,8 @@
               sphere.position.y += 0.001
             } else {
               radius += sign*0.001;
-              if ( radius == 1 ) sign = -1;
-              if ( radius == 0 ) {
+              if ( radius >= 1 ) sign = -1;
+              if ( radius <= 0 ) {
                 MODE1 != MODE1;
                 MODE2 != MODE2;
               }
