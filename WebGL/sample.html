@@ -117,15 +117,33 @@
         
         
         /* mode = 3 */
+        /* mode = 1 にかぶらないようにするためのズレ : Misalignment */
+        const mis = 3;
+        
         geometry = new THREE.PlaneGeometry(4, 4, 10, 10);
         material = new THREE.MeshStandardMaterial({ color:0xffffff, wireframe:false, roughness:0.0 });
         var background = new THREE.Mesh(geometry, material);
+        /* 背景 */
+        background.position.set(0 + mis, 0, -1.5);
         
-        background.position.set(3, 0, -1.5);
+        
+        geometry = new THREE.PlaneGeometry(0.3, 0.3, 10, 10);
+        material = new THREE.MeshStandardMaterial({ color:0xffffff, wireframe:false, roughness:0.0 });
+        var board = new THREE.Mesh(geometry, material);
+        
+        board.position.x = -0.5 + mis;
+        
+        
+        geometry = new THREE.TorusKnotGeometry(0.3, 0.1)
+        material = new THREE.MeshStandardMaterial({ color:0x55ff55, wireframe:false });
+        var torusKnot = new THREE.Mesh(geometry, material);
+        
+        torusKnot.position.x = +0.5 + mis;
+        
         
         const mode_2 = new THREE.Group();
         mode_2.add(background);
-        
+        mode_2.add(torusKnot);
         scene.add(mode_2);
         
         
