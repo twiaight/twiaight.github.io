@@ -127,6 +127,8 @@
         background.position.set(0 + mis, 0, -1.5);
         background.receiveShadow = true;
         
+        scene.add(background);
+        
         
         geometry = new THREE.PlaneGeometry(0.3, 0.3, 10, 10);
         material = new THREE.MeshStandardMaterial({ color:0xff5555, wireframe:false, roughness:0.0 });
@@ -156,7 +158,6 @@
         
         
         const mode_3 = new THREE.Group();
-        mode_3.add(background);
         mode_3.add(board);
         mode_3.add(cone);
         mode_3.add(torusKnot);
@@ -223,6 +224,7 @@
               
             case 2: /* mode = 1 から mode = 3 へ移行 */
               mode_1.position.x -= 0.01;
+              background.position.x -= 0.01;
               mode_3.position.x -= 0.01;
               if ( mode_1.position.x <= -3 ) {
                 mode = 3;
@@ -258,6 +260,7 @@
               
             case 4:　/* mode = 3 から mode = 1 へ移行 */
               mode_1.position.x += 0.01;
+              background.position.x += 0.01;
               mode_3.position.x += 0.01;
               if ( mode_1.position.x >= 0 ) {
                 mode = 1;
