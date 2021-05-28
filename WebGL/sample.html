@@ -190,7 +190,7 @@
         var mode = 1;
         var radius = 0.0;
         var sign = 1;
-        const turn = [-1, -1, 1, 1];
+        const turn = [0, -1, 1, 1, -1];
         var now = 0;
         const x_num = 250;
         var count;
@@ -237,7 +237,7 @@
                   pointLight.position.y = 0;
                   sphere.position.y = 0;
                   sign = 1;
-                  now = (now+1) % 4;
+                  now = (now+1) % 5;
                   console.log(count);
                   count = 0;
                 }
@@ -245,6 +245,20 @@
                 count++;
                 pointLight.position.x += turn[now]*0.002;
                 sphere.position.x += turn[now]*0.002;
+              }
+              if ( turn[now] == 0 ) mode = 4;
+              break;
+              
+            case 4:
+              mode_1.position.x += 0.01;
+              mode_3.position.x += 0.01;
+              if ( mode_1.position.x >= 3 ) {
+                mode = 1;
+                radius = 0.0;
+                sign = 1;
+                now = 0;
+                sphere.position.set(0, 0.01, 0);
+                pointLight.position.set(0, 0.01, 0);
               }
               break;
           }
