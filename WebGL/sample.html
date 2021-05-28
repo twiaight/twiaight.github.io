@@ -225,16 +225,16 @@
                 case -0.3:
                 case 0:
                 case +0.3:
-                  pointLight.position.y += sign*0.001;
+                  pointLight.position.y += sign*0.002;
                   if ( pointLight.position.y >= 1 ) sign = -1;
                   if ( pointLight.position.y <= 0 ) {
                     sign = 1;
                     count = (count+1) % 4;
-                    pointLight.position.x += turn[count]*0.001;
+                    pointLight.position.x += turn[count]*0.002;
                   }
                   break;
                 default:
-                  pointLight.position.x += turn[count]*0.001;
+                  pointLight.position.x += turn[count]*0.002;
               }
               break;
           }
