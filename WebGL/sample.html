@@ -8,6 +8,9 @@
   <body>
     
     <script>
+      var MODE1 = true;
+      var MODE2 = false;
+      
       var init = function() {
         
         var width = 800, height = 600;
@@ -17,6 +20,8 @@
         document.body.appendChild(renderer.domElement);
         
         renderer.shadowMap.enabled = true;
+        
+        /* ↓高解像度を得られるがデバイスによっては動作が重くなるのでコメントアウト↓ */
         // renderer.setPixelRatio(window.devicePixelRatio);
         
         var scene = new THREE.Scene();
@@ -124,20 +129,30 @@
         // scene.add(lightHelper);
         
         var radius = 0.0;
+        var sign = 1;
         var update = function() {
           requestAnimationFrame(update);
           
-          if ( pointLight.position.y < 1 ){
-            pointLight.position.y += 0.001;
-            sphere.position.y += 0.001
-          } else {
-            if ( radius < 1.0 ) radius += 0.001;
-            const time = Date.now() / 1000;
-            pointLight.position.x = radius * Math.cos(time);
-            pointLight.position.z = radius * Math.sin(time);
-            sphere.position.x = radius * Math.cos(time);
-            sphere.position.z = radius * Math.sin(time);
-          }
+          if ( MODE1 ) {
+            if ( pointLight.position.y < 1 ){
+              pointLight.position.y += 0.001;
+              sphere.position.y += 0.001
+            } else {
+              radius += sign*0.001;
+              if ( radius == 1 ) sign = -1;
+              if ( radius == 0 ) {
+                MODE1 != MODE1;
+                MODE2 != MODE2;
+              }
+
+              const time = Date.now() / 1000;
+              pointLight.position.x = radius * Math.cos(time);
+              pointLight.position.z = radius * Math.sin(time);
+              sphere.position.x = radius * Math.cos(time);
+              sphere.position.z = radius * Math.sin(time);
+            }
+            } else if ( MODE2 ) {
+            }
           renderer.render(scene, camera);
         };
         update();
