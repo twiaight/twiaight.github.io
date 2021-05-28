@@ -191,7 +191,7 @@
         const turn = [-1, -1, 1, 1];
         var now = 0;
         const x_num = 150;
-        var count = 0;
+        var count;
         
         /* アニメーション */
         var update = function() {
@@ -221,6 +221,7 @@
               if ( mode_1.position.x < -3 ) {
                 mode = 3;
                 sign = -1;
+                count = x_num
                 pointLight.position.x = 0;
               }
               break;
@@ -228,9 +229,11 @@
             case 3:
               if ( count >= x_num ) {
                 pointLight.position.y += sign*0.002;
+                sphere.position.y += sign*0.002;
                 if ( pointLight.position.y >= 1 ) sign = -1;
                 if ( pointLight.position.y <= 0 ) {
                   pointLight.position.y = 0;
+                  sphere.position.y = 0;
                   sign = 1;
                   now = (now+1) % 4;
                   console.log(count);
@@ -239,6 +242,7 @@
               } else {
                 count++;
                 pointLight.position.x += turn[now]*0.002;
+                sphere.position.y += turn[now]*0.002;
               }
               break;
           }
