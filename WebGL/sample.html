@@ -149,6 +149,12 @@
               }
               break;
             case 2:
+              boxes.position.x -= 0.01;
+              walls.position.x -= 0.01;
+              ground.position.x -= 0.01;
+              if ( ground.position.x < -2 ) mode = 3;
+              break;
+            case 3:
               break;
           }
 
