@@ -187,16 +187,17 @@
         
 
         /* アニメーション用 */
+        /* 光源の移動速度を調整可能 (mode = 1 の光源が円を描く速度はこれに依存しない)*/
+        var speed_1 = 0.005; // Default 0.001
+        var speed_3 = 0.01;  // Default 0.002
+        
         var mode = 1;
         var radius = 0.0;
         var sign = 1;
         const turn = [0, -1, 1, 1, -1];
         var now = 0;
-        const x_num = 250;
+        const x_num = 0.5 / speed_3;
         var count;
-        
-        var speed_1 = 0.005; // Default 0.001
-        var speed_3 = 0.01; // Default 0.002
         
         /* アニメーション */
         var update = function() {
@@ -208,7 +209,7 @@
                 pointLight.position.y += speed_1;
                 sphere.position.y += speed_1;
               } else {
-                radius += sign*speed_1;
+                radius += sign*0.002;
                 if ( radius >= 1 ) sign = -1;
                 if ( radius <= 0 ) mode = 2;
 
