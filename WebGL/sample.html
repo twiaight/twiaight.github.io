@@ -132,7 +132,8 @@
         var board = new THREE.Mesh(geometry, material);
         
         board.position.set(-0.5 + mis, 0.5, 0);
-        board.rotation.x = -90*(Math.PI/180);
+        board.rotation.x = -45*(Math.PI/180);
+        board.castShadow = true;
         
         
         geometry = new THREE.ConeGeometry( 0.15, 0.3, 30 );
@@ -140,13 +141,15 @@
         var cone = new THREE.Mesh( geometry, material );
         
         cone.position.set(mis, 0.5, 0);
+        cone.castShadow = true;
         
         
-        geometry = new THREE.TorusKnotGeometry(0.01, 0.05, 64, 8, 10, 3);
+        geometry = new THREE.TorusKnotGeometry(0.01, 0.001, 64, 8, 10, 3);
         material = new THREE.MeshStandardMaterial({ color:0x5555ff, wireframe:false });
         var torusKnot = new THREE.Mesh(geometry, material);
         
         torusKnot.position.set(+0.5 + mis, 0.5, 0);
+        torusKnot.castShadow = true;
         
         
         const mode_2 = new THREE.Group();
@@ -154,8 +157,7 @@
         mode_2.add(board);
         mode_2.add(cone);
         mode_2.add(torusKnot);
-        scene.add(mode_2);
-        
+        scene.add(mode_2);   
         
         
         /* ライト (スフィアはポイントライトの位置を可視化する役割) */
@@ -221,6 +223,7 @@
               break;
               
             case 3:
+              console.log(pointLight.position.x);
               switch( pointLight.position.x ) {
                 case -0.3:
                 case 0:
