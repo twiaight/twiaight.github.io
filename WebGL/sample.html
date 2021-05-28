@@ -189,8 +189,10 @@
         var radius = 0.0;
         var sign = 1;
         const turn = [-1, -1, 1, 1];
+        var now = 0;
+        const x_num = 150;
         var count = 0;
-
+        
         /* アニメーション */
         var update = function() {
           requestAnimationFrame(update);
@@ -224,21 +226,19 @@
               break;
               
             case 3:
-              console.log(Math.round(pointLight.position.x * 10));
-              switch( Math.round(pointLight.position.x * 10)) {
-                case -0.3:
-                case 0:
-                case +0.3:
-                  pointLight.position.y += sign*0.002;
-                  if ( pointLight.position.y >= 1 ) sign = -1;
-                  if ( pointLight.position.y <= 0 ) {
-                    sign = 1;
-                    count = (count+1) % 4;
-                    pointLight.position.x += turn[count]*0.002;
-                  }
-                  break;
-                default:
-                  pointLight.position.x += turn[count]*0.002; 
+              if ( count >= x_num ) {
+                pointLight.position.y += sign*0.002;
+                if ( pointLight.position.y >= 1 ) sign = -1;
+                if ( pointLight.position.y <= 0 ) {
+                  pointLight.position.y = 0;
+                  sign = 1;
+                  now = (now+1) % 4;
+                  console.log(now);
+                  count = 0;
+                }
+              } else {
+                count++;
+                pointLight.position.x += turn[now]*0.002;
               }
               break;
           }
