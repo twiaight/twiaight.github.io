@@ -196,7 +196,7 @@
         var count;
         
         var speed_1 = 0.005; // Default 0.001
-        var speed_2 = 0.01; // Default 0.002
+        var speed_3 = 0.01; // Default 0.002
         
         /* アニメーション */
         var update = function() {
@@ -205,10 +205,10 @@
           switch ( mode ) {
             case 1: /* 点光源による影のでき方  */
               if ( pointLight.position.y < 1 ){
-                pointLight.position.y += 0.001;
-                sphere.position.y += 0.001
+                pointLight.position.y += speed_1;
+                sphere.position.y += speed_1;
               } else {
-                radius += sign*0.001;
+                radius += sign*speed_1;
                 if ( radius >= 1 ) sign = -1;
                 if ( radius <= 0 ) mode = 2;
 
@@ -233,8 +233,8 @@
               
             case 3:
               if ( count >= x_num ) {
-                pointLight.position.y += sign*0.002;
-                sphere.position.y += sign*0.002;
+                pointLight.position.y += sign*speed_3;
+                sphere.position.y += sign*speed_3;
                 if ( pointLight.position.y >= 1 ) sign = -1;
                 if ( pointLight.position.y <= 0 ) {
                   pointLight.position.y = 0;
@@ -245,8 +245,8 @@
                 }
               } else {
                 count++;
-                pointLight.position.x += turn[now]*0.002;
-                sphere.position.x += turn[now]*0.002;
+                pointLight.position.x += turn[now]*speed_3;
+                sphere.position.x += turn[now]*speed_3;
               }
               if ( pointLight.position.y <= 0 && turn[now] == 0 ) mode = 4;
               break;
