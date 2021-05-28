@@ -124,7 +124,9 @@
         pointLight.castShadow = true;
         scene.add(pointLight);
         
-        scene.remove(sphere);
+        //scene.remove(sphere);
+        
+        console.log("init()");
         
         
         var radius = 0.0;
@@ -140,7 +142,7 @@
               } else {
                 radius += sign*0.001;
                 if ( radius >= 1 ) sign = -1;
-                if ( radius <= 0 ) mode = 1;
+                if ( radius <= 0 ) mode = 2;
 
                 const time = Date.now() / 1000;
                 pointLight.position.x = radius * Math.cos(time);
