@@ -131,7 +131,7 @@
         material = new THREE.MeshStandardMaterial({ color:0xff5555, wireframe:false, roughness:0.0 });
         var board = new THREE.Mesh(geometry, material);
         
-        board.position.x = -0.5 + mis;
+        board.position.set(-0.5 + mis, 0.5, 0);
         board.rotation.x = -90*(Math.PI/180);
         
         
@@ -139,14 +139,14 @@
         material = new THREE.MeshBasicMaterial({ color: 0x55ff55, wireframe:false });
         var cone = new THREE.Mesh( geometry, material );
         
-        cone.position.x = mis;
+        cone.position.x(mis, 0.5, 0);
         
         
         geometry = new THREE.TorusKnotGeometry(0.01, 0.05, 64, 8, 10, 3);
         material = new THREE.MeshStandardMaterial({ color:0x5555ff, wireframe:false });
         var torusKnot = new THREE.Mesh(geometry, material);
         
-        torusKnot.position.x = +0.5 + mis;
+        torusKnot.position.x(+0.5 + mis, 0.5, 0);
         
         
         const mode_2 = new THREE.Group();
