@@ -133,7 +133,7 @@
             sphere.position.y += 0.001
           } else {
             if ( radius < 1.0 ) radius += 0.001;
-            const time = clock.getDelta / 1000;
+            const time = clock.getDelta() / 1000;
             pointLight.position.x = radius * Math.cos(time);
             pointLight.position.z = radius * Math.sin(time);
             sphere.position.x = radius * Math.cos(time);
