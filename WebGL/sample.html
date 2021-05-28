@@ -8,10 +8,7 @@
   <body>
     
     <script>
-      var MODE1 = true;
-      var MODE2 = false;
-      
-      var bool = [true, false];
+      var mode = 0;
       
       var init = function() {
         
@@ -127,6 +124,8 @@
         pointLight.castShadow = true;
         scene.add(pointLight);
         
+        scene.remove(directionalLight);
+        
         const lightHelper = new THREE.PointLightHelper(pointLight);
         // scene.add(lightHelper);
         
@@ -135,26 +134,27 @@
         var update = function() {
           requestAnimationFrame(update);
           
-          if ( MODE1 ) {
-            if ( pointLight.position.y < 1 ){
-              pointLight.position.y += 0.001;
-              sphere.position.y += 0.001
-            } else {
-              radius += sign*0.001;
-              if ( radius >= 1 ) sign = -1;
-              if ( radius <= 0 ) {
-                MODE1 = !MODE1;
-                MODE2 = !MODE2;
-              }
+          switch ( mode ) {
+            case 1:
+              if ( pointLight.position.y < 1 ){
+                pointLight.position.y += 0.001;
+                sphere.position.y += 0.001
+              } else {
+                radius += sign*0.001;
+                if ( radius >= 1 ) sign = -1;
+                if ( radius <= 0 ) mode = 1;
 
-              const time = Date.now() / 1000;
-              pointLight.position.x = radius * Math.cos(time);
-              pointLight.position.z = radius * Math.sin(time);
-              sphere.position.x = radius * Math.cos(time);
-              sphere.position.z = radius * Math.sin(time);
-            }
-            } else if ( MODE2 ) {
-            }
+                const time = Date.now() / 1000;
+                pointLight.position.x = radius * Math.cos(time);
+                pointLight.position.z = radius * Math.sin(time);
+                sphere.position.x = radius * Math.cos(time);
+                sphere.position.z = radius * Math.sin(time);
+              }
+              break;
+            case 2:
+              break;
+          }
+          
           renderer.render(scene, camera);
         };
         update();
