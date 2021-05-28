@@ -139,14 +139,14 @@
         material = new THREE.MeshBasicMaterial({ color: 0x55ff55, wireframe:false });
         var cone = new THREE.Mesh( geometry, material );
         
-        cone.position.x(mis, 0.5, 0);
+        cone.position.set(mis, 0.5, 0);
         
         
         geometry = new THREE.TorusKnotGeometry(0.01, 0.05, 64, 8, 10, 3);
         material = new THREE.MeshStandardMaterial({ color:0x5555ff, wireframe:false });
         var torusKnot = new THREE.Mesh(geometry, material);
         
-        torusKnot.position.x(+0.5 + mis, 0.5, 0);
+        torusKnot.position.set(+0.5 + mis, 0.5, 0);
         
         
         const mode_2 = new THREE.Group();
@@ -185,6 +185,8 @@
         var mode = 1;
         var radius = 0.0;
         var sign = 1;
+        const turn = [-1, -1, 1, 1];
+        var count = 0;
 
         /* アニメーション */
         var update = function() {
@@ -211,10 +213,29 @@
             case 2: /* mode = 1 から mode = 3 へ移行 */
               mode_1.position.x -= 0.01;
               mode_2.position.x -= 0.01;
-              if ( mode_1.position.x < -3 ) mode = 3;
+              if ( mode_1.position.x < -3 ) {
+                mode = 3;
+                sign = -1;
+                pointLight.position.x = 0;
+              }
               break;
               
             case 3:
+              switch( pointLight.position.x ) {
+                case -0.3:
+                case 0:
+                case +0.3:
+                  pointLight.position.y += sign*0.001;
+                  if ( pointLight.position.y >= 1 ) sign = -1;
+                  if ( pointLight.position.y <= 0 ) {
+                    sign = 1;
+                    count = (count+1) % 4;
+                    pointLight.position.x += turn[count]*0.001;
+                  }
+                  break;
+                default:
+                  pointLight.position.x += turn[count]*0.001;
+              }
               break;
           }
 
