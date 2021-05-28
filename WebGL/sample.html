@@ -141,8 +141,8 @@
               radius += sign*0.001;
               if ( radius >= 1 ) sign = -1;
               if ( radius <= 0 ) {
-                MODE1 != MODE1;
-                MODE2 != MODE2;
+                MODE1 = false;
+                MODE2 = true;
               }
 
               const time = Date.now() / 1000;
