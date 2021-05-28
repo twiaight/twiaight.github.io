@@ -125,6 +125,7 @@
         var background = new THREE.Mesh(geometry, material);
         /* 背景 */
         background.position.set(0 + mis, 0, -1.5);
+        background.receiveShadow = true;
         
         
         geometry = new THREE.PlaneGeometry(0.3, 0.3, 10, 10);
