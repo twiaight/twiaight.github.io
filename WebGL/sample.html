@@ -132,10 +132,11 @@
         var board = new THREE.Mesh(geometry, material);
         
         board.position.x = -0.5 + mis;
+        board.rotation.x = -90*(Math.PI/180);
         
         
         geometry = new THREE.ConeGeometry( 0.15, 0.3, 30 );
-        material = new THREE.MeshBasicMaterial( {color: 0x55ff55, wireframe:false } );
+        material = new THREE.MeshBasicMaterial({ color: 0x55ff55, wireframe:false });
         var cone = new THREE.Mesh( geometry, material );
         
         cone.position.x = mis;
@@ -150,6 +151,7 @@
         
         const mode_2 = new THREE.Group();
         mode_2.add(background);
+        mode_2.add(board);
         mode_2.add(cone);
         mode_2.add(torusKnot);
         scene.add(mode_2);
