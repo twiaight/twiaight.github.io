@@ -8,8 +8,33 @@
   <body>
     
     <script>
-      var mode = 1;
+      /* 基本要素 */
+      var width, height;
+      var renderer, scene, camera;
+      var axes;
+      var geometry, material;
       
+      /* ジオメトリー */
+      /* "boxes" as "box group" */
+      const boxes = new THREE.Group();
+      const limit = 10;
+      
+      /* "walls" as "wall group & ground" */
+      const walls = new THREE.Group();
+      var ground, wall;
+      
+      var sphere;
+      
+      /* ライト */
+      var directionalLight;
+      var pointLight;
+      
+      /* アニメーション用 */
+      var mode = 1;
+      var radius = 0.0;
+      var sign = 1;
+      
+      /* 初期設定 */
       var init = function() {
         
         var width = 800, height = 600;
@@ -33,9 +58,6 @@
         var axes = new THREE.AxesHelper(20);
         scene.add(axes);
         
-        /* "boxes" as "box group" */
-        const boxes = new THREE.Group();
-        const limit = 10;
         
         for ( let i=0; i<limit; i++ ) {
           
@@ -43,8 +65,8 @@
           const randomZ = 3*(Math.random()-0.5)/2;
           const oneSide = Math.random()/10;
           const degree = Math.random()*20;
-          var geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
-          var material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
+          geometry = new THREE.BoxGeometry(oneSide, oneSide, oneSide);
+          material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
           
           for ( let j=0; j<limit; j++ ) {
             var box = new THREE.Mesh(geometry, material);
@@ -65,29 +87,28 @@
         scene.add(boxes);
         
         
-        var geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
-        var material = new THREE.MeshStandardMaterial({ color:0xcccccc, wireframe:false, roughness:0.0 });
-        var ground = new THREE.Mesh(geometry, material);
+        geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
+        material = new THREE.MeshStandardMaterial({ color:0xcccccc, wireframe:false, roughness:0.0 });
+        ground = new THREE.Mesh(geometry, material);
         
         ground.rotation.x = -90*(Math.PI/180);
         
         ground.receiveShadow = true;
         scene.add(ground);
         
-        const walls = new THREE.Group();
         
-        var wall = new THREE.Mesh(geometry, material);
+        wall = new THREE.Mesh(geometry, material);
         wall.position.z = -1;
         wall.position.y =  1;
         walls.add(wall);
         
-        var wall = new THREE.Mesh(geometry, material);
+        wall = new THREE.Mesh(geometry, material);
         wall.position.x = +1;
         wall.position.y =  1;
         wall.rotation.y = -90*(Math.PI/180);
         walls.add(wall);
         
-        var wall = new THREE.Mesh(geometry, material);
+        wall = new THREE.Mesh(geometry, material);
         wall.position.x = -1;
         wall.position.y =  1;
         wall.rotation.y = +90*(Math.PI/180);
@@ -97,25 +118,18 @@
         scene.add(walls);
         
         
-        var geometry = new THREE.TorusKnotGeometry(0.1, 1, 99, 8, 20, 8);
-        var marterial = new THREE.MeshPhongMaterial({ color:0xffffff, wireframe:true });
-        var torusKnot = new THREE.Mesh(geometry, material);
-        
-        torusKnot.position.set(0, 0.5, 1);
-        // scene.add(torusKnot);
-        
-        var geometry = new THREE.SphereGeometry(0.02, 30, 30);
-        var material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.45, transparent:true });
-        var sphere = new THREE.Mesh(geometry, material);
+        geometry = new THREE.SphereGeometry(0.02, 30, 30);
+        material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.45, transparent:true });
+        sphere = new THREE.Mesh(geometry, material);
         
         sphere.position.set(0, 0.01, 0);
         scene.add(sphere);
         
         
-        var directionalLight = new THREE.DirectionalLight(0xdddddd, 0.3);
+        directionalLight = new THREE.DirectionalLight(0xdddddd, 0.3);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffcccc, 3, 2, 1);
+        pointLight = new THREE.PointLight(0xffcccc, 3, 2, 1);
         pointLight.position.set(0, 0.01, 0);
         
         directionalLight.castShadow = true;
@@ -125,16 +139,9 @@
         scene.add(pointLight);
         
         //scene.remove(sphere);
-        
-        console.log("init()");
-        
-        
-        var radius = 0.0;
-        var sign = 1;
-
-        
       }
       
+      /* アニメーション */
       var update = function() {
         requestAnimationFrame(update);
 
@@ -162,6 +169,7 @@
         renderer.render(scene, camera);
       };
 
+      /* アニメーションの更新 */
       update();
       
       window.addEventListener( 'DOMContentLoaded', init );
