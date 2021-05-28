@@ -97,7 +97,6 @@
         walls.add(wall);
         
         /* 天井 (壁という表現はおかしいが、ここではwallに含まれることにする) */
-        /* */
         wall = new THREE.Mesh(geometry, material);
         wall.position.y =  2;
         wall.rotation.x = +90*(Math.PI/180);
@@ -122,7 +121,7 @@
         material = new THREE.MeshStandardMaterial({ color:0xffffff, wireframe:false, roughness:0.0 });
         var background = new THREE.Mesh(geometry, material);
         
-        background.position.set(3, 0, -2);
+        background.position.set(3, 0, -1.5);
         
         const mode_2 = new THREE.Group();
         mode_2.add(background);
@@ -133,7 +132,7 @@
         
         /* ライト (スフィアはポイントライトの位置を可視化する役割) */
         geometry = new THREE.SphereGeometry(0.02, 30, 30);
-        material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.45, transparent:true });
+        material = new THREE.MeshPhongMaterial({ color:0xaaaaff, opacity:0.6, transparent:true });
         var sphere = new THREE.Mesh(geometry, material);
         
         sphere.position.set(0, 0.01, 0);
