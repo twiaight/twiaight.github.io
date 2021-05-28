@@ -139,7 +139,7 @@
             sphere.position.x = radius * Math.cos(time);
             sphere.position.z = radius * Math.sin(time);
           }
-          
+          console.log(clock.getDelta());
           renderer.render(scene, camera);
         };
         update();
