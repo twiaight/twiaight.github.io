@@ -246,7 +246,7 @@
                 pointLight.position.x += turn[now]*0.002;
                 sphere.position.x += turn[now]*0.002;
               }
-              if ( turn[now] == 0 ) mode = 4;
+              if ( pointLight.position.y <= 0 && turn[now] == 0 ) mode = 4;
               break;
               
             case 4:
