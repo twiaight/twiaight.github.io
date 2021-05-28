@@ -120,6 +120,11 @@
         pointLight.castShadow = true;
         scene.add(pointLight);
         
+        const mode_1 = new THREE.Group();
+        mode_1.add(boxes);
+        mode_1.add(walls);
+        mode_1.add(ground);
+        
         //scene.remove(sphere);
 
         /* アニメーション用 */
@@ -149,10 +154,8 @@
               }
               break;
             case 2:
-              boxes.position.x -= 0.01;
-              walls.position.x -= 0.01;
-              ground.position.x -= 0.01;
-              if ( ground.position.x < -3 ) mode = 3;
+              mode_1.position.x -= 0.01;
+              if ( mode.x < -3 ) mode = 3;
               break;
             case 3:
               break;
