@@ -224,8 +224,8 @@
               break;
               
             case 3:
-              console.log(pointLight.position.x);
-              switch( pointLight.position.x ) {
+              console.log(Math.round(pointLight.position.x * 10));
+              switch( Math.round(pointLight.position.x * 10)) {
                 case -0.3:
                 case 0:
                 case +0.3:
@@ -238,8 +238,7 @@
                   }
                   break;
                 default:
-                  pointLight.position.x += turn[count]*0.002;
-                  pointLight.position.x = Math.round(pointLight.position.x * 1000) / 1000; 
+                  pointLight.position.x += turn[count]*0.002; 
               }
               break;
           }
