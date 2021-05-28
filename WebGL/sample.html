@@ -124,10 +124,8 @@
         pointLight.castShadow = true;
         scene.add(pointLight);
         
-        scene.remove(directionalLight);
+        scene.remove(sphere);
         
-        const lightHelper = new THREE.PointLightHelper(pointLight);
-        // scene.add(lightHelper);
         
         var radius = 0.0;
         var sign = 1;
