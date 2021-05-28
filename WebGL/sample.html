@@ -145,11 +145,12 @@
         cone.castShadow = true;
         
         
-        geometry = new THREE.TorusKnotGeometry(0.05, 0.001, 64, 8, 10, 3);
+        geometry = new THREE.TorusKnotGeometry(0.07, 0.003, 64, 8, 10, 3);
         material = new THREE.MeshStandardMaterial({ color:0x5555ff, wireframe:false });
         var torusKnot = new THREE.Mesh(geometry, material);
         
         torusKnot.position.set(+0.5 + mis, 0.5, 0);
+        torusKnot.rotation.x = -45*(Math.PI/180);
         torusKnot.castShadow = true;
         
         
@@ -190,7 +191,7 @@
         var sign = 1;
         const turn = [-1, -1, 1, 1];
         var now = 0;
-        const x_num = 150;
+        const x_num = 250;
         var count;
         
         /* アニメーション */
@@ -242,7 +243,7 @@
               } else {
                 count++;
                 pointLight.position.x += turn[now]*0.002;
-                sphere.position.y += turn[now]*0.002;
+                sphere.position.x += turn[now]*0.002;
               }
               break;
           }
