@@ -239,6 +239,7 @@
                   break;
                 default:
                   pointLight.position.x += turn[count]*0.002;
+                  pointLight.position.x = Math.round(pointLight.position.x * 1000) / 1000; 
               }
               break;
           }
