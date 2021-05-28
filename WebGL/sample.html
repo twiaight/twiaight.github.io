@@ -97,6 +97,7 @@
         walls.add(wall);
         
         /* 天井 (壁という表現はおかしいが、ここではwallに含まれることにする) */
+        /* */
         wall = new THREE.Mesh(geometry, material);
         wall.position.y =  2;
         wall.rotation.x = +90*(Math.PI/180);
@@ -140,7 +141,7 @@
         
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
-        var directionalLight = new THREE.DirectionalLight(0xdddddd, 0.3);
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
         directionalLight.position.set(0, 0, 2);
         
         var pointLight = new THREE.PointLight(0xffcccc, 3, 2, 1);
@@ -179,11 +180,13 @@
                 sphere.position.z = radius * Math.sin(time);
               }
               break;
+              
             case 2: /* mode = 1 から mode = 3 へ移行 */
               mode_1.position.x -= 0.01;
               mode_2.position.x -= 0.01;
               if ( mode_1.position.x < -3 ) mode = 3;
               break;
+              
             case 3:
               break;
           }
