@@ -26,6 +26,8 @@
         camera.position.z = 2.5;
         camera.position.y = 0.5;
         
+        var tL = new THREE.TextureLoader();
+        
         
         /* Axis -> x:RED / y:GREEN / z:BLUE */
         var axes = new THREE.AxesHelper(20);
@@ -36,10 +38,25 @@
         var geometry, material;
      
         geometry = new THREE.BoxGeometry(1, 1, 1);
-        material = new THREE.MeshStandardMaterial({ color:0x0000ff, wireframe:false});  
-          
-        var box = new THREE.Mesh(geometry, material);
-         
+        var texture1 = tL.load("/img/ink.png");
+        material = new THREE.MeshStandardMaterial();
+        material.map = texture1;
+        
+        var box1 = new THREE.Mesh(geometry, material);
+        box1.position.x = -1;
+        
+        scene.add(box1);
+        
+        
+        var bump = tL.load("/img/stone-bump.jpg");
+        material.bumpmap = bump;
+        material.bumpscale = 0.5;
+        
+        var box2 = new THREE.Mesh(geometry, material);
+        box2.position.x = +1;
+        
+        scene.add(box2);
+        
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
         var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
