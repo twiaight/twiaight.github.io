@@ -38,7 +38,7 @@
         var geometry, material;
      
         geometry = new THREE.BoxGeometry(1, 1, 1);
-        var texture1 = tL.load("/img/ink.png");
+        var texture1 = tL.load("img/ink.png");
         material = new THREE.MeshStandardMaterial();
         material.map = texture1;
         
@@ -48,7 +48,7 @@
         scene.add(box1);
         
         
-        var bump = tL.load("/img/stone-bump.jpg");
+        var bump = tL.load("img/stone-bump.jpg");
         material.bumpmap = bump;
         material.bumpscale = 0.5;
         
