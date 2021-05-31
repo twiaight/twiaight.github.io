@@ -39,7 +39,7 @@
      
         geometry = new THREE.BoxGeometry(1, 1, 1);
         var texture1 = tL.load("img/ink.png");
-        material = new THREE.MeshStandardMaterial();
+        material = new THREE.MeshPhongMaterial();
         material.map = texture1;
         
         var box1 = new THREE.Mesh(geometry, material);
@@ -62,7 +62,7 @@
         var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffcccc, 10, 2, 1);
+        var pointLight = new THREE.PointLight(0xffffff, 3, 0, 1);
         pointLight.position.set(0, 2, 0);
         
         directionalLight.castShadow = true;
