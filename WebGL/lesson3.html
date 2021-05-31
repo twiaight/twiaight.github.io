@@ -48,6 +48,9 @@
         scene.add(box1);
         
         
+        material = new THREE.MeshPhongMaterial();
+        material.map = texture1;
+        
         var bump = tL.load("img/stone-bump.jpg");
         material.bumpMap = bump;
         material.bumpscale = 1;
