@@ -44,6 +44,7 @@
         
         var box1 = new THREE.Mesh(geometry, material);
         box1.position.x = -1;
+        box1.rotation.x = -10 * (Math.PI/180);
         
         scene.add(box1);
         
@@ -57,15 +58,27 @@
         
         var box2 = new THREE.Mesh(geometry, material);
         box2.position.x = +1;
+        box2.rotation.x = -10 * (Math.PI/180);
         
         scene.add(box2);
         
+        geometry = new THREE.PlaneGeometry(5, 5, 10, 10);
+        var texture2 = tL.load("img/light.png");
+        material = new THREE.MeshStandardMaterial();
+        material.map = texture2;
+        
+        var background = new THREE.Mesh(geometry, material);
+        background.position.z = -1;
+        background.rotation.x = -45 * (Math.PI/180);
+        
+        scene.add(background);
+        
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
-        var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        var directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
         directionalLight.position.set(0, 0, 2);
         
-        var pointLight = new THREE.PointLight(0xffffff, 3, 0, 1);
+        var pointLight = new THREE.PointLight(0xff2222, 3, 0, 1);
         pointLight.position.set(0, 2, 0);
         
         directionalLight.castShadow = true;
