@@ -31,7 +31,7 @@
         
         /* Axis -> x:RED / y:GREEN / z:BLUE */
         var axes = new THREE.AxesHelper(20);
-        scene.add(axes);
+        //scene.add(axes);
         
         
         /* ジオメトリー作成用 */
@@ -79,7 +79,7 @@
         directionalLight.position.set(0, 0, 2);
         
         var pointLight = new THREE.PointLight(0xff2222, 3, 0, 1);
-        pointLight.position.set(0, 2, 0);
+        pointLight.position.set(0, 2, 1);
         
         directionalLight.castShadow = true;
         scene.add(directionalLight);
