@@ -75,19 +75,19 @@
         material.map = texture3;
         var tree1 = new THREE.Mesh(geometry, material);
         tree1.position.set(-5, 11, 0);
-        tree1.rotarion.y = 90*(Math.PI/180);
+        tree1.rotation.y = -90*(Math.PI/180);
         tree.add(tree1);
         
         material.map = texture4;
         var tree2 = new THREE.Mesh(geometry, material);
         tree2.position.set(5, 11, 0);
-        tree2.rotarion.y = -90*(Math.PI/180);
+        tree2.rotation.y = +90*(Math.PI/180);
         tree.add(tree2);
         
         material.map = texture5;
         var tree3 = new THREE.Mesh(geometry, material);
         tree3.position.set(0, 11, -5);
-        tree3.rotarion.y = 180*(Math.PI/180);
+        tree3.rotation.y = 180*(Math.PI/180);
         tree.add(tree3);
         
         scene.add(tree);
