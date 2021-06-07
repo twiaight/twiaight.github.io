@@ -17,9 +17,9 @@
 
   <script type="module">
 
-    // import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 
-    // import { PointerLockControls } from 'PointerLockControls.js';
+    import { PointerLockControls } from 'PointerLockControls.js';
 
 
 
@@ -125,6 +125,7 @@
         requestAnimationFrame(update);
         // const time = performence.now();
         // const delta = ( time - prevTime ) / 1000;
+        /*
 
         //Get the controller object
         var control = controls.getObject();
@@ -138,6 +139,7 @@
 
         //prevTime = time;
 
+        */
         renderer.render(scene, camera);
       };
       update();
