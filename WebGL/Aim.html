@@ -29,7 +29,10 @@
 
     var clock = new THREE.Clock();
     
-    var init = function() {
+    init();
+    update();
+    
+    function init() {
 
       /* 参考文献
       https://irukanobox.blogspot.com/2016/04/threejs_3.html
@@ -113,8 +116,9 @@
 
       directionalLight.castShadow = true;
       scene.add(directionalLight);
-      
-      var update = function() {
+    }
+    
+     function update() {
         requestAnimationFrame(update);
         // const time = performence.now();
         // const delta = ( time - prevTime ) / 1000;
@@ -135,9 +139,6 @@
         */
         renderer.render(scene, camera);
       };
-      update();
-    }
-    window.addEventListener( 'DOMContentLoaded', init );
 
   </script>
 
