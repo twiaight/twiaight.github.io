@@ -45,9 +45,7 @@
       https://threejs.org/examples/misc_controls_pointerlock.html
       */
 
-      var renderer = new  THREE.WebGLRenderer({
-        canvas: document.querySelector('myCanvas')
-      });
+      var renderer = new  THREE.WebGLRenderer({});
       renderer.setSize(width, height);
       document.body.appendChild(renderer.domElement);
 
@@ -76,9 +74,6 @@
           blocker.style.display = 'block';
           instructions.style.display = '';
         } );
-
-      controls.getObject().position.y = 50;
-      controls.getObject().position.x = 100;
 
       scene.add( controls.getObject() );
 
@@ -116,7 +111,7 @@
 
 
       var directionalLight = new THREE.DirectionalLight(0xffffff);
-      directionalLight.position.set(0, 0, 2);
+      directionalLight.position.set(0, 0, 10);
 
       directionalLight.castShadow = true;
       scene.add(directionalLight);
