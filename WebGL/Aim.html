@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="blocker">
-    <div id="instructions"></div>
+    <div id="instructions"><p></p></div>
   </div>
 
   <script type="module">
@@ -119,26 +119,10 @@
     }
     
      function update() {
-        requestAnimationFrame(update);
-        // const time = performence.now();
-        // const delta = ( time - prevTime ) / 1000;
-        /*
-
-        //Get the controller object
-        var control = controls.getObject();
-        //Get refresh time
-        var delta = clock.getDelta();
-
-        //Move the controller according to the speed value
-        control.translateX( velocity.x * delta );
-        control.translateY( velocity.y * delta );
-        control.translateZ( velocity.z * delta );
-
-        //prevTime = time;
-
-        */
-        renderer.render(scene, camera);
-      };
+       requestAnimationFrame(update);
+       const time = performance.now();
+       renderer.render(scene, camera);
+     };
 
   </script>
 
