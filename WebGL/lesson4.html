@@ -27,7 +27,7 @@
         var scene = new THREE.Scene();
         
         var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
-        camera.position.z = 200;
+        camera.position.z = 20;
         camera.position.y = 0.5;
         
         const controls = new THREE.OrbitControls(camera, document.body);
@@ -40,14 +40,14 @@
         scene.add(axes);
         
         const gridHelper = new
-        THREE.GridHelper(400,50); // size, step
+        THREE.GridHelper(40,50); // size, step
         scene.add(gridHelper);
         
         
         /* ジオメトリー作成用 */
         var geometry, material;
      
-        geometry = new THREE.BoxGeometry(200, 200, 200);
+        geometry = new THREE.BoxGeometry(10, 10, 10);
         var texture1 = tL.load("img/ink.png");
         material = new THREE.MeshPhongMaterial();
         material.map = texture1;
@@ -58,6 +58,39 @@
         
         scene.add(box1);
         
+        var texture2 = tL.load("img/tree0.png")
+        var texture3 = tL.load("img/tree1.png")
+        var texture4 = tL.load("img/tree2.png")
+        var texture5 = tL.load("img/tree3.png")
+        
+        geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
+        material = new THREE.MeshLamberMaterial({ transparent: true });
+        
+        const tree = THREE.Group()
+        material.map = texture2;
+        var tree0 = new THREE.Mesh(geometry, material);
+        tree0.position.set(0, 11, 5);
+        tree.add(tree0);
+        
+        material.map = texture3;
+        var tree1 = new THREE.Mesh(geometry, material);
+        tree1.position.set(-5, 11, 0);
+        tree1.rotarion.y = 90*(Math.PI/180);
+        tree.add(tree1);
+        
+        material.map = texture4;
+        var tree2 = new THREE.Mesh(geometry, material);
+        tree2.position.set(5, 11, 0);
+        tree2.rotarion.y = -90*(Math.PI/180);
+        tree.add(tree2);
+        
+        material.map = texture5;
+        var tree3 = new THREE.Mesh(geometry, material);
+        tree3.position.set(0, 11, -5);
+        tree3.rotarion.y = 180*(Math.PI/180);
+        tree.add(tree3);
+        
+        scene.add(tree);
         /*
         material = new THREE.MeshPhongMaterial();
         material.map = texture1;
