@@ -12,12 +12,14 @@
   <div id="blocker">
     <div id="instructions"></div>
   </div>
+  
+  <canvas id="myCanvas"></canvas>
 
   <script type="module">
 
-    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+    // import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
 
-    import { PointerLockControls } from './PointerLockControls.js';
+    // import { PointerLockControls } from 'PointerLockControls.js';
 
 
 
@@ -43,7 +45,9 @@
       https://threejs.org/examples/misc_controls_pointerlock.html
       */
 
-      var renderer = new  THREE.WebGLRenderer({antialias:true});
+      var renderer = new  THREE.WebGLRenderer({
+        canvas: document.querySelector('myCanvas')
+      });
       renderer.setSize(width, height);
       document.body.appendChild(renderer.domElement);
 
