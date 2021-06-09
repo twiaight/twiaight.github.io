@@ -12,6 +12,8 @@
   <div id="blocker">
     <div id="instructions"><p>Click plzzzzzzzzzzzz</p></div>
   </div>
+  
+  <canvas id="mC"></canvas>
 
   <script type="module">
 
@@ -20,8 +22,9 @@
     import { PointerLockControls } from './PointerLockControls.js';
 
     let scene, camera, renderer;
+    const canvas = document.querySelector('#mC');
 
-    var mouseX = 0, mouseY = 0; 
+    const mouse = new THREE.Vector();
     var width = 800, height = 600;
     var prevTime = 0;
     var controls;
@@ -46,7 +49,7 @@
       https://threejs.org/examples/misc_controls_pointerlock.html
       */
 
-      renderer = new  THREE.WebGLRenderer({ antialias: true });
+      renderer = new  THREE.WebGLRenderer({ canvas:canvas, antialias: true });
       renderer.setSize(width, height);
       document.body.appendChild(renderer.domElement);
 
@@ -77,6 +80,8 @@
         } );
 
       scene.add( controls.getObject() );
+      
+      const ray = THREE.Raycaster();
 
 
       //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
@@ -121,6 +126,7 @@
      function update() {
        requestAnimationFrame(update);
        const time = performance.now();
+       // console.log();
        renderer.render(scene, camera);
      };
 
