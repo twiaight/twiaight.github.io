@@ -148,9 +148,9 @@
       
       sphereList.map( (sphere) => {
         if (intersects.length > 0 /*&& sphere === intersects[0].object*/ ) {
-          sphere.material.color.setHex(0xff0000);
+          intersects.material.color.setHex(0xff0000);
         } else {
-          sphere.material.color.setHex(0xffffff);
+          intersects.material.color.setHex(0xffffff);
         }
       });
       
