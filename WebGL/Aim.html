@@ -114,11 +114,16 @@
       scene.add(axes);
 
 
-      var geometry = new THREE.SphereGeometry(1, 2, 2);
+      var geometry = new THREE.SphereGeometry(1, 20, 20);
       var material = new THREE.MeshPhongMaterial({ color:0xffffff });
       
       sphere = new THREE.Mesh(geometry, material);
       sphere.position.x = -2;
+      scene.add(sphere);
+      sphereList.push(sphere);
+      
+      sphere = new THREE.Mesh(geometry, material);
+      sphere.position.x = +0;
       scene.add(sphere);
       sphereList.push(sphere);
      
