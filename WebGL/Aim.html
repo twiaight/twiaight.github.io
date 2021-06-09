@@ -148,13 +148,13 @@
       
       sphereList.map( (sphere) => {
         if (intersects.length > 0 /*&& sphere === intersects[0].object*/ ) {
-          intersects.material.color.setHex(0xff0000);
+          sphere.material.color.setHex(0xff0000);
         } else {
-          intersects.material.color.setHex(0xffffff);
+          sphere.material.color.setHex(0xffffff);
         }
       });
       
-      // console.log();
+      console.log(ray.setFromCamera(mouse, camera));
       renderer.render(scene, camera);
     };
 
