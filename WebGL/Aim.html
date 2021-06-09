@@ -119,10 +119,12 @@
       
       sphere = new THREE.Mesh(geometry, material);
       sphere.position.x = -2;
+      scene.add(sphere);
       sphereList.push(sphere);
      
       sphere = new THREE.Mesh(geometry, material);
       sphere.position.x = +2;
+      scene.add(sphere);
       sphereList.push(sphere);
 
       scene.add(sphereList);
