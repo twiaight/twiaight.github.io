@@ -154,7 +154,7 @@
         }
       });
       
-      console.log(ray.setFromCamera(mouse, camera));
+      console.log(ray.setFromCamera(mouse, camera).x, ray.setFromCamera(mouse, camera).y, ray.setFromCamera(mouse, camera).z);
       renderer.render(scene, camera);
     };
 
