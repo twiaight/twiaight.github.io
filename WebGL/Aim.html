@@ -152,9 +152,10 @@
         } else {
           sphere.material.color.setHex(0xffffff);
         }
+        console.log("カメラ位置座標からの距離：" + intersects[0].distance);
+        console.log("光線との交差座標(" + intersects[0].point.x + ", " + intersects[0].point.y + ", " + intersects[0].point.z + ")" );
+        console.log(intersects[0]);
       });
-      
-      console.log(ray.setFromCamera(mouse, camera).x, ray.setFromCamera(mouse, camera).y, ray.setFromCamera(mouse, camera).z);
       renderer.render(scene, camera);
     };
 
