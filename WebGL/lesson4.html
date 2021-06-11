@@ -137,13 +137,17 @@
           requestAnimationFrame(update);
 
           renderer.render(scene, camera);
+          
         };
 
         /* アニメーションの更新 */
         update();
+        
       }
       
       window.addEventListener( 'DOMContentLoaded', init );
+      document.write(camera.position.x);
+      document.write(camera.position.y);     
     
     </script>
     
