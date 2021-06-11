@@ -71,7 +71,7 @@
         tree0.position.set(0, 6, 5);
         scene.add(tree0);
         
-        material = new THREE.MeshLambertMaterial({ transparent: true });
+        material = new THREE.MeshLambertMaterial({ transparent: true, side: THREE.DoubleSide});
         material.map = texture3;
         var tree1 = new THREE.Mesh(geometry, material);
         tree1.position.set(-5, 6, 0);
@@ -146,9 +146,7 @@
       }
       
       window.addEventListener( 'DOMContentLoaded', init );
-      document.write(camera.position.x);
-      document.write(camera.position.y);     
-    
+      
     </script>
     
     <!-- ↓書かなくていい↓ -->
