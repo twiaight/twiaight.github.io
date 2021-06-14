@@ -63,7 +63,7 @@
         var circles = [];
         const limit = 10;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.TorusGeometry(5*Math.random(), 0.03, 20, 200);
+          geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 20, 200);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
@@ -94,9 +94,9 @@
           
         for ( let i=0; i<limit; i++ ) {
           var circle = circles[i];
-          circle.rotation.x += 0.1;
-          circle.rotation.y += 0.1;
-          circle.rotation.z += 0.1;
+          circle.rotation.x += 0.01;
+          circle.rotation.y += 0.01;
+          circle.rotation.z += 0.01;
         }  
 
           renderer.render(scene, camera);
