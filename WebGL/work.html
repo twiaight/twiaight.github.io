@@ -15,7 +15,8 @@
         var width = 800, height = 600;
         
         var renderer = new  THREE.WebGLRenderer({
-          canvas: document.querySelector('#myCanvas')
+          canvas: document.querySelector('#myCanvas'),
+          antialias:true
         });
         renderer.setSize(width, height);
         renderer.setClearColor( 0x010101 );
