@@ -54,8 +54,8 @@
         scene.add(star);
         
         geometry = new THREE.CircleGeometry(1, 20);
-        var texture1 = tL.load("img/tree0.png");
-        material = new THREE.MeshBasicMaterial({map:texture1});
+        var texture1 = tL.load("img/flash.png");
+        material = new THREE.MeshBasicMaterial({ map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
         const circle = new THREE.Mesh(geometry, material);
         circle.position.z = 1;
         scene.add(circle);
