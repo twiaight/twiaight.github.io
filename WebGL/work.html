@@ -64,7 +64,20 @@
         material = new THREE.MeshStandardMaterial({ color:0xffffff });
         var circle = new THREE.Mesh(geometry, material);
         circle.rotation.x = 25*(Math.PI/180);
-        scene.add(circle);
+        // scene.add(circle);
+        
+        const circles = new THREE.Group();
+        const limit = 10;
+        for ( let i=0; i<limit; i++ ) {
+          geometry = new THREE.TorusGeometry(10, 0.1, 10*Math.random()+10, 200);
+          material = new THREE.MeshStandardMaterial({ color:0xffffff });
+          var circle = new THREE.Mesh(geometry, material);
+          circle.rotation.x = Math.random()*360*(Math.PI/180);
+          circle.rotation.y = Math.random()*360*(Math.PI/180);
+          circle.rotation.z = Math.random()*360*(Math.PI/180);
+          circles.add(circle);
+        }
+        scene.add(circles);
         
         /*
         geometry = new THREE.BoxGeometry(10, 10, 10);
@@ -149,7 +162,7 @@
         scene.add(directionalLight);
         
         pointLight.castShadow = true;
-        scene.add(pointLight);
+        // scene.add(pointLight);
         
         
         /* アニメーション */
