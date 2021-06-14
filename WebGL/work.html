@@ -70,7 +70,7 @@
           scene.add(circle);
         }
         
-  　　　 geometry = new THREE.RingGeometry(6, 7, 200, 20, 0);
+        geometry = new THREE.RingGeometry(6, 7, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xaaaaff, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         scene.add(ring);
@@ -92,7 +92,7 @@
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -90*(Math.PI/180);
-        //scene.add(arch); 
+        scene.add(arch); 
         
         geometry = new THREE.ConeGeometry(1, 2, 20, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
