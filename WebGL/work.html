@@ -60,7 +60,7 @@
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
-        geometry = new THREE.TorusGeometry(1, 0.1, 2, 100);
+        geometry = new THREE.TorusGeometry(1, 0.1, 2, 200);
         material = new THREE.MeshStandardMaterial({ color:0xffffff });
         var circle = new THREE.Mesh(geometry, material);
         circle.rotation.x = 25*(Math.PI/180);
