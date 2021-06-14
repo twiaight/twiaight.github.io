@@ -48,8 +48,8 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        geometry = new THREE.SphereGeometry(1, 1, 1);
-        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.6, transparent:true });
+        geometry = new THREE.SphereGeometry(1, 20, 20);
+        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.6, transparent:true, side:THREE.DoubleSide });
         const star = new THREE.Mesh(geometry, material);
         scene.add(star);
         
