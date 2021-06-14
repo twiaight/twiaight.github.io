@@ -70,8 +70,8 @@
           circle.rotation.y = Math.random()*360*(Math.PI/180);
           circle.rotation.z = Math.random()*360*(Math.PI/180);
           circles.push(circle);
+          scene.add(circle);
         }
-        scene.add(circles);
         
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
