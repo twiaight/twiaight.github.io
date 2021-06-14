@@ -49,9 +49,8 @@
         var geometry, material;
         
         var texture1 = tL.load("img/white_flash.PNG");
-        geometry = new THREE.PlaneGeometry(1, 1, 20, 20);
-        material = new THREE.MeshLambertMaterial({ map:texture1, transparent:true, side:THREE.DoubleSide });
-        const star = new THREE.Mesh( geometry, material );
+        material = new THREE.SprideMaterial({ map:texture1 });
+        const star = new THREE.Sprite( material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
