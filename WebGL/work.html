@@ -76,7 +76,7 @@
   　　　 geometry = new THREE.TorusGeometry(6, 0.4, 2, 200, Math.PI);
         material = new THREE.MeshStandardMaterial({ color:0xffffff });
         var circle = new THREE.Mesh(geometry, material);
-        circle.rotation.z = -60*(Math.PI/180);
+        circle.rotation.z = 120*(Math.PI/180);
         scene.add(circle);
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
