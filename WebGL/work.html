@@ -76,12 +76,12 @@
   　　　 geometry = new THREE.TorusGeometry(6, 0.4, 2, 200, Math.PI);
         material = new THREE.MeshStandardMaterial({ color:0xffffff });
         var circle = new THREE.Mesh(geometry, material);
-        circle.rotation.z = -25*(Math.PI/180);
+        circle.rotation.z = -155*(Math.PI/180);
         scene.add(circle);
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
         var directionalLight = new THREE.DirectionalLight(0xffffff);
-        directionalLight.position.set(0, 0, -100);
+        directionalLight.position.set(0, 0, 20);
         
         var pointLight = new THREE.PointLight(0xff2222, 3, 0, 1);
         // pointLight.position.set(0, 2, 1);
