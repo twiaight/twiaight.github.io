@@ -53,6 +53,12 @@
         const star = new THREE.Mesh(geometry, material);
         scene.add(star);
         
+        geometry = new THREE.CircleGeometry(1, 20);
+        var texture1 = tL.load("img/tree0.png");
+        material = new THREE.MeshBasicMaterial({map:texture1});
+        const circle = new THREE.Mesh(geometry, material);
+        scene.add(circle);
+        
         /*
         geometry = new THREE.BoxGeometry(10, 10, 10);
         var texture1 = tL.load("img/ink.png");
