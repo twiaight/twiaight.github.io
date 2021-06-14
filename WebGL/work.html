@@ -73,8 +73,8 @@
           scene.add(circle);
         }
         
-  　　　 geometry = new THREE.TorusGeometry(6, 0.4, 20, 200, 5/4*Math.PI);
-        material = new THREE.MeshStandardMaterial({ color:0xffffff });
+  　　　 geometry = new THREE.TorusGeometry(6, 0.4, 2, 200, 5/4*Math.PI);
+        material = new THREE.MeshStandardMaterial({ color:0xffffff, side:THREE.DoubleSide });
         var circle = new THREE.Mesh(geometry, material);
         circle.rotation.z = 120*(Math.PI/180);
         scene.add(circle);
