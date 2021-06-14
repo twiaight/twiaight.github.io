@@ -61,9 +61,9 @@
         scene.add(star);
         
         const circles = new THREE.Group();
-        const limit = 20;
+        const limit = 10;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.TorusGeometry(5*Math.random(), 0.05, 20, 200);
+          geometry = new THREE.TorusGeometry(5*Math.random(), 0.02, 20, 200);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
