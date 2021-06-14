@@ -53,10 +53,9 @@
         // const star = new THREE.Mesh(geometry, material);
         // scene.add(star);
         
-        geometry = new THREE.CircleGeometry(1, 72);
         var texture1 = tL.load("img/white_flash.PNG");
-        material = new THREE.SpriteMaterial({ map:texture1 });
-        const star = new THREE.Sprite(material);
+        material = new THREE.MeshLambereMaterial({ map:texture1, transparent:true, side:THREE.DoubleSide });
+        const star = new THREE.Mesh( geometry, material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
