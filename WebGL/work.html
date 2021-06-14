@@ -87,6 +87,7 @@
         geometry = new THREE.TorusGeometry(7, 0.2, 20, 200);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
+        arch.rotation.x = -90*(Math.PI/180);
         scene.add(arch); 
         
         geometry = new THREE.ConeGeometry(1, 2, 20, 20);
