@@ -91,6 +91,13 @@
         /* アニメーション */
         var update = function() {
           requestAnimationFrame(update);
+          
+        for ( let i=0; i<limit; i++ ) {
+          var circle = circles[i];
+          circle.rotation.x += 0.1;
+          circle.rotation.y += 0.1;
+          circle.rotation.z += 0.1;
+        }  
 
           renderer.render(scene, camera);
         };
