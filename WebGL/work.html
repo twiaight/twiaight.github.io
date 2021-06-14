@@ -70,7 +70,7 @@
           scene.add(circle);
         }
         
-        const ring = THREE.Group();
+        const ring = new THREE.Group();
         geometry = new THREE.CylinderGeometry(6, 6, 0.3, 200, 20, false );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
