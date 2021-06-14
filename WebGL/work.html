@@ -73,7 +73,7 @@
           scene.add(circle);
         }
         
-  　　　 geometry = new THREE.RingGeometry(6, 7, 20, 200, 0, 5/4*Math.PI);
+  　　　 geometry = new THREE.RingGeometry(6, 7, 200, 20, 0, 5/4*Math.PI);
         material = new THREE.MeshStandardMaterial({ color:0xaaaaff, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.rotation.z = 120*(Math.PI/180);
