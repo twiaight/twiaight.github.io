@@ -63,7 +63,7 @@
         const circles = new THREE.Group();
         const limit = 10;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.TorusGeometry(10, 0.1, 10*Math.random()+10, 200);
+          geometry = new THREE.TorusGeometry(10, 0.01, 20*Math.random()+1, 200);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
