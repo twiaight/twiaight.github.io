@@ -82,6 +82,7 @@
         geometry = new THREE.ConeGeometry(1, 1, 20, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var cone = new THREE.Mesh(geometry, material);
+        cone.position.y = -8;
         scene.add(cone);
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
