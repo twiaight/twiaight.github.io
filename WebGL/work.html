@@ -18,7 +18,7 @@
           canvas: document.querySelector('#myCanvas')
         });
         renderer.setSize(width, height);
-        renderer.setClearColor( 0xffffff );
+        renderer.setClearColor( 0x101010 );
         document.body.appendChild(renderer.domElement);
         
         renderer.shadowMap.enabled = true;
@@ -41,12 +41,19 @@
         
         const gridHelper = new
         THREE.GridHelper(40,50); // size, step
+        // 
         scene.add(gridHelper);
         
         
         /* ジオメトリー作成用 */
         var geometry, material;
-     
+        
+        geometry = new THREE.SphereGeometry(1, 1, 1);
+        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.6, transparent:true });
+        const star = new THREE.Mesh(geometry, material);
+        scene.add(star);
+        
+        /*
         geometry = new THREE.BoxGeometry(10, 10, 10);
         var texture1 = tL.load("img/ink.png");
         material = new THREE.MeshPhongMaterial();
@@ -91,7 +98,7 @@
         tree3.position.set(0, 6, -5);
         tree3.rotation.y = 180*(Math.PI/180);
         scene.add(tree3);
-        
+        */
         /*
         material = new THREE.MeshPhongMaterial();
         material.map = texture1;
