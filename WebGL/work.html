@@ -49,15 +49,15 @@
         var geometry, material;
         
         geometry = new THREE.SphereGeometry(1, 20, 20);
-        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.6, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.4, transparent:true, side:THREE.DoubleSide });
         const star = new THREE.Mesh(geometry, material);
         scene.add(star);
         
-        geometry = new THREE.CircleGeometry(1, 20);
+        geometry = new THREE.CircleGeometry(1, 72);
         var texture1 = tL.load("img/flash.png");
-        material = new THREE.MeshBasicMaterial({ map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
+        material = new THREE.MeshSpriteMaterial({ color:0xfff0f0, map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
         const circle = new THREE.Mesh(geometry, material);
-        circle.position.z = 1;
+        // circle.position.z = 1;
         scene.add(circle);
         
         /*
