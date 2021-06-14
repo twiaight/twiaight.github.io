@@ -85,12 +85,14 @@
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         ring.position.y = +0.2;
+        ring.rotation.x = -90*(Math.PI/180);
         ring.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 200, 20, 0 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         ring.position.y = -0.2;
+        ring.rotation.x = -90*(Math.PI/180);
         ring.add(parts);
         
         scene.add(ring);
