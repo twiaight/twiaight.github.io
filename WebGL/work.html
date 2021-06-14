@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+      /* 初期設定 */
+      var init = function() {
+        
+        var width = 800, height = 600;
+        
+        var renderer = new  THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas')
+        });
+        renderer.setSize(width, height);
+        renderer.setClearColor( 0xffffff );
+        document.body.appendChild(renderer.domElement);
+        
+        renderer.shadowMap.enabled = true;
+        // renderer.setPixelRatio(window.devicePixelRatio);
+        
+        var scene = new THREE.Scene();
+        
+        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 1000);
+        camera.position.z = 20;
+        camera.position.y = 0.5;
+        
+        const controls = new THREE.OrbitControls(camera, document.body);
+        
+        var tL = new THREE.TextureLoader();
+        
+        
+        /* Axis -> x:RED / y:GREEN / z:BLUE */
+        const axes = new THREE.AxesHelper(20);
+        scene.add(axes);
+        
+        const gridHelper = new
+        THREE.GridHelper(40,50); // size, step
+        scene.add(gridHelper);
+        
+        
+        /* ジオメトリー作成用 */
+        var geometry, material;
+     
+        geometry = new THREE.BoxGeometry(10, 10, 10);
+        var texture1 = tL.load("img/ink.png");
+        material = new THREE.MeshPhongMaterial();
+        material.map = texture1;
+        
+        var box1 = new THREE.Mesh(geometry, material);
+        // box1.position.x = -1;
+        // box1.rotation.x = -10 * (Math.PI/180);
+        
+        scene.add(box1);
+        
+        var texture2 = tL.load("img/tree0.png")
+        var texture3 = tL.load("img/tree1.png")
+        var texture4 = tL.load("img/tree2.png")
+        var texture5 = tL.load("img/tree3.png")
+        
+        geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
+        material = new THREE.MeshLambertMaterial({ transparent: true });
+        
+        material.map = texture2;
+        var tree0 = new THREE.Mesh(geometry, material);
+        tree0.position.set(0, 6, 5);
+        scene.add(tree0);
+        
+        material = new THREE.MeshLambertMaterial({ transparent: true, side: THREE.DoubleSide});
+        material.map = texture3;
+        var tree1 = new THREE.Mesh(geometry, material);
+        tree1.position.set(-5, 6, 0);
+        tree1.rotation.y = -90*(Math.PI/180);
+        scene.add(tree1);
+        
+        material = new THREE.MeshLambertMaterial({ transparent: true });
+        material.map = texture4;
+        var tree2 = new THREE.Mesh(geometry, material);
+        tree2.position.set(5, 6, 0);
+        tree2.rotation.y = +90*(Math.PI/180);
+        scene.add(tree2);
+        
+        material = new THREE.MeshLambertMaterial({ transparent: true });
+        material.map = texture5;
+        var tree3 = new THREE.Mesh(geometry, material);
+        tree3.position.set(0, 6, -5);
+        tree3.rotation.y = 180*(Math.PI/180);
+        scene.add(tree3);
+        
+        /*
+        material = new THREE.MeshPhongMaterial();
+        material.map = texture1;
+        
+        var bump = tL.load("img/stone-bump.jpg");
+        material.bumpMap = bump;
+        material.bumpscale = 1;
+        
+        var box2 = new THREE.Mesh(geometry, material);
+        box2.position.x = +1;
+        box2.rotation.x = -10 * (Math.PI/180);
+        
+        scene.add(box2);
+        
+        geometry = new THREE.PlaneGeometry(5, 5, 10, 10);
+        var texture2 = tL.load("img/light.jpg");
+        material = new THREE.MeshStandardMaterial();
+        material.map = texture2;
+        
+        var background = new THREE.Mesh(geometry, material);
+        background.position.z = -1;
+        background.rotation.x = -45 * (Math.PI/180);
+        
+        scene.add(background);
+        */
+        
+        /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
+        var directionalLight = new THREE.DirectionalLight(0xffffff);
+        directionalLight.position.set(0, 0, 2);
+        
+        var pointLight = new THREE.PointLight(0xff2222, 3, 0, 1);
+        pointLight.position.set(0, 2, 1);
+        
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
+        
+        pointLight.castShadow = true;
+        //scene.add(pointLight);
+        
+        
+        /* アニメーション */
+        var update = function() {
+          requestAnimationFrame(update);
+
+          renderer.render(scene, camera);
+          
+        };
+
+        /* アニメーションの更新 */
+        update();
+        
+      }
+      
+      window.addEventListener( 'DOMContentLoaded', init );
+      
+    </script>
+    
+    <!-- ↓書かなくていい↓ -->
+    <!-- <canvas width="800" height="600" style="width: 800px; height: 600px;"></canvas> -->
+
+  </body>
+  
+</html>
