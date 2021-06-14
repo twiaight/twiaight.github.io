@@ -54,7 +54,7 @@
         // scene.add(star);
         
         var texture1 = tL.load("img/white_flash.PNG");
-        material = new THREE.MeshLambereMaterial({ map:texture1, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshLambertMaterial({ map:texture1, transparent:true, side:THREE.DoubleSide });
         const star = new THREE.Mesh( geometry, material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
