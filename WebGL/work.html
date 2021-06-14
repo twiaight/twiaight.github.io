@@ -55,7 +55,7 @@
         
         geometry = new THREE.CircleGeometry(1, 72);
         var texture1 = tL.load("img/flash.png");
-        material = new THREE.MeshSpriteMaterial({ color:0xfff0f0, map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
+        material = new THREE.SpriteMaterial({ color:0xfff0f0, map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
         const circle = new THREE.Mesh(geometry, material);
         // circle.position.z = 1;
         scene.add(circle);
