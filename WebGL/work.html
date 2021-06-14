@@ -54,11 +54,11 @@
         scene.add(star);
         
         geometry = new THREE.CircleGeometry(1, 72);
-        var texture1 = tL.load("img/flash.png");
+        var texture1 = tL.load("img/white_flash.png");
         // material = new THREE.MeshBasicMaterial({ color:0xfff0f0, map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
         const circle = new THREE.Mesh(geometry, material);
         material = new THREE.SpriteMaterial({ map:texture1 });
-        // circle.position.z = 1;
+        circle.position.z = 1;
         scene.add(circle);
         
         /*
