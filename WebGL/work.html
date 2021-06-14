@@ -71,7 +71,7 @@
           circle.rotation.z = Math.random()*360*(Math.PI/180);
           circles.push(circle);
         }
-        scene.add(circles);
+        // scene.add(circles);
         
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
@@ -91,12 +91,6 @@
         /* アニメーション */
         var update = function() {
           requestAnimationFrame(update);
-          
-          for ( let i=0; i<limit; i++ ) {
-            circles[i].rotation.x += 0.1;
-            circles[i].rotation.y += 0.1;
-            circles[i].rotation.z += 0.1;
-          }
 
           renderer.render(scene, camera);
           
