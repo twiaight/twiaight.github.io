@@ -71,74 +71,76 @@
         }
         
         const ring = new THREE.Group();
-        geometry = new THREE.CylinderGeometry(6.5, 6.5, 0.3, 200, 20, true );
+        geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         ring.add(parts);
         
-        geometry = new THREE.CylinderGeometry(7.5, 7.5, 0.3, 200, 20, true );
+        geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
+        ring.add(parts);
+        
+        geometry = new THREE.RingGeometry( 6.5, 7.5, 200, 20, 0 );
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        var parts = new THREE.Mesh(geometry, material);
+        ring.position.y = +0.2;
+        ring.add(parts);
+        
+        geometry = new THREE.RingGeometry( 6.5, 7.5, 200, 20, 0 );
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        var parts = new THREE.Mesh(geometry, material);
+        ring.position.y = -0.2;
         ring.add(parts);
         
         scene.add(ring);
         
-        geometry = new THREE.RingGeometry(6, 7, 200, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xaaaaff, transparent:true, side:THREE.DoubleSide });
-        var parts = new THREE.Mesh(geometry, material);
-        //scene.add(ring);
         
-        geometry = new THREE.TorusGeometry(7, 0.2, 20, 200, Math.PI);
+        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 200, Math.PI );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
         scene.add(arch);
         
-        geometry = new THREE.TorusGeometry(7, 0.2, 20, 200, Math.PI);
+        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 200, Math.PI );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         scene.add(arch);
         
-        geometry = new THREE.TorusGeometry(7, 0.2, 20, 200);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var arch = new THREE.Mesh(geometry, material);
-        arch.rotation.x = -90*(Math.PI/180);
-        //scene.add(arch); 
-        
-        geometry = new THREE.ConeGeometry(1, 2, 20, 20);
+        geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         scene.add(cone);
         
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20);
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(5, 5, 1, 200, 20);
+        geometry = new THREE.CylinderGeometry( 5, 5, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(3, 3, 3, 200, 20);
+        geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(7, 8, 1, 200, 20);
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
         
         for ( let i=0; i<6; i++ ) {
-          geometry = new THREE.CylinderGeometry(0.5, 0.5, 3, 200, 20);
+          geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 200, 20 );
           material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( 4.5*Math.cos(2*Math.PI/6*i), -10.5, 4.5*Math.sin(2*Math.PI/6*i) );
