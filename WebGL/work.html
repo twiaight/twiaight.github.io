@@ -48,6 +48,8 @@
         // scene.add(gridHelper);
         
         
+        
+        
         /* ジオメトリー作成用 */
         var geometry, material;
         
@@ -167,12 +169,12 @@
         var update = function() {
           requestAnimationFrame(update);
           
-        for ( let i=0; i<limit; i++ ) {
-          var circle = circles[i];
-          circle.rotation.x += 0.01;
-          circle.rotation.y += 0.01;
-          circle.rotation.z += 0.01;
-        }  
+          for ( let i=0; i<limit; i++ ) {
+            var circle = circles[i];
+            circle.rotation.x += 0.01;
+            circle.rotation.y += 0.01;
+            circle.rotation.z += 0.01;
+          }  
 
           renderer.render(scene, camera);
         };
