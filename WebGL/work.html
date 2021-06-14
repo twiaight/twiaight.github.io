@@ -70,6 +70,19 @@
           scene.add(circle);
         }
         
+        const ring = THREE.Group();
+        geometry = new THREE.CylinderGeometry(6, 6, 0.3, 200, 20, false );
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        var parts = new THREE.Mesh(geometry, material);
+        ring.add(parts);
+        
+        geometry = new THREE.CylinderGeometry(7, 7, 0.3, 200, 20, false );
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        var parts = new THREE.Mesh(geometry, material);
+        ring.add(parts);
+        
+        scene.add(ring);
+        
         geometry = new THREE.RingGeometry(6, 7, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xaaaaff, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
