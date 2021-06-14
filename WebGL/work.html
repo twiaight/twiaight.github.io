@@ -60,12 +60,6 @@
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
-        geometry = new THREE.TorusGeometry(10, 0.1, 20, 200);
-        material = new THREE.MeshStandardMaterial({ color:0xffffff });
-        var circle = new THREE.Mesh(geometry, material);
-        circle.rotation.x = 25*(Math.PI/180);
-        // scene.add(circle);
-        
         const circles = new THREE.Group();
         const limit = 10;
         for ( let i=0; i<limit; i++ ) {
