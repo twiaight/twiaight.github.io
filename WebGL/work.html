@@ -71,12 +71,12 @@
         }
         
         const ring = new THREE.Group();
-        geometry = new THREE.CylinderGeometry(6, 6, 0.3, 200, 20, true );
+        geometry = new THREE.CylinderGeometry(6.5, 6.5, 0.3, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         ring.add(parts);
         
-        geometry = new THREE.CylinderGeometry(7, 7, 0.3, 200, 20, true );
+        geometry = new THREE.CylinderGeometry(7.5, 7.5, 0.3, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         ring.add(parts);
