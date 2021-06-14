@@ -60,90 +60,19 @@
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
-        const circles = new THREE.Group();
+        var circles = [];
         const limit = 10;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.TorusGeometry(5*Math.random(), 0.02, 20, 200);
+          geometry = new THREE.TorusGeometry(5*Math.random(), 0.03, 20, 200);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
           circle.rotation.y = Math.random()*360*(Math.PI/180);
           circle.rotation.z = Math.random()*360*(Math.PI/180);
-          circles.add(circle);
+          circles.push(circle);
         }
         scene.add(circles);
         
-        /*
-        geometry = new THREE.BoxGeometry(10, 10, 10);
-        var texture1 = tL.load("img/ink.png");
-        material = new THREE.MeshPhongMaterial();
-        material.map = texture1;
-        
-        var box1 = new THREE.Mesh(geometry, material);
-        // box1.position.x = -1;
-        // box1.rotation.x = -10 * (Math.PI/180);
-        
-        scene.add(box1);
-        
-        var texture2 = tL.load("img/tree0.png")
-        var texture3 = tL.load("img/tree1.png")
-        var texture4 = tL.load("img/tree2.png")
-        var texture5 = tL.load("img/tree3.png")
-        
-        geometry = new THREE.PlaneGeometry(2, 2, 10, 10);
-        material = new THREE.MeshLambertMaterial({ transparent: true });
-        
-        material.map = texture2;
-        var tree0 = new THREE.Mesh(geometry, material);
-        tree0.position.set(0, 6, 5);
-        scene.add(tree0);
-        
-        material = new THREE.MeshLambertMaterial({ transparent: true, side: THREE.DoubleSide});
-        material.map = texture3;
-        var tree1 = new THREE.Mesh(geometry, material);
-        tree1.position.set(-5, 6, 0);
-        tree1.rotation.y = -90*(Math.PI/180);
-        scene.add(tree1);
-        
-        material = new THREE.MeshLambertMaterial({ transparent: true });
-        material.map = texture4;
-        var tree2 = new THREE.Mesh(geometry, material);
-        tree2.position.set(5, 6, 0);
-        tree2.rotation.y = +90*(Math.PI/180);
-        scene.add(tree2);
-        
-        material = new THREE.MeshLambertMaterial({ transparent: true });
-        material.map = texture5;
-        var tree3 = new THREE.Mesh(geometry, material);
-        tree3.position.set(0, 6, -5);
-        tree3.rotation.y = 180*(Math.PI/180);
-        scene.add(tree3);
-        */
-        /*
-        material = new THREE.MeshPhongMaterial();
-        material.map = texture1;
-        
-        var bump = tL.load("img/stone-bump.jpg");
-        material.bumpMap = bump;
-        material.bumpscale = 1;
-        
-        var box2 = new THREE.Mesh(geometry, material);
-        box2.position.x = +1;
-        box2.rotation.x = -10 * (Math.PI/180);
-        
-        scene.add(box2);
-        
-        geometry = new THREE.PlaneGeometry(5, 5, 10, 10);
-        var texture2 = tL.load("img/light.jpg");
-        material = new THREE.MeshStandardMaterial();
-        material.map = texture2;
-        
-        var background = new THREE.Mesh(geometry, material);
-        background.position.z = -1;
-        background.rotation.x = -45 * (Math.PI/180);
-        
-        scene.add(background);
-        */
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
         var directionalLight = new THREE.DirectionalLight(0xffffff);
