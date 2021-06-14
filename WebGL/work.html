@@ -50,16 +50,20 @@
         
         geometry = new THREE.SphereGeometry(1, 20, 20);
         material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.01, transparent:true, side:THREE.DoubleSide });
-        const star = new THREE.Mesh(geometry, material);
-        //scene.add(star);
+        // const star = new THREE.Mesh(geometry, material);
+        // scene.add(star);
         
         geometry = new THREE.CircleGeometry(1, 72);
         var texture1 = tL.load("img/white_flash.PNG");
-        // material = new THREE.MeshBasicMaterial({ color:0xfff0f0, map:texture1, blending:THREE.AdditiveBlending, depthWrite:false});
         material = new THREE.SpriteMaterial({ map:texture1 });
-        const circle = new THREE.Sprite(material);
-        circle.scale.set(1.7, 1.7, 1.7);
-        // circle.position.z = 1;
+        const star = new THREE.Sprite(material);
+        star.scale.set(1.7, 1.7, 1.7);
+        scene.add(star);
+        
+        geometry = new THREE.TorusGeometry(1, 0.1, 2, 100);
+        material = new THREE.MeshStandardMaterial({ color:0xffffff });
+        var circle = new THREE.Mesh(geometry, material);
+        circle.rotation.x = 25*(Math.PI/180);
         scene.add(circle);
         
         /*
