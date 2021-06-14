@@ -93,29 +93,37 @@
         cone.position.y = -7.5;
         scene.add(cone);
         
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 20, 200);
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(5, 5, 1, 20, 200);
+        geometry = new THREE.CylinderGeometry(5, 5, 1, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(3, 3, 3, 20, 200);
+        geometry = new THREE.CylinderGeometry(3, 3, 3, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
         scene.add(cylinder);
         
-        geometry = new THREE.CylinderGeometry(7, 8, 1, 20, 200);
+        geometry = new THREE.CylinderGeometry(7, 8, 1, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
+        
+        for ( let i=0; i<5; i++ ) {
+          geometry = new THREE.CylinderGeometry(0.5, 0.5, 3, 200, 20);
+          material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+          cylinder = new THREE.Mesh(geometry, material);
+          cylinder.position.set( Math.cos(2*Math.PI/5), Math.sin(2*Math.PI/5), 3 );
+          scene.add(cylinder);
+        }
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
         var directionalLight = new THREE.DirectionalLight(0xffffff);
