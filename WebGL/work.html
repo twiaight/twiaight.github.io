@@ -85,6 +85,11 @@
         cone.position.y = -7;
         scene.add(cone);
         
+        geometry = new THREE.CylinderGeometry(1, 8, 1, 20, 200);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        var cylinder = new THREE.Mesh(geometry, material);
+        scene.add(cylinder);
+        
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
         var directionalLight = new THREE.DirectionalLight(0xffffff);
         directionalLight.position.set(0, 0, 20);
