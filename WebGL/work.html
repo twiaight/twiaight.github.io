@@ -88,6 +88,7 @@
         geometry = new THREE.CylinderGeometry(4, 5, 1, 20, 200);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var cylinder = new THREE.Mesh(geometry, material);
+        cylinder.position.y = -7.5;
         scene.add(cylinder);
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
