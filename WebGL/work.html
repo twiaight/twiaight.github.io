@@ -101,6 +101,7 @@
         
         geometry = new THREE.CylinderGeometry(5, 5, 1, 20, 200);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         scene.add(cylinder);
         
@@ -111,6 +112,7 @@
         
         geometry = new THREE.CylinderGeometry(7, 8, 1, 20, 200);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
         
