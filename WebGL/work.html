@@ -130,13 +130,13 @@
         directionalLight.position.set(0, 0, 2);
         
         var pointLight = new THREE.PointLight(0xff2222, 3, 0, 1);
-        pointLight.position.set(0, 2, 1);
+        // pointLight.position.set(0, 2, 1);
         
         directionalLight.castShadow = true;
         scene.add(directionalLight);
         
         pointLight.castShadow = true;
-        //scene.add(pointLight);
+        scene.add(pointLight);
         
         
         /* アニメーション */
