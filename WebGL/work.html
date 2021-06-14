@@ -9,6 +9,9 @@
   <body>
     <canvas id="myCanvas"></canvas>
     <script>
+      
+      var cylinder;
+      
       /* 初期設定 */
       var init = function() {
         
@@ -92,8 +95,23 @@
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 20, 200);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var cylinder = new THREE.Mesh(geometry, material);
+        cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
+        scene.add(cylinder);
+        
+        geometry = new THREE.CylinderGeometry(5, 5, 1, 20, 200);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        cylinder.position.y = -9;
+        scene.add(cylinder);
+        
+        geometry = new THREE.CylinderGeometry(3, 3, 3, 20, 200);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        cylinder.position.y = -10.5;
+        scene.add(cylinder);
+        
+        geometry = new THREE.CylinderGeometry(7, 8, 1, 20, 200);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        cylinder.position.y = -12.5;
         scene.add(cylinder);
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
