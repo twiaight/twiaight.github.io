@@ -57,6 +57,7 @@
         var texture1 = tL.load("img/tree0.png");
         material = new THREE.MeshBasicMaterial({map:texture1});
         const circle = new THREE.Mesh(geometry, material);
+        circle.position.z = 1;
         scene.add(circle);
         
         /*
