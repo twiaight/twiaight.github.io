@@ -49,7 +49,7 @@
         var geometry, material;
         
         geometry = new THREE.SphereGeometry(1, 20, 20);
-        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.4, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0x000000, opacity:0.01, transparent:true, side:THREE.DoubleSide });
         const star = new THREE.Mesh(geometry, material);
         scene.add(star);
         
