@@ -116,8 +116,7 @@
         geometry = new THREE.RingGeometry( 6, 7, 200, 20, 0 );
         material = new THREE.MeshStandardMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
-        scene.add(ring);    
-        
+        scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 200, Math.PI );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
