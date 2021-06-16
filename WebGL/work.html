@@ -156,6 +156,7 @@
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
+        cylinder.ratation.y = 60*(Math.PI/180);
         scene.add(cylinder);
         
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20 );
