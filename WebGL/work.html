@@ -143,13 +143,13 @@
         const top_board = new THREE.Group();
         geometry = new THREE.RingGeometry(0, 3, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = THREE.Mesh(geometry, material);
+        var parts = new THREE.Mesh(geometry, material);
         parts.position.y = -7.5;
         top_board.add(parts);
         
         geometry = new THREE.RingGeometry(0, 4, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = THREE.Mesh(geometry, material);
+        var parts = new THREE.Mesh(geometry, material);
         parts.position.y = -8.5;
         top_board.add(parts);
         
@@ -168,13 +168,13 @@
         const und_board = new THREE.Group();
         geometry = new THREE.RingGeometry(0, 7, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = THREE.Mesh(geometry, material);
+        var parts = new THREE.Mesh(geometry, material);
         parts.position.y = -12;
         und_board.add(parts);
         
         geometry = new THREE.RingGeometry(0, 8, 200, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = THREE.Mesh(geometry, material);
+        var parts = new THREE.Mesh(geometry, material);
         parts.position.y = -13;
         und_board.add(parts);
         
