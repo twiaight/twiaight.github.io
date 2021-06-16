@@ -182,8 +182,8 @@
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20, true);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        // material.bumpMap = texture_board;
-        // material.bumpScale = 1;
+        material.bumpMap = texture_board;
+        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
@@ -212,8 +212,8 @@
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        // material.bumpMap = texture_board;
-        // material.bumpScale = 1;
+        material.bumpMap = texture_board;
+        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
