@@ -218,17 +218,19 @@
         
         var texture_board = tL.load("img/board_bump_small.png");
         
+        var texture_cylinder = tL.load("img/cylinder_bump.png");
+        
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
-        material.bumpMap = texture_ring;
+        material.bumpMap = texture_cylinder;
         material.bumpScale = 0.35;
-
         cylinder.receiveShadow = true;
         cylinder.castShaodow = true;
-        scene.add(cylinder);        
-        var texture_cylinder = tL.load("img/cylinder_bump.png");
+        scene.add(cylinder);
+        
+        
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 200, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         material.bumpMap = texture_cylinder;
