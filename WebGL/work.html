@@ -140,52 +140,21 @@
         scene.add(cone);
         
         /*----------------------------------------------------------------------------------------------------*/
-        const top_board = new THREE.Group();
-        geometry = new THREE.RingGeometry(0, 3, 200, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = new THREE.Mesh(geometry, material);
-        parts.position.y = -7.5;
-        top_board.add(parts);
-        
-        geometry = new THREE.RingGeometry(0, 4, 200, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = new THREE.Mesh(geometry, material);
-        parts.position.y = -8.5;
-        top_board.add(parts);
-        
         var texture_board = tL.load("img/board_bump.png");
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20, true);
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_board;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
-        top_board.add(cylinder);
-        
-        scene.add(top_board);
-        /*----------------------------------------------------------------------------------------------------*/
-        
-        const und_board = new THREE.Group();
-        geometry = new THREE.RingGeometry(0, 7, 200, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = new THREE.Mesh(geometry, material);
-        parts.position.y = -12;
-        und_board.add(parts);
-        
-        geometry = new THREE.RingGeometry(0, 8, 200, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        var parts = new THREE.Mesh(geometry, material);
-        parts.position.y = -13;
-        und_board.add(parts);
-        
-        geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20, true);
+        scene.add(cylinder);
+        /*----------------------------------------------------------------------------------------------------*/  
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_board;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
-        und_board.add(cylinder);
-        
         scene.add(cylinder);
         /*----------------------------------------------------------------------------------------------------*/
         
