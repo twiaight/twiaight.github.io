@@ -150,7 +150,7 @@
         scene.add(cylinder);
         
         var texture_pillar = tL.load("img/cylinder_bump.png");
-        geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 20 );
+        geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 200 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_pillar;
         material.bumpScale = 1;
