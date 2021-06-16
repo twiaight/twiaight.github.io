@@ -161,12 +161,12 @@
         cylinder.position.y = -12.5;
         scene.add(cylinder);
         
+        var texture_pillar = tL.load("img/pillar_bump.PNG");
+        material = new THREE.MeshPhongMaterial({ color:0xc49411/*color:0xc49411, transparent:true*/ });
+        material.bumpMap = texture_pillar;
+        material.bumpScale = 1;
         for ( let i=0; i<6; i++ ) {
           geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 200, 20 );
-          var texture_pillar = tL.load("img/pillar_bump.PNG");
-          material = new THREE.MeshPhongMaterial({ color:0xc49411/*color:0xc49411, transparent:true*/ });
-          material.bumpMap = texture_pillar;
-          material.bumpScale = 1;
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           scene.add(cylinder);
