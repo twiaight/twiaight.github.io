@@ -137,8 +137,11 @@
         cone.position.y = -7.5;
         scene.add(cone);
         
+        var texture_board = tL.load("img/board_bump.png");
         geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        material.bumpMap = texture_board;
+        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         scene.add(cylinder);
@@ -149,18 +152,20 @@
         cylinder.position.y = -9;
         scene.add(cylinder);
         
-        var texture_pillar = tL.load("img/cylinder_bump.png");
+        var texture_cylinder = tL.load("img/cylinder_bump.png");
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 200 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        material.bumpMap = texture_pillar;
+        material.bumpMap = texture_cylinder;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
-        cylinder.ratation.y = 60*(Math.PI/180);
+        cylinder.rotation.y = 60*(Math.PI/180);
         scene.add(cylinder);
         
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        material.bumpMap = texture_board;
+        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
