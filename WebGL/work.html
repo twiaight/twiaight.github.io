@@ -157,7 +157,6 @@
         scene.add(cone);
         
         /*----------------------------------------------------------------------------------------------------*/
-        var texture_board = tL.load("img/board_bump_small.png");
         var texture_ring  = tL.load("img/ring_bump.png");
         
         geometry = new THREE.RingGeometry(0, 3, 200, 20, 0);
@@ -182,8 +181,6 @@
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 200, true);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        material.bumpMap = texture_board;
-        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
@@ -212,8 +209,6 @@
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 200, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
-        material.bumpMap = texture_board;
-        material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
@@ -221,14 +216,18 @@
         scene.add(cylinder);
         /*----------------------------------------------------------------------------------------------------*/
         
+        var texture_board = tL.load("img/board_bump_small.png");
+        
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 200, 20 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
+        material.bumpMap = texture_ring;
+        material.bumpScale = 0.35;
+
         cylinder.receiveShadow = true;
         cylinder.castShaodow = true;
-        scene.add(cylinder);
-        
+        scene.add(cylinder);        
         var texture_cylinder = tL.load("img/cylinder_bump.png");
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 200, 200 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
