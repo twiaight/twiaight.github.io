@@ -158,7 +158,27 @@
         
         /*----------------------------------------------------------------------------------------------------*/
         var texture_board = tL.load("img/board_bump_small.png");
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20);
+        var texture_ring  = tL.load("img/ring_bump.png");
+        
+        geometry = new THREE.RingGeometry(0, 3, 200, 20, 0);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        var ring = new THREE.Mesh(geometry, material);
+        ring.position.y = -7.5;
+        material.bumpMap = texture_ring;
+        material.bumpScale = 1;
+        cylinder.receiveShadow = true;
+        cylinder.castShaodow = true;
+        scene.add(ring);
+        
+        geometry = new THREE.RingGeometry(0, 4, 200, 20, 0);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        var ring = new THREE.Mesh(geometry, material);
+        ring.position.y = -8.5;
+        cylinder.receiveShadow = true;
+        cylinder.castShaodow = true;
+        scene.add(ring);
+        
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 200, 20, true);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_board;
         material.bumpScale = 1;
@@ -167,8 +187,26 @@
         cylinder.receiveShadow = true;
         cylinder.castShaodow = true;
         scene.add(cylinder);
+        
+        geometry = new THREE.RingGeometry(0, 7, 200, 20, 0);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        var ring = new THREE.Mesh(geometry, material);
+        ring.position.y = -12;
+        material.bumpMap = texture_ring;
+        material.bumpScale = 1;
+        cylinder.receiveShadow = true;
+        cylinder.castShaodow = true;
+        scene.add(ring);
+        
+        geometry = new THREE.RingGeometry(0, 8, 200, 20, 0);
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        var ring = new THREE.Mesh(geometry, material);
+        ring.position.y = -13;
+        cylinder.receiveShadow = true;
+        cylinder.castShaodow = true;
+        scene.add(ring);
        
-        geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20);
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 200, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_board;
         material.bumpScale = 1;
