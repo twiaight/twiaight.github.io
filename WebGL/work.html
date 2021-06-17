@@ -56,13 +56,13 @@
           geometry = new THREE.SphereGeometry(Math.random()/20, 20, 20);
           switch( i%3 ) {
             case 0:
-              material = new THREE.MeshStandardMaterial({ color:0xccccff });
+              material = new THREE.MeshStandardMaterial({ color:0xccccff, transparent: true, opacity:0.5 });
               break;
             case 1:
-              material = new THREE.MeshStandardMaterial({ color:0xccffcc });
+              material = new THREE.MeshStandardMaterial({ color:0xccffcc, transparent: true, opacity:0.5 });
               break;
             case 2:
-              material = new THREE.MeshStandardMaterial({ color:0xffcccc });
+              material = new THREE.MeshStandardMaterial({ color:0xffcccc, transparent: true, opacity:0.5 });
               break;
           }
           
