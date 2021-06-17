@@ -53,7 +53,7 @@
         const glitters = new THREE.Group();
         var limit = 100;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()/0, 20, 20);
+          geometry = new THREE.SphereGeometry(Math.random()/20, 20, 20);
           switch( i%3 ) {
             case 0:
               material = new THREE.MeshStandardMaterial({ color:0xccccff });
