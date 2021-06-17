@@ -303,7 +303,9 @@
             var circle = circles[i];
             circle.rotation.x += 0.01;
             circle.rotation.z += 0.01;
-          }  
+          }
+          
+          if ( camera.position.y < 0 ) camera.position.y = 0;
 
           renderer.render(scene, camera);
         };
