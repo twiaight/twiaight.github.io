@@ -48,7 +48,7 @@
         // scene.add(gridHelper);
         
         var smokeTexture = THREE.ImageUtils.loadTexture('img/smoke.PNG');
-        var smokeMaterial = new THREE.MeshLambertMaterial({color: 0x00dddd, map: smokeTexture, transparent: true});
+        var smokeMaterial = new THREE.MeshLambertMaterial({color: 0x00dddd, map: smokeTexture, transparent: true, blending: THREE.AdditiveBlending });
         var smokeGeo = new THREE.PlaneGeometry(10,10);
         
         var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
