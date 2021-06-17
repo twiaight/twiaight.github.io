@@ -68,12 +68,6 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        var geometry = new THREE.PlaneGeometry(10, 10, 10, 10);
-        var material = new THREE.MeshStandardMaterial({ color:0xffffff });
-        var board = new THREE.Mesh(geometry, material);
-        board.position.z = -10;
-        scene.add(board);
-        
         var texture1 = tL.load("img/white_flash.PNG");
         material = new THREE.SpriteMaterial({ map:texture1, transparent:true, alphaTest:0.01 });
         const star = new THREE.Sprite( material );
