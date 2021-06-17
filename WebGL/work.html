@@ -305,7 +305,10 @@
             circle.rotation.z += 0.01;
           }
           
-          if ( camera.position.y < 0 ) camera.position.y = 0;
+          if ( camera.position.y < 0 ) {
+            camera.position.y = 0;
+            console.log(camera.position.x, camera.position.y, camera.position.z);
+          }
 
           renderer.render(scene, camera);
         };
