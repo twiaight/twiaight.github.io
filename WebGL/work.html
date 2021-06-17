@@ -51,10 +51,21 @@
         var geometry, material;
         
         const glitters = new THREE.Group();
-        var limit = 50;
+        var limit = 100;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
-          material = new THREE.MeshStandardMaterial({ color:0xffffff });
+          geometry = new THREE.SphereGeometry(Math.random()/20, 20, 20);
+          switch( i%3 ) {
+            case 0:
+              material = new THREE.MeshStandardMaterial({ color:0xccccff });
+              break;
+            case 1:
+              material = new THREE.MeshStandardMaterial({ color:0xccffcc });
+              break;
+            case 2:
+              material = new THREE.MeshStandardMaterial({ color:0xffcccc });
+              break;
+          }
+          
           var glitter = new THREE.Mesh(geometry, material);
           glitter.position.x = 4*(Math.random()*2-1);
           glitter.position.y = 4*(Math.random()*2-1);
