@@ -49,24 +49,31 @@
         
         var smokeTexture = THREE.ImageUtils.loadTexture('img/smoke.PNG');
         var smokeMaterial = new THREE.MeshLambertMaterial({color: 0x00dddd, map: smokeTexture, transparent: true});
-        var smokeGeo = new THREE.PlaneGeometry(300,300);
-        var smokeParticles = [];
+        var smokeGeo = new THREE.PlaneGeometry(10,10);
         
         var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
         scene.add(particle);
-        smokeParticles.push(particle);
 
-        /*
+        
         for (p = 0; p < 150; p++) {
             var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
+            particle.position.x = Math.random();
+            particle.position.y = Math.random();
+            particle.position.z = Math.random();
             scene.add(particle);
-            smokeParticles.push(particle);
         }
-        */
+        
 
         
         /* ジオメトリー作成用 */
         var geometry, material;
+        
+        var geometry = new THREE.PlaneGeometry(10, 10);
+        var material = new THREE.MeshStandardMaterial({ color:0xffffff });
+        var board = new THREE.Mesh(geometry, material);
+        board.ratation.x = -90*(Math.PI/180);
+        board.position.z = 10;
+        scene.add(board);
         
         var texture1 = tL.load("img/white_flash.PNG");
         material = new THREE.SpriteMaterial({ map:texture1, transparent:true, alphaTest:0.01 });
