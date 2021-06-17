@@ -47,35 +47,31 @@
         THREE.GridHelper(40,50); // size, step
         // scene.add(gridHelper);
         
-        var smokeTexture = THREE.ImageUtils.loadTexture('img/smoke.PNG');
-        var smokeMaterial = new THREE.MeshLambertMaterial({color: 0xffffff, map: smokeTexture, transparent: true, blending: THREE.AdditiveBlending });
-        var smokeGeo = new THREE.PlaneGeometry(10,10);
-        
-        var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
-        scene.add(particle);
-
-        
-        for (p = 0; p < 150; p++) {
-            var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
-            particle.position.x = Math.random();
-            particle.position.y = Math.random();
-            particle.position.z = Math.random();
-            scene.add(particle);
-        }
-        
-
-        
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        var texture1 = tL.load("img/white_flash.PNG");
-        material = new THREE.SpriteMaterial({ map:texture1, transparent:true, alphaTest:0.01 });
+        const glitters = new THREE.Group();
+        var limit = 100;
+        for ( let i=0; i<limit; i++ ) {
+          geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
+          material = new THREE.MeshSrandardMaterial({ color:0xffffff });
+          var glitter = new THREE.Mesh(geometry, material);
+          glitter.position.x = 4*Math.random()+1.7;
+          glitter.position.y = 4*Math.random()+1.7;
+          glitter.position.z = 4*Math.random()+1.7;
+          glitters.add(glitter);
+        }
+        scene.add(glitters);
+        
+        
+        var texture_star = tL.load("img/white_flash.PNG");
+        material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, alphaTest:0.01 });
         const star = new THREE.Sprite( material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
         var circles = [];
-        const limit = 10;
+        var limit = 10;
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 20, 200);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
@@ -274,7 +270,6 @@
           cylinder.castShaodow = true;
           scene.add(cylinder);
         }
-        
         
         
         /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
