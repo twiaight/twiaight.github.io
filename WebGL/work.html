@@ -51,14 +51,18 @@
         var smokeMaterial = new THREE.MeshLambertMaterial({color: 0x00dddd, map: smokeTexture, transparent: true});
         var smokeGeo = new THREE.PlaneGeometry(300,300);
         var smokeParticles = [];
+        
+        var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
+        scene.add(particle);
+        smokeParticles.push(particle);
 
+        /*
         for (p = 0; p < 150; p++) {
             var particle = new THREE.Mesh(smokeGeo,smokeMaterial);
-            particle.position.set(Math.random()*500-250,Math.random()*500-250,Math.random()*1000-100);
-            particle.rotation.z = Math.random() * 360;
             scene.add(particle);
             smokeParticles.push(particle);
         }
+        */
 
         
         /* ジオメトリー作成用 */
