@@ -49,20 +49,21 @@
         
         /* ジオメトリー作成用 */
         var geometry, material;
-        /*
+        
         const glitters = new THREE.Group();
         var limit = 100;
-        for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
+         geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var glitter = new THREE.Mesh(geometry, material);
           glitter.position.x = 4*Math.random()+1.7;
           glitter.position.y = 4*Math.random()+1.7;
           glitter.position.z = 4*Math.random()+1.7;
           glitters.add(glitter);
+        for ( let i=0; i<limit; i++ ) {
+         
         }
-        scene.add(glitters);
-        */
+        scene.add(glitter);
+        
         
         var texture_star = tL.load("img/white_flash.PNG");
         material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, alphaTest:0.01 });
