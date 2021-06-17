@@ -72,7 +72,7 @@
         var material = new THREE.MeshStandardMaterial({ color:0xffffff });
         var board = new THREE.Mesh(geometry, material);
         board.rotation.x = -90*(Math.PI/180);
-        board.position.z = 10;
+        board.position.z = -10;
         scene.add(board);
         
         var texture1 = tL.load("img/white_flash.PNG");
