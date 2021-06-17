@@ -54,7 +54,7 @@
         var limit = 100;
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
-          material = new THREE.MeshSrandardMaterial({ color:0xffffff });
+          material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var glitter = new THREE.Mesh(geometry, material);
           glitter.position.x = 4*Math.random()+1.7;
           glitter.position.y = 4*Math.random()+1.7;
