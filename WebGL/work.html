@@ -56,9 +56,9 @@
           geometry = new THREE.SphereGeometry(Math.random()/10, 20, 20);
           material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var glitter = new THREE.Mesh(geometry, material);
-          glitter.position.x = 4*Math.random()+1.7;
-          glitter.position.y = 4*Math.random()+1.7;
-          glitter.position.z = 4*Math.random()+1.7;
+          glitter.position.x = 4*(Math.random()*2-1);
+          glitter.position.y = 4*(Math.random()*2-1);
+          glitter.position.z = 4*(Math.random()*2-1);
           glitters.add(glitter);
         }
         scene.add(glitters);
