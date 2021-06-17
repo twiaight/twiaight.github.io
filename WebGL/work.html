@@ -50,10 +50,11 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        const glitters = new THREE.Group();
+        var glitters_list = [];
+        var glitters = new THREE.Group();
         var limit = 100;
         for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()/8, 20, 20);
+          geometry = new THREE.SphereGeometry(Math.random()/12, 20, 20);
           switch( i%3 ) {
             case 0:
               material = new THREE.MeshStandardMaterial({ color:0xccccff, transparent: true, opacity:0.5 });
@@ -71,6 +72,10 @@
           glitter.position.y = 4*(Math.random()*2-1);
           glitter.position.z = 4*(Math.random()*2-1);
           glitters.add(glitter);
+          if ( i != 0 && i%10 == 0 ) {
+            glitters_list[i/10-1] = glitters;
+            var glitters = new THREE.Group();
+          }
         }
         scene.add(glitters);
         
@@ -309,11 +314,12 @@
           
           for ( let i=0; i<limit; i++ ) {
             var circle = circles[i];
+            var glitter= glitters_list[i];
             circle.rotation.x += 0.01;
             circle.rotation.z += 0.01;
+            glitters.rotation.x += 0.01 * i;
+            glitters.rotation.y += 0.01;
           }
-          glitters.rotation.x += 0.03;
-          glitters.rotation.y += 0.01;
 
           renderer.render(scene, camera);
         };
