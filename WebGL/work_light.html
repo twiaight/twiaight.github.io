@@ -259,9 +259,12 @@
 
           circles[i].rotation.x += 0.1;
           circles[i].rotation.z += 0.1;
+          circles[i+1].rotation.x += 0.1;
+          circles[i+1].rotation.z += 0.1;
+          
           starry_night.rotation.y += 0.01;
           
-          i++;
+          i+=2;
           if ( i%10 == 0 ) i = 0;
 
           renderer.render(scene, camera);
