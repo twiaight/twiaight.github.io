@@ -53,7 +53,7 @@
         const starry_night = new THREE.Group();
         const star_num = 200;
         for ( let i=0; i<star_num; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()*0.2, 4, 4);
+          geometry = new THREE.SphereGeometry(Math.random()*0.02, 4, 4);
           material = new THREE.MeshPhongMaterial({ transparent:true, opacity:0.4 });
           var starry = new THREE.Mesh(geometry, material);
           const cosTheta = -2.0 * Math.random() + 1.0;
