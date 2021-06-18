@@ -77,7 +77,7 @@
             var glitters = new THREE.Group();
           }
         }
-        // scene.add(glitters);
+        scene.add(glitters);
         
         
         var texture_star = tL.load("img/white_flash.PNG");
@@ -90,7 +90,7 @@
         var limit = 10;
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 10, 80);
-          material = new THREE.MeshBasicMaterial({ color:0xffffff });
+          material = new THREE.MeshStandardMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
           circle.rotation.y = Math.random()*360*(Math.PI/180);
@@ -317,8 +317,8 @@
             var glitter= glitters_list[i];
             circle.rotation.x += 0.01;
             circle.rotation.z += 0.01;
-            glitters.rotation.x += 0.01;
-            glitters.rotation.y += 0.01;
+            glitters.rotation.x += 0.001*i;
+            glitters.rotation.z += 0.001*i;
           }
 
           renderer.render(scene, camera);
