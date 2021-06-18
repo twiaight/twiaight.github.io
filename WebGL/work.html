@@ -275,18 +275,17 @@
         }
         
         
-        /* 点光源のみだと暗いところが多すぎるため平行光源を用意 */
-        var directionalLight = new THREE.DirectionalLight(0xffffff);
-        directionalLight.position.set(0, 0, 30);
+        var pointLight1 = new THREE.PointLight(0x9999dd, 1, 20, 1);
+        pointLight1.position.set(+10, 10, 10);
         
-        var pointLight1 = new THREE.PointLight(0xaa99dd, 1.8, 0, 1);
-        pointLight1.position.set(0, 10, 30);
+        var pointLight2 = new THREE.PointLight(0x9999dd, 1, 20, 1);
+        pointLight2.position.set(-10, 10, 10);
         
-        var pointLight2 = new THREE.PointLight(0xaaaaff, 1, 10, 1);
-        pointLight2.position.set(0, 0, 0);
+        var pointLight3 = new THREE.PointLight(0x9999dd, 1, 20, 1);
+        pointLight3.position.set( 0, 10, -10);
         
-        directionalLight.castShadow = true;
-        scene.add(directionalLight);
+        var pointLight4 = new THREE.PointLight(0x9999dd, 1, 20, 1);
+        pointLight4.position.set( 0, -10, 0);
         
         pointLight1.castShadow = true;
         scene.add(pointLight1);
@@ -294,6 +293,11 @@
         pointLight2.castShadow = true;
         scene.add(pointLight2);
         
+        pointLight3.castShadow = true;
+        scene.add(pointLight3);
+        
+        pointLight4.castShadow = true;
+        scene.add(pointLight4);
         
         /* アニメーション */
         var update = function() {
