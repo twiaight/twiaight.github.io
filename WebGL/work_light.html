@@ -312,14 +312,14 @@
         var update = function() {
           requestAnimationFrame(update);
           
-          for ( let i=0; i<limit; i++ ) {
+          /*for ( let i=0; i<limit; i++ ) {
             var circle = circles[i];
             var glitter= glitters_list[i];
             circle.rotation.x += 0.01;
             circle.rotation.z += 0.01;
             glitters.rotation.x += 0.01;
             glitters.rotation.y += 0.01;
-          }
+          }*/
 
           renderer.render(scene, camera);
         };
