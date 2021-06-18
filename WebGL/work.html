@@ -50,19 +50,19 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        const SIZE = 30;
+        const SIZE = 4;
         const LENGTH = 200;
         const vertices = [];
         for ( let i=0; i<LENGTH; i++ ) {
-          const x = SIZE * (Math.random() - 0.5);
-          const y = SIZE * (Math.random() - 0.5);
+          const x = SIZE * Math.cos(Math.random()*Math.PI) * (Math.random() - 0.5);
+          const y = SIZE * Math.sin(Math.random()*Math.PI) * (Math.random() - 0.5);
           const z = SIZE * (Math.random() - 0.5);
           vertices.push(x, y, z);
         }
         
         geometry = new THREE.BufferGeometry();
         geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        material = new THREE.PointsMaterial({ size: Math.random(), color: 0xffffff });
+        material = new THREE.PointsMaterial({ size: Math.random()*3, color: 0xffffff });
 
         var mesh = new THREE.Points(geometry, material);
         scene.add(mesh);
