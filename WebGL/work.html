@@ -107,7 +107,7 @@
         parts.castShaodow = true;
         rings.add(parts);
         
-        geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
+        geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
         material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
