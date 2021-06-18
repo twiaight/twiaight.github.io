@@ -314,12 +314,10 @@
           requestAnimationFrame(update);
           
           for ( let i=0; i<limit; i++ ) {
-            var circle = circles[i];
-            var glitters = glitters_list[i];
-            circle.rotation.x += 0.01;
-            circle.rotation.z += 0.01;
-            glitters.rotation.x += 0.001*i;
-            glitters.rotation.z += 0.001*i;
+            circles[i].rotation.x += 0.01;
+            circles[i].rotation.z += 0.01;
+            glitters[i].rotation.x += 0.001*i;
+            glitters[i].rotation.z += 0.001*i;
           }
 
           renderer.render(scene, camera);
