@@ -328,7 +328,8 @@
           circle.rotation.x += 0.01;
           circle.rotation.z += 0.01;
           
-          (++i) %= limit;
+          i++;
+          i %= limit;
 
           renderer.render(scene, camera);
         };
