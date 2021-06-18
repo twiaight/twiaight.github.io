@@ -61,7 +61,7 @@
         }
         
         geometry = new THREE.BufferGeometry();
-        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+        geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
         material = new THREE.PointsMaterial({ size: Math.random(), color: 0xffffff });
 
         var mesh = new THREE.Points(geometry, material);
