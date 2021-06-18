@@ -49,37 +49,7 @@
         
         /* ジオメトリー作成用 */
         var geometry, material;
-        
-        var glitters_list = [];
-        var glitters = new THREE.Group();
-        var limit = 100;
-        for ( let i=0; i<limit; i++ ) {
-          geometry = new THREE.SphereGeometry(Math.random()/12, 20, 20);
-          switch( i%3 ) {
-            case 0:
-              material = new THREE.MeshStandardMaterial({ color:0xccccff, transparent: true, opacity:0.5 });
-              break;
-            case 1:
-              material = new THREE.MeshStandardMaterial({ color:0xccffcc, transparent: true, opacity:0.5 });
-              break;
-            case 2:
-              material = new THREE.MeshStandardMaterial({ color:0xffcccc, transparent: true, opacity:0.5 });
-              break;
-          }
-          
-          var glitter = new THREE.Mesh(geometry, material);
-          glitter.position.x = 4*(Math.random()*2-1);
-          glitter.position.y = 4*(Math.random()*2-1);
-          glitter.position.z = 4*(Math.random()*2-1);
-          glitters.add(glitter);
-          if ( i != 0 && i%10 == 0 ) {
-            scene.add(glitters);
-            glitters_list[i/10-1] = glitters;
-            var glitters = new THREE.Group();
-          }
-        }
-        
-        
+         
         
         var texture_star = tL.load("img/white_flash.PNG");
         material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, alphaTest:0.01 });
@@ -316,8 +286,6 @@
           for ( let i=0; i<limit; i++ ) {
             circles[i].rotation.x += 0.01;
             circles[i].rotation.z += 0.01;
-            glitters[i].rotation.x += 0.001*i;
-            glitters[i].rotation.z += 0.001*i;
           }
 
           renderer.render(scene, camera);
