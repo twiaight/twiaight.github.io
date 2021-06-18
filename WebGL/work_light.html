@@ -308,6 +308,9 @@
         scene.add(pointLight2);
         
         
+        let i=0;
+        var circle;
+        
         /* アニメーション */
         var update = function() {
           requestAnimationFrame(update);
@@ -320,6 +323,12 @@
             glitters.rotation.x += 0.01;
             glitters.rotation.y += 0.01;
           }*/
+          
+          circle = circles[i];
+          circle.rotation.x += 0.01;
+          circle.rotation.z += 0.01;
+          
+          (++i) %= limit;
 
           renderer.render(scene, camera);
         };
