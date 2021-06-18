@@ -52,9 +52,9 @@
         
         const starry_night = new THREE.Group();
         const star_num = 200;
+        material = new THREE.MeshBasicMaterial({ transparent:true, opacity:0.4 });
         for ( let i=0; i<star_num; i++ ) {
           geometry = new THREE.SphereGeometry(Math.random()*0.1, 4, 4);
-          material = new THREE.MeshPhongMaterial({ transparent:true, opacity:0.4 });
           var starry = new THREE.Mesh(geometry, material);
           const cosTheta = -2.0 * Math.random() + 1.0;
           const sinTheta = Math.sqrt(1.0 - cosTheta * cosTheta);
@@ -75,9 +75,9 @@
         
         var circles = [];
         var limit = 10;
+        material = new THREE.MeshBasicMaterial({ color:0xffffff });
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 10, 80);
-          material = new THREE.MeshPhongMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
           circle.rotation.y = Math.random()*360*(Math.PI/180);
@@ -265,11 +265,11 @@
         
         
         var texture_pillar = tL.load("img/pillar_bump_long.png");
+        geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         material.bumpMap = texture_pillar;
         material.bumpScale = 1;
         for ( let i=0; i<6; i++ ) {
-          geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           cylinder.receiveShadow = true;
