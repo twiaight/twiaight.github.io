@@ -57,13 +57,13 @@
           geometry = new THREE.SphereGeometry(Math.random()/12, 20, 20);
           switch( i%3 ) {
             case 0:
-              material = new THREE.MeshStandardMaterial({ color:0xccccff, transparent: true, opacity:0.5 });
+              material = new THREE.MeshPhongMaterial({ color:0xccccff, transparent: true, opacity:0.5 });
               break;
             case 1:
-              material = new THREE.MeshStandardMaterial({ color:0xccffcc, transparent: true, opacity:0.5 });
+              material = new THREE.MeshPhongMaterial({ color:0xccffcc, transparent: true, opacity:0.5 });
               break;
             case 2:
-              material = new THREE.MeshStandardMaterial({ color:0xffcccc, transparent: true, opacity:0.5 });
+              material = new THREE.MeshPhongMaterial({ color:0xffcccc, transparent: true, opacity:0.5 });
               break;
           }
           
@@ -90,7 +90,7 @@
         var limit = 10;
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 10, 80);
-          material = new THREE.MeshBasicMaterial({ color:0xffffff });
+          material = new THREE.MeshPhongMaterial({ color:0xffffff });
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
           circle.rotation.y = Math.random()*360*(Math.PI/180);
@@ -104,21 +104,21 @@
         /*----------------------------------------------------------------------------------------------------*/
         const rings = new THREE.Group();
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShaodow = true;
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShaodow = true;
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShaodow = true;
@@ -127,7 +127,7 @@
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShaodow = true;
@@ -139,14 +139,14 @@
         /*----------------------------------------------------------------------------------------------------*/
         
         geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
-        material = new THREE.MeshBasicMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.receiveShadow = true;
         ring.castShaodow = true;
         scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
@@ -155,7 +155,7 @@
         scene.add(arch);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         arch.receiveShadow = true;
@@ -163,7 +163,7 @@
         scene.add(arch);
         
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         cone.receiveShadow = true;
@@ -174,7 +174,7 @@
         var texture_ring  = tL.load("img/ring_bump.png");
         
         geometry = new THREE.RingGeometry(0, 3, 120, 20, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -7.5;
         material.bumpMap = texture_ring;
@@ -185,7 +185,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -270*(Math.PI/180);
@@ -194,7 +194,7 @@
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
@@ -202,7 +202,7 @@
         scene.add(cylinder);
         
         geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -12;
         material.bumpMap = texture_ring;
@@ -213,7 +213,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -13;
         ring.rotation.x = -270*(Math.PI/180);
@@ -222,7 +222,7 @@
         scene.add(ring);
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
@@ -233,7 +233,7 @@
         var texture_board = tL.load("img/board_bump_small.png");
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -90*(Math.PI/180);
@@ -242,7 +242,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -9.5;
         ring.rotation.x = -270*(Math.PI/180);
@@ -251,7 +251,7 @@
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         material.bumpMap = texture_board;
@@ -263,7 +263,7 @@
         
         var texture_cylinder = tL.load("img/cylinder_bump.png");
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120, true );
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         material.bumpMap = texture_cylinder;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
@@ -275,7 +275,7 @@
         
         
         var texture_pillar = tL.load("img/pillar_bump_long.png");
-        material = new THREE.MeshBasicMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         material.bumpMap = texture_pillar;
         material.bumpScale = 1;
         for ( let i=0; i<6; i++ ) {
