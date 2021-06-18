@@ -125,8 +125,10 @@
         scene.add(rings);
         /*----------------------------------------------------------------------------------------------------*/
         
+        var texture_triangle_ring = tL.load("img/triangle_ring.png");
+        
         geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
-        material = new THREE.MeshStandardMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.receiveShadow = true;
         ring.castShaodow = true;
