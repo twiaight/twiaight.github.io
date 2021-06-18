@@ -50,22 +50,22 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
-        const SIZE = 5;
-        const LENGTH = 200;
-        const vertices = [];
-        for ( let i=0; i<LENGTH; i++ ) {
-          const x = SIZE * Math.cos(Math.random()*Math.PI) * (Math.random() - 0.5)*2;
-          const y = SIZE * Math.sin(Math.random()*Math.PI) * (Math.random() - 0.5)*2;
-          const z = SIZE * (Math.random() - 0.5)*2;
-          vertices.push(x, y, z);
+        const starry_night;
+        const star_num = 200;
+        for ( let i=0; i<star_num; i++ ) {
+          geometry = new THREE.SphereGeometry(Math.random()*0.2, 4, 4);
+          material = new THREE.MeshPhongMaterial({ transparent:true, opacity:0.4 });
+          var starry = new THREE.Mesh(geometry, material);
+          const cosTheta = -2.0 * 6*Math.random() + 1.0;
+          const sinTheta = Math.sqrt(1.0 - cosTheta * cosTheta);
+          const phi = 2.0 * Math.PI * 6*Math.random();
+          const radius = Math.pow(6*Math.random(), 1.0 / 3.0);
+          starry.rotation.x = radius * sinTheta * Math.cos(phi);
+          starry.rotation.y = radius * sinTheta * Math.sin(phi);
+          starry.rotation.z = radius * cosTheta;
+          starry_night.add(starry);
         }
-        
-        geometry = new THREE.BufferGeometry();
-        geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        material = new THREE.PointsMaterial({ size: Math.random(), color: 0xffffff });
-
-        var mesh = new THREE.Points(geometry, material);
-        scene.add(mesh);
+        scene.add(starry_night);
         
         var texture_star = tL.load("img/white_flash.PNG");
         material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, alphaTest:0.01 });
