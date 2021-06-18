@@ -60,9 +60,9 @@
           const sinTheta = Math.sqrt(1.0 - cosTheta * cosTheta);
           const phi = 2.0 * Math.PI * Math.random();
           const radius = Math.pow(Math.random(), 1.0 / 3.0);
-          starry.rotation.x = 6 * radius * sinTheta * Math.cos(phi);
-          starry.rotation.y = 6 * radius * sinTheta * Math.sin(phi);
-          starry.rotation.z = 6 * radius * cosTheta;
+          starry.position.x = 6 * radius * sinTheta * Math.cos(phi);
+          starry.position.y = 6 * radius * sinTheta * Math.sin(phi);
+          starry.position.z = 6 * radius * cosTheta;
           starry_night.add(starry);
         }
         scene.add(starry_night);
