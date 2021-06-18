@@ -30,7 +30,7 @@
         
         var scene = new THREE.Scene();
         
-        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 50);
+        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 70);
         camera.position.z = 30;
         camera.position.y = 0.5;
         
@@ -96,22 +96,16 @@
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShaodow = true;
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShaodow = true;
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
         material = new THREE.MeshPhongMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShaodow = true;
         parts.position.y = +0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
@@ -119,8 +113,6 @@
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShaodow = true;
         parts.position.y = -0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
@@ -131,8 +123,6 @@
         geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
         material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
         scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
@@ -140,24 +130,18 @@
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
-        arch.receiveShadow = true;
-        arch.castShaodow = true;
         scene.add(arch);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
-        arch.receiveShadow = true;
-        arch.castShaodow = true;
         scene.add(arch);
         
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
-        cone.receiveShadow = true;
-        cone.castShaodow = true;
         scene.add(cone);
         
         /*----------------------------------------------------------------------------------------------------*/
@@ -170,8 +154,6 @@
         material.bumpMap = texture_ring;
         material.bumpScale = 0.35;
         ring.rotation.x = -90*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
@@ -179,16 +161,12 @@
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -270*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
-        cylinder.receiveShadow = true;
-        cylinder.castShaodow = true;
         scene.add(cylinder);
         
         geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
@@ -198,8 +176,7 @@
         material.bumpMap = texture_ring;
         material.bumpScale = 0.35;
         ring.rotation.x = -90*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
+
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
@@ -207,17 +184,14 @@
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -13;
         ring.rotation.x = -270*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
         scene.add(ring);
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
         material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
-        cylinder.receiveShadow = true;
-        cylinder.castShaodow = true;
         scene.add(cylinder);
+        
         /*----------------------------------------------------------------------------------------------------*/
         
         var texture_board = tL.load("img/board_bump_small.png");
@@ -236,8 +210,6 @@
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -9.5;
         ring.rotation.x = -270*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
@@ -246,9 +218,8 @@
         cylinder.position.y = -9;
         material.bumpMap = texture_board;
         material.bumpScale = 0.35;
-        cylinder.receiveShadow = true;
-        cylinder.castShaodow = true;
         scene.add(cylinder);
+        
         /*----------------------------------------------------------------------------------------------------*/
         
         var texture_cylinder = tL.load("img/cylinder_bump.png");
@@ -259,8 +230,6 @@
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
         cylinder.rotation.y = 60*(Math.PI/180);
-        cylinder.receiveShadow = true;
-        cylinder.castShaodow = true;
         scene.add(cylinder);
         
         
@@ -272,52 +241,28 @@
         for ( let i=0; i<6; i++ ) {
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
-          cylinder.receiveShadow = true;
-          cylinder.castShaodow = true;
           scene.add(cylinder);
         }
         
         
-        var pointLight1 = new THREE.PointLight(0x9999dd, 1.8, 30, 1);
-        pointLight1.position.set(+10, 0, 10);
+        var directionalLight = new THREE.DirectionalLight(0x9999dd, 1);
+        directionalLight.position.set(0, 0.5, 30);
+
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
         
-        var pointLight2 = new THREE.PointLight(0x9999dd, 1.8, 30, 1);
-        pointLight2.position.set(-10, 0, 10);
-        
-        var pointLight3 = new THREE.PointLight(0x9999dd, 1.8, 30, 1);
-        pointLight3.position.set( 0, 0, -10);
-        
-        var pointLight4 = new THREE.PointLight(0x9999dd, 1.8, 30, 1);
-        pointLight4.position.set( 0, -20, 0);
-        
-        var pointLight5 = new THREE.PointLight(0x9999dd, 1.8, 30, 1);
-        pointLight5.position.set( 0, +20, 0);
-        
-        pointLight1.castShadow = true;
-        scene.add(pointLight1);
-        
-        pointLight2.castShadow = true;
-        scene.add(pointLight2);
-        
-        pointLight3.castShadow = true;
-        scene.add(pointLight3);
-        
-        pointLight4.castShadow = true;
-        scene.add(pointLight4);
-        
-        pointLight5.castShadow = true;
-        scene.add(pointLight5);
+        let i = 0;
         
         /* アニメーション */
         var update = function() {
           requestAnimationFrame(update);
-          
-          for ( let i=0; i<limit; i++ ) {
-            circles[i].rotation.x += 0.01;
-            circles[i].rotation.z += 0.01;
-          }
-          
+
+          circles[i].rotation.x += 0.1;
+          circles[i].rotation.z += 0.1;
           starry_night.rotation.y += 0.01;
+          
+          i++;
+          if ( i%10 == 0 ) i = 0;
 
           renderer.render(scene, camera);
         };
