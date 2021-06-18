@@ -73,11 +73,12 @@
           glitter.position.z = 4*(Math.random()*2-1);
           glitters.add(glitter);
           if ( i != 0 && i%10 == 0 ) {
+            scene.add(glitters);
             glitters_list[i/10-1] = glitters;
             var glitters = new THREE.Group();
           }
         }
-        scene.add(glitters);
+        
         
         
         var texture_star = tL.load("img/white_flash.PNG");
