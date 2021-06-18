@@ -11,6 +11,10 @@
     <script>
       
       var cylinder;
+
+      var obj = document.getElementById('sampleImage');
+      obj.width = 1024;
+      obj.height= 1024;
       
       /* 初期設定 */
       var init = function() {
@@ -89,9 +93,7 @@
         }
         
         /*----------------------------------------------------------------------------------------------------*/
-        var obj = document.getElementById('sampleImage');
-        obj.width = 1024;
-        obj.height= 1024;
+
         var texture_triangle_ring = tL.load(obj);
         
         const rings = new THREE.Group();
