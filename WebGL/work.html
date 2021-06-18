@@ -62,7 +62,7 @@
         
         geometry = new THREE.BufferGeometry();
         geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        material = new THREE.PointsMaterial({ size: Math.random()*1.5, color: 0xffffff });
+        material = new THREE.PointsMaterial({ size: Math.random()*0.5, color: 0xffffff });
 
         var mesh = new THREE.Points(geometry, material);
         scene.add(mesh);
