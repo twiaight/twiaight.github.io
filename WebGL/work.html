@@ -96,22 +96,22 @@
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShadow = true;
+        // parts.receiveShadow = true;
+        // parts.castShadow = true;
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShadow = true;
+        // parts.receiveShadow = true;
+        // parts.castShadow = true;
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
         material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShadow = true;
+        // parts.receiveShadow = true;
+        // parts.castShadow = true;
         parts.position.y = +0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
@@ -119,8 +119,8 @@
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
-        parts.receiveShadow = true;
-        parts.castShadow = true;
+        // parts.receiveShadow = true;
+        // parts.castShadow = true;
         parts.position.y = -0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
