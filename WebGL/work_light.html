@@ -68,7 +68,7 @@
         scene.add(starry_night);
         
         var texture_star = tL.load("img/white_flash.PNG");
-        material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, alphaTest:0.01 });
+        material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, opacity:0.8, alphaTest:0.01 });
         const star = new THREE.Sprite( material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
@@ -94,52 +94,52 @@
         
         const rings = new THREE.Group();
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.BackSide });
         var parts = new THREE.Mesh(geometry, material);
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.FrontSide });
         var parts = new THREE.Mesh(geometry, material);
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
-        material = new THREE.MeshPhongMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true });
         var parts = new THREE.Mesh(geometry, material);
         parts.position.y = +0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var parts = new THREE.Mesh(geometry, material);
         parts.position.y = -0.2;
-        parts.rotation.x = -90*(Math.PI/180);
+        parts.rotation.x = -270*(Math.PI/180);
         rings.add(parts);
         
         scene.add(rings);
         /*----------------------------------------------------------------------------------------------------*/
         
         geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
-        material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
         scene.add(arch);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         scene.add(arch);
         
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         scene.add(cone);
@@ -148,7 +148,7 @@
         var texture_ring  = tL.load("img/ring_bump.png");
         
         geometry = new THREE.RingGeometry(0, 3, 120, 20, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -7.5;
         material.bumpMap = texture_ring;
@@ -157,20 +157,20 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -270*(Math.PI/180);
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         scene.add(cylinder);
         
         geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -12;
         material.bumpMap = texture_ring;
@@ -180,14 +180,14 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -13;
         ring.rotation.x = -270*(Math.PI/180);
         scene.add(ring);
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
@@ -197,7 +197,7 @@
         var texture_board = tL.load("img/board_bump_small.png");
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -90*(Math.PI/180);
@@ -206,14 +206,14 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -9.5;
         ring.rotation.x = -270*(Math.PI/180);
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         material.bumpMap = texture_board;
@@ -224,7 +224,7 @@
         
         var texture_cylinder = tL.load("img/cylinder_bump.png");
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_cylinder;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
@@ -235,7 +235,7 @@
         
         var texture_pillar = tL.load("img/pillar_bump_long.png");
         geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_pillar;
         material.bumpScale = 1;
         for ( let i=0; i<6; i++ ) {
