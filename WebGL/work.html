@@ -187,8 +187,8 @@
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200);
         material = [
-          new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
         ];
         cylinder = new THREE.Mesh(geometry, material);
