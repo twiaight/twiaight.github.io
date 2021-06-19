@@ -108,7 +108,7 @@
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
-        material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShadow = true;
@@ -117,7 +117,7 @@
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShadow = true;
@@ -164,7 +164,7 @@
         var texture_ring  = tL.load("img/ring_bump.png");
         
         geometry = new THREE.RingGeometry(0, 3, 120, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -7.5;
         material.bumpMap = texture_ring;
@@ -175,7 +175,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -270*(Math.PI/180);
@@ -192,7 +192,7 @@
         scene.add(cylinder);
         
         geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
-        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -12;
         material.bumpMap = texture_ring;
@@ -203,7 +203,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
-        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -13;
         ring.rotation.x = -270*(Math.PI/180);
