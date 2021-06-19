@@ -163,6 +163,7 @@
         /*----------------------------------------------------------------------------------------------------*/
         var texture_ring  = tL.load("img/ring_bump.png");
         
+        /*
         geometry = new THREE.RingGeometry(0, 3, 120, 20, 0);
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
@@ -182,9 +183,14 @@
         ring.receiveShadow = true;
         ring.castShadow = true;
         scene.add(ring);
+        */
         
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200);
+        material = [
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
+        ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
