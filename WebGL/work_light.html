@@ -50,6 +50,7 @@
         /* ジオメトリー作成用 */
         var geometry, material;
         
+        /* 小惑星群　*/
         const starry_night = new THREE.Group();
         const star_num = 200;
         material = new THREE.MeshBasicMaterial({ transparent:true, opacity:0.4 });
@@ -67,30 +68,24 @@
         }
         scene.add(starry_night);
         
-        var texture_star = tL.load("img/white_flash.PNG");
-        material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, opacity:0.8, alphaTest:0.01 });
-        const star = new THREE.Sprite( material );
-        star.scale.set(1.7, 1.7, 1.7);
-        scene.add(star);
-        
+        /*　衛星軌道　*/
         var circles = [];
         var limit = 10;
-        material = new THREE.MeshBasicMaterial({ color:0xffffff });
+        material = new THREE.MeshPhongMaterial({ color:0xffffff });
         for ( let i=0; i<limit; i++ ) {
           geometry = new THREE.TorusGeometry(4*Math.random()+1.7, 0.03, 10, 80);
           var circle = new THREE.Mesh(geometry, material);
           circle.rotation.x = Math.random()*360*(Math.PI/180);
           circle.rotation.y = Math.random()*360*(Math.PI/180);
           circle.rotation.z = Math.random()*360*(Math.PI/180);
-          circle.receiveShadow = true;
-          circle.castShaodow = true;
           circles.push(circle);
           scene.add(circle);
         }
         
-        /*----------------------------------------------------------------------------------------------------*/
         
-        var texture_triangle_ring = tL.load("img/triangle_ring.png");
+        /*----------------------------------------------------------------------------------------------------*/
+        /* 筒　*/
+        var texture_triangle_ring = tL.load('img/triangle_ring.png');
         
         const rings = new THREE.Group();
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
@@ -120,11 +115,14 @@
         scene.add(rings);
         /*----------------------------------------------------------------------------------------------------*/
         
+        
+        /* 青いリング */
         geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
-        material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true });
+        material = new THREE.MeshPhongMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         scene.add(ring);
         
+        /*　支柱　*/
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
@@ -132,118 +130,86 @@
         arch.rotation.y = -90*(Math.PI/180);
         scene.add(arch);
         
+        /*　支柱　*/
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         scene.add(arch);
         
+        /*　支柱の固定具　*/
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
         material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         scene.add(cone);
         
-        /*----------------------------------------------------------------------------------------------------*/
+        
+        /*　台座上方の円錐台　*/
         var texture_ring  = tL.load("img/ring_bump.png");
         
-        geometry = new THREE.RingGeometry(0, 3, 120, 20, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -7.5;
-        material.bumpMap = texture_ring;
-        material.bumpScale = 0.35;
-        ring.rotation.x = -90*(Math.PI/180);
-        scene.add(ring);
-        
-        geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -8.5;
-        ring.rotation.x = -270*(Math.PI/180);
-        scene.add(ring);
-        
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200);
+        material = [
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+        ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         scene.add(cylinder);
         
-        geometry = new THREE.RingGeometry(-1, 7, 200, 200, 0);
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -12;
-        material.bumpMap = texture_ring;
-        material.bumpScale = 0.35;
-        ring.rotation.x = -90*(Math.PI/180);
-
-        scene.add(ring);
+        /*　台座下方の円錐台　*/
+        // var texture_ring  = tL.load("img/ring_bump.png");
         
-        geometry = new THREE.RingGeometry(-1, 8, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -13;
-        ring.rotation.x = -270*(Math.PI/180);
-        scene.add(ring);
-       
-        geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120 );
+        material = [
+          new THREE.MeshPhongMaterial({ color:0x875130, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0x875130, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0x875130, transparent:true }),
+        ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         scene.add(cylinder);
         
-        /*----------------------------------------------------------------------------------------------------*/
-        
+        /*　台座上方の円柱　*/
         var texture_board = tL.load("img/board_bump_small.png");
         
-        geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -8.5;
-        ring.rotation.x = -90*(Math.PI/180);
-        ring.receiveShadow = true;
-        ring.castShaodow = true;
-        scene.add(ring);
-        
-        geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        var ring = new THREE.Mesh(geometry, material);
-        ring.position.y = -9.5;
-        ring.rotation.x = -270*(Math.PI/180);
-        scene.add(ring);
-        
-        geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
+        geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120 );
+        material = [
+          new THREE.MeshPhongMaterial({ color:0xc49411, bumpMap:texture_board, bumpScale:0.35, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+        ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
-        material.bumpMap = texture_board;
-        material.bumpScale = 0.35;
         scene.add(cylinder);
-        
-        /*----------------------------------------------------------------------------------------------------*/
-        
+      
+        /*　台座中央の円柱　*/
         var texture_cylinder = tL.load("img/cylinder_bump.png");
-        geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120, true );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        material.bumpMap = texture_cylinder;
-        material.bumpScale = 1;
+        geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120 );
+        material = [
+          new THREE.MeshPhongMaterial({ color:0xc49411, bumpMap:texture_cylinder, bumpScale:0.35, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+        ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
         cylinder.rotation.y = 60*(Math.PI/180);
         scene.add(cylinder);
         
-        
+        /*　台座中央の円柱群　*/
         var texture_pillar = tL.load("img/pillar_bump_long.png");
-        geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
-        material = new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true });
-        material.bumpMap = texture_pillar;
-        material.bumpScale = 1;
+        material = [
+          new THREE.MeshPhongMaterial({ color:0xc49411, bumpMap:texture_pillar, bumpScale:0.35, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshPhongMaterial({ color:0xc49411, transparent:true }),
+        ];
         for ( let i=0; i<6; i++ ) {
+          geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           scene.add(cylinder);
         }
-        
         
         var directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 0.5, 30);
