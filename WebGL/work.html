@@ -103,6 +103,7 @@
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
+        parts.rotation.x = 180*(Math.PI/180);
         parts.receiveShadow = true;
         parts.castShadow = true;
         rings.add(parts);
