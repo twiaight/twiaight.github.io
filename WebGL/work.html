@@ -94,14 +94,14 @@
         
         const rings = new THREE.Group();
         geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.BackSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShadow = true;
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.FrontSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShadow = true;
@@ -136,7 +136,7 @@
         scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
@@ -145,7 +145,7 @@
         scene.add(arch);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         arch.receiveShadow = true;
@@ -153,7 +153,7 @@
         scene.add(arch);
         
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         cone.receiveShadow = true;
@@ -184,7 +184,7 @@
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
@@ -212,7 +212,7 @@
         scene.add(ring);
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
-        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0x875130, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
@@ -223,7 +223,7 @@
         var texture_board = tL.load("img/board_bump_small.png");
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -8.5;
         ring.rotation.x = -90*(Math.PI/180);
@@ -232,7 +232,7 @@
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -9.5;
         ring.rotation.x = -270*(Math.PI/180);
@@ -241,7 +241,7 @@
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
         material.bumpMap = texture_board;
@@ -253,7 +253,7 @@
         
         var texture_cylinder = tL.load("img/cylinder_bump.png");
         geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120, true );
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_cylinder;
         material.bumpScale = 1;
         cylinder = new THREE.Mesh(geometry, material);
@@ -265,7 +265,7 @@
         
         
         var texture_pillar = tL.load("img/pillar_bump_long.png");
-        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
+        material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         material.bumpMap = texture_pillar;
         material.bumpScale = 1;
         for ( let i=0; i<6; i++ ) {
@@ -293,16 +293,9 @@
         var pointLight5 = new THREE.PointLight(0x9999dd, 2, 30, 1);
         pointLight5.position.set( 0, +20, 0);
         
-        // pointLight1.castShadow = true;
         scene.add(pointLight1);
-        
-        // pointLight2.castShadow = true;
         scene.add(pointLight2);
-        
-        // pointLight3.castShadow = true;
         scene.add(pointLight3);
-        
-        // pointLight4.castShadow = true;
         scene.add(pointLight4);
         
         pointLight5.castShadow = true;
