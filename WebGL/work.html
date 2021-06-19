@@ -219,7 +219,7 @@
         scene.add(ring);
        */
         
-        geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120 );
         material = [
           new THREE.MeshStandardMaterial({ color:0x875130, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0x875130, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
@@ -253,11 +253,11 @@
         scene.add(ring);
         */
         
-        geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
+        geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120 );
         material = [
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_board, bumpScale:0.35, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
         ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -9;
@@ -267,11 +267,11 @@
       
         
         var texture_cylinder = tL.load("img/cylinder_bump.png");
-        geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120, true );
+        geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120 );
         material = [
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_cylinder, bumpScale:0.35, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
         ];
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -10.5;
@@ -283,9 +283,9 @@
         
         var texture_pillar = tL.load("img/pillar_bump_long.png");
         material = [
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
-          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_pillar, bumpScale:0.35, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
+          new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
         ];
         for ( let i=0; i<6; i++ ) {
           geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
