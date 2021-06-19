@@ -169,7 +169,7 @@
         cylinder.position.y = -8;
         scene.add(cylinder);
         
-        geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
+        geometry = new THREE.RingGeometry(-1, 7, 200, 200, 0);
         material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -12;
@@ -179,7 +179,7 @@
 
         scene.add(ring);
         
-        geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
+        geometry = new THREE.RingGeometry(-1, 8, 120, 120, 0);
         material = new THREE.MeshPhongMaterial({ color:0x875130, transparent:true });
         var ring = new THREE.Mesh(geometry, material);
         ring.position.y = -13;
