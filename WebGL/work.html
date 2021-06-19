@@ -25,7 +25,7 @@
         renderer.setClearColor( 0x010101 );
         document.body.appendChild(renderer.domElement);
         
-        renderer.shadowMap.enabled = true;
+        renderer.ShadowMap.enabled = true;
         // renderer.setPixelRatio(window.devicePixelRatio);
         
         var scene = new THREE.Scene();
@@ -83,7 +83,7 @@
           circle.rotation.y = Math.random()*360*(Math.PI/180);
           circle.rotation.z = Math.random()*360*(Math.PI/180);
           circle.receiveShadow = true;
-          circle.castshadow = true;
+          circle.castShadow = true;
           circles.push(circle);
           scene.add(circle);
         }
@@ -97,21 +97,21 @@
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
-        parts.castshadow = true;
+        parts.castShadow = true;
         rings.add(parts);
         
         geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
-        parts.castshadow = true;
+        parts.castShadow = true;
         rings.add(parts);
         
         geometry = new THREE.RingGeometry( 6.5, 7.5, 100, 100, 0 );
         material = new THREE.MeshStandardMaterial({ map:texture_triangle_ring, color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
-        parts.castshadow = true;
+        parts.castShadow = true;
         parts.position.y = +0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
@@ -120,7 +120,7 @@
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.DoubleSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
-        parts.castshadow = true;
+        parts.castShadow = true;
         parts.position.y = -0.2;
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
@@ -132,7 +132,7 @@
         material = new THREE.MeshStandardMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
@@ -141,7 +141,7 @@
         arch.rotation.x = -180*(Math.PI/180);
         arch.rotation.y = -90*(Math.PI/180);
         arch.receiveShadow = true;
-        arch.castshadow = true;
+        arch.castShadow = true;
         scene.add(arch);
         
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
@@ -149,7 +149,7 @@
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
         arch.receiveShadow = true;
-        arch.castshadow = true;
+        arch.castShadow = true;
         scene.add(arch);
         
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
@@ -157,7 +157,7 @@
         var cone = new THREE.Mesh(geometry, material);
         cone.position.y = -7.5;
         cone.receiveShadow = true;
-        cone.castshadow = true;
+        cone.castShadow = true;
         scene.add(cone);
         
         /*----------------------------------------------------------------------------------------------------*/
@@ -171,7 +171,7 @@
         material.bumpScale = 0.35;
         ring.rotation.x = -90*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 4, 120, 20, 0);
@@ -180,7 +180,7 @@
         ring.position.y = -8.5;
         ring.rotation.x = -270*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200, true);
@@ -188,7 +188,7 @@
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
-        cylinder.castshadow = true;
+        cylinder.castShadow = true;
         scene.add(cylinder);
         
         geometry = new THREE.RingGeometry(0, 7, 200, 200, 0);
@@ -199,7 +199,7 @@
         material.bumpScale = 0.35;
         ring.rotation.x = -90*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 8, 120, 120, 0);
@@ -208,7 +208,7 @@
         ring.position.y = -13;
         ring.rotation.x = -270*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
        
         geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120, true );
@@ -216,7 +216,7 @@
         cylinder = new THREE.Mesh(geometry, material);
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
-        cylinder.castshadow = true;
+        cylinder.castShadow = true;
         scene.add(cylinder);
         /*----------------------------------------------------------------------------------------------------*/
         
@@ -228,7 +228,7 @@
         ring.position.y = -8.5;
         ring.rotation.x = -90*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.RingGeometry(0, 5, 120, 120, 0);
@@ -237,7 +237,7 @@
         ring.position.y = -9.5;
         ring.rotation.x = -270*(Math.PI/180);
         ring.receiveShadow = true;
-        ring.castshadow = true;
+        ring.castShadow = true;
         scene.add(ring);
         
         geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120, true );
@@ -247,7 +247,7 @@
         material.bumpMap = texture_board;
         material.bumpScale = 0.35;
         cylinder.receiveShadow = true;
-        cylinder.castshadow = true;
+        cylinder.castShadow = true;
         scene.add(cylinder);
         /*----------------------------------------------------------------------------------------------------*/
         
@@ -260,7 +260,7 @@
         cylinder.position.y = -10.5;
         cylinder.rotation.y = 60*(Math.PI/180);
         cylinder.receiveShadow = true;
-        cylinder.castshadow = true;
+        cylinder.castShadow = true;
         scene.add(cylinder);
         
         
@@ -273,7 +273,7 @@
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           cylinder.receiveShadow = true;
-          cylinder.castshadow = true;
+          cylinder.castShadow = true;
           scene.add(cylinder);
         }
         
