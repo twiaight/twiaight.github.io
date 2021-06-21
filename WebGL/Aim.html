@@ -113,9 +113,6 @@
       /* Axis -> x:RED / y:GREEN / z:BLUE */
       var axes = new THREE.AxesHelper(20);
       scene.add(axes);
-      
-      var arrow = new THREE.ArrowHelper( camera.getWorldDirection(), camera.getWorldPosition(), 100, Math.random() * 0xffffff );
-      scene.add(arrow);
 
 
       var geometry = new THREE.SphereGeometry(1, 20, 20);
@@ -151,7 +148,7 @@
       const intersects = ray.intersectObjects(sphereList);
       
       sphereList.map( (sphere) => {
-        if (intersects.length > 0 && sphere === intersects[0].object ) {
+        if (intersects.length > 0 && sphere === intersects[1].object ) {
           sphere.material.color.setHex(0xff0000);
         } else {
           sphere.material.color.setHex(0xffffff);
