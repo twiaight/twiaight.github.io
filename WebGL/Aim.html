@@ -113,6 +113,9 @@
       /* Axis -> x:RED / y:GREEN / z:BLUE */
       var axes = new THREE.AxesHelper(20);
       scene.add(axes);
+      
+      var arrow = new THREE.ArrowHelper( camera.getWorldDirection(), camera.getWorldPosition(), 100, Math.random() * 0xffffff );
+      scene.add(arrow);
 
 
       var geometry = new THREE.SphereGeometry(1, 20, 20);
