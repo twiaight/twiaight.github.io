@@ -70,8 +70,8 @@
         
         /*　ビルボード　*/
         var texture_star = tL.load("img/white_flash.PNG");
-        material = new THREE.SpriteMaterial({ map:texture_star, transparent:true, opacity:0.8, alphaTest:0.01 });
-        const star = new THREE.Sprite( material );
+        material = new THREE.MeshLambertMaterial({ map:texture_star, transparent:true, opacity:0.8, alphaTest:0.01 });
+        const star = new THREE.Mesh( material );
         star.scale.set(1.7, 1.7, 1.7);
         scene.add(star);
         
