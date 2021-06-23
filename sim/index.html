@@ -24,9 +24,14 @@
           canvas.width = document.documentElement.clientWidth;
           canvas.height = document.documentElement.clientHeight;
         }
-
+        
         fitCanvasSize();
         window.onresize = fitCanvasSize;
+        
+        var ctx = canvas.getContext('2d');
+        // 指定の色で範囲内を塗りつぶす
+        ctx.fillStyle = 'rgb(255,0,255)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
       }
     </script>
   </body>
