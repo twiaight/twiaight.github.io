@@ -62,8 +62,8 @@
         const stairs = new THREE.Group();
         for ( let i=0; i<st_limit; i++ ) {
           var stair = new THREE.Mesh(geometry, material);
-          stair.position.z = -0.5*i;
-          stair.position.y = +0.5*i;
+          stair.position.z = -0.75*i;
+          stair.position.y = +0.50*i;
           stairs.add(stair);
         }
         all.add(stairs);
