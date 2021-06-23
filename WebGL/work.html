@@ -54,18 +54,10 @@
         var geometry, material;
         const all = new THREE.Group();
         
-        /* 階段　*/
-        var texture_stair = tL.load('img/stairs_bump.png');
         
-        geometry = new THREE.BoxGeometry(1, 2, 10);
-        material = [
-          new THREE.MeshStandardMaterial({ color:0xffffff }),
-          new THREE.MeshStandardMaterial({ color:0xffffff, bumpMap:texture_stair, bumpScale:1 }),
-          new THREE.MeshStandardMaterial({ color:0xffffff }),
-          new THREE.MeshStandardMaterial({ color:0xffffff }),
-          new THREE.MeshStandardMaterial({ color:0xffffff }),
-          new THREE.MeshStandardMaterial({ color:0xffffff }),
-        ];
+        /* 階段 */
+        geometry = new THREE.BoxGeomatry(1, 2, 1);
+        material = new THREE.MeshPhongMaterial({ color:0xffffff });
         var stair = new THREE.Mesh(geometry, material);
         scene.add(stair);
         
