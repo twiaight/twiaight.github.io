@@ -62,12 +62,12 @@
         const stairs = new THREE.Group();
         for ( let i=0; i<st_limit; i++ ) {
           var stair = new THREE.Mesh(geometry, material);
-          stair.position.z = -0.75*i;
-          stair.position.y = +0.50*i;
+          stair.position.z = +0.70*i;
+          stair.position.y = -0.50*i;
           stairs.add(stair);
         }
-        stairs.position.y = -18;
-        stairs.position.z = 10;
+        stairs.position.y = -12;
+        stairs.position.z = 7;
         all.add(stairs);
         
         /*　小惑星群　*/
