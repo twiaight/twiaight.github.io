@@ -56,10 +56,13 @@
         
         
         /* 階段 */
-        geometry = new THREE.BoxGeomatry(1, 2, 1);
+        geometry = new THREE.BoxGeometry(1, 2, 1);
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
-        var stair = new THREE.Mesh(geometry, material);
-        scene.add(stair);
+        const st_limit = 10;
+        //for ( let i=0; i<st_limit; i++ ) {
+          var stair = new THREE.Mesh(geometry, material);
+        //}
+        all.add(stair);
         
         /*　小惑星群　*/
         const starry_night = new THREE.Group();
