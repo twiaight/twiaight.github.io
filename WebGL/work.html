@@ -59,11 +59,14 @@
         geometry = new THREE.BoxGeometry(1.5, 0.5, 1);
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         const st_limit = 10;
+        var st_z = 0.3, st_y = 0;
         const stairs = new THREE.Group();
         for ( let i=0; i<st_limit; i++ ) {
           var stair = new THREE.Mesh(geometry, material);
           stair.position.z = +0.70*i;
           stair.position.y = -0.50*i;
+          st_z += 0.70;
+          st_y += 1.00;
           stairs.add(stair);
         }
         stairs.position.y = -12.25 + 0.001;
@@ -71,7 +74,7 @@
         all.add(stairs);
         
         /* 縁石 */
-        geometry = new THREE.BoxGeometry(0.2, 0.5, 10);
+        geometry = new THREE.BoxGeometry(0.2, 0.5, Math.sqrt (Math.pow(z, 2) + Math.pow(y, 2)) );
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         var curb = new THREE.Mesh(geometry, material);
         curb.position.y = -14;
