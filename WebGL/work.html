@@ -56,6 +56,7 @@
         
         
         /* 階段 */
+        /*
         geometry = new THREE.BoxGeometry(1.5, 0.5, 1);
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         const st_limit = 10;
@@ -74,6 +75,7 @@
         all.add(stairs);
         
         /* 縁石 */
+        /*
         geometry = new THREE.BoxGeometry(0.2, 1, Math.sqrt (Math.pow(st_y, 2) + Math.pow(st_z, 2)) );
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         var curb = new THREE.Mesh(geometry, material);
@@ -82,13 +84,15 @@
         curb.position.z = stairs.position.z + st_z/2;
         curb.rotation.x = Math.atan(st_y/st_z);
         all.add(curb);
-        
+        */
+        /*
         var curb = new THREE.Mesh(geometry, material);
         curb.position.x = -0.8;
         curb.position.y = stairs.position.y - st_y/2;
         curb.position.z = stairs.position.z + st_z/2;
         curb.rotation.x = Math.atan(st_y/st_z);
         all.add(curb);
+        */
         
         /*　小惑星群　*/
         const starry_night = new THREE.Group();
