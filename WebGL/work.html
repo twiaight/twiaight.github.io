@@ -30,14 +30,14 @@
         
         var scene = new THREE.Scene();
         
-        var camera = new THREE.PerspectiveCamera(45, width/height, 1, 100);
-        camera.position.z = 35;
+        var camera = new THREE.PerspectiveCamera(50, width/height, 1, 100);
+        camera.position.z = 40;
         camera.position.y = 0;
         
         const controls = new THREE.OrbitControls(camera, document.body);
         controls.maxPolarAngle = Math.PI/2 + 45*(Math.PI/180);
-        controls.minDistance = 4;
-        controls.maxDistance = 35;
+        controls.minDistance = 7;
+        controls.maxDistance = 40;
         
         var tL = new THREE.TextureLoader();
         
