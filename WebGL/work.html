@@ -59,7 +59,7 @@
         geometry = new THREE.BoxGeometry(1.5, 0.5, 1);
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         const st_limit = 10;
-        var st_z = -0.7, st_y = -1.0;
+        var st_z = -0.7, st_y = -0.5;
         const stairs = new THREE.Group();
         for ( let i=0; i<st_limit; i++ ) {
           var stair = new THREE.Mesh(geometry, material);
