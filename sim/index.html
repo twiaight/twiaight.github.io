@@ -17,17 +17,16 @@
     
     <script>
       window.onload = function() {
-      var canvas = document.getElementById("my_canvas");
-      var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById("my_canvas");
 
-      function fitCanvasSize() {
-        // Canvas のサイズをクライアントサイズに合わせる
-        canvas.width = document.documentElement.clientWidth;
-        canvas.height = document.documentElement.clientHeight;
-      }
+        function fitCanvasSize() {
+          // Canvas のサイズをクライアントサイズに合わせる
+          canvas.width = document.documentElement.clientWidth;
+          canvas.height = document.documentElement.clientHeight;
+        }
 
-      fitCanvasSize();
-      window.onresize = fitCanvasSize;
+        fitCanvasSize();
+        window.onresize = fitCanvasSize;
       }
     </script>
   </body>
