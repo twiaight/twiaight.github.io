@@ -35,6 +35,7 @@
         camera.position.y = 0.5;
         
         const controls = new THREE.OrbitControls(camera, document.body);
+        controls.maxPolarAngle = Math.PI/2;
         
         var tL = new THREE.TextureLoader();
         
