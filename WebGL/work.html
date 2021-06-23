@@ -101,14 +101,14 @@
         var texture_triangle_ring = tL.load('img/triangle_ring.png');
         
         const rings = new THREE.Group();
-        geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 120, 20, true );
+        geometry = new THREE.CylinderGeometry( 6.5, 6.5, 0.4, 80, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.BackSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
         parts.castShadow = true;
         rings.add(parts);
         
-        geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 120, 20, true );
+        geometry = new THREE.CylinderGeometry( 7.5, 7.5, 0.4, 80, 20, true );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true, side:THREE.FrontSide });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
@@ -124,7 +124,7 @@
         parts.rotation.x = -90*(Math.PI/180);
         rings.add(parts);
         
-        geometry = new THREE.RingGeometry( 6.5, 7.5, 120, 20, 0 );
+        geometry = new THREE.RingGeometry( 6.5, 7.5, 80, 20, 0 );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var parts = new THREE.Mesh(geometry, material);
         parts.receiveShadow = true;
@@ -139,7 +139,7 @@
         
         
         /* 青いリング */
-        geometry = new THREE.RingGeometry( 6, 7, 120, 20, 0 );
+        geometry = new THREE.RingGeometry( 6, 7, 80, 20, 0 );
         material = new THREE.MeshStandardMaterial({ color:0x7b90d2, transparent:true, side:THREE.DoubleSide });
         var ring = new THREE.Mesh(geometry, material);
         ring.receiveShadow = true;
@@ -148,7 +148,7 @@
         // scene.add(ring);
         
         /*　支柱　*/
-        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
+        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 80, Math.PI );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = -180*(Math.PI/180);
@@ -159,7 +159,7 @@
         // scene.add(arch);
         
         /*　支柱　*/
-        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
+        geometry = new THREE.TorusGeometry( 7, 0.2, 20, 80, Math.PI );
         material = new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true });
         var arch = new THREE.Mesh(geometry, material);
         arch.rotation.x = Math.PI;
@@ -182,7 +182,7 @@
         /*　台座上方の円錐台　*/
         var texture_ring  = tL.load("img/ring_bump.png");
         
-        geometry = new THREE.CylinderGeometry(3, 4, 1, 120, 200);
+        geometry = new THREE.CylinderGeometry(3, 4, 1, 80, 200);
         material = [
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
@@ -198,7 +198,7 @@
         /*　台座下方の円錐台　*/
         // var texture_ring  = tL.load("img/ring_bump.png");
         
-        geometry = new THREE.CylinderGeometry( 7, 8, 1, 120, 120 );
+        geometry = new THREE.CylinderGeometry( 7, 8, 1, 80, 80 );
         material = [
           new THREE.MeshStandardMaterial({ color:0x875130, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0x875130, bumpMap:texture_ring, bumpScale:0.35, transparent:true }),
@@ -214,7 +214,7 @@
         /*　台座上方の円柱　*/
         var texture_board = tL.load("img/board_bump_small.png");
         
-        geometry = new THREE.CylinderGeometry( 5, 5, 1, 120, 120 );
+        geometry = new THREE.CylinderGeometry( 5, 5, 1, 80, 80 );
         material = [
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_board, bumpScale:0.35, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
@@ -229,7 +229,7 @@
       
         /*　台座中央の円柱　*/
         var texture_cylinder = tL.load("img/cylinder_bump.png");
-        geometry = new THREE.CylinderGeometry( 3, 3, 3, 120, 120 );
+        geometry = new THREE.CylinderGeometry( 3, 3, 3, 80, 80 );
         material = [
           new THREE.MeshStandardMaterial({ color:0xc49411, bumpMap:texture_cylinder, bumpScale:0.35, transparent:true }),
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
@@ -251,7 +251,7 @@
           new THREE.MeshStandardMaterial({ color:0xc49411, transparent:true }),
         ];
         for ( let i=0; i<6; i++ ) {
-          geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 120, 60 );
+          geometry = new THREE.CylinderGeometry( 0.5, 0.5, 3, 80, 60 );
           cylinder = new THREE.Mesh(geometry, material);
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           cylinder.receiveShadow = true;
