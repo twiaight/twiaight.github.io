@@ -59,7 +59,7 @@
         geometry = new THREE.BoxGeometry(1.5, 0.5, 1);
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         const st_limit = 10;
-        var st_z = 0.3, st_y = 0;
+        var st_z = -0.7, st_y = -1.00;
         const stairs = new THREE.Group();
         for ( let i=0; i<st_limit; i++ ) {
           var stair = new THREE.Mesh(geometry, material);
@@ -77,8 +77,8 @@
         geometry = new THREE.BoxGeometry(0.2, 0.5, Math.sqrt (Math.pow(st_z, 2) + Math.pow(st_y, 2)) );
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         var curb = new THREE.Mesh(geometry, material);
-        curb.position.y = -stair.position.y - st_y/2;
-        curb.position.z = +stair.position.z - st_z/2;
+        curb.position.y = -stairs.position.y - st_y/2;
+        curb.position.z = +stairs.position.z - st_z/2;
         curb.rotation.x = Math.atan(st_y/st_z);
         all.add(curb);
         
