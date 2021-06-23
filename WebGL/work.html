@@ -74,7 +74,7 @@
         all.add(stairs);
         
         /* 縁石 */
-        geometry = new THREE.BoxGeometry(0.2, 0.5, Math.sqrt (Math.pow(z, 2) + Math.pow(y, 2)) );
+        geometry = new THREE.BoxGeometry(0.2, 0.5, Math.sqrt (Math.pow(st_z, 2) + Math.pow(st_y, 2)) );
         material = new THREE.MeshPhongMaterial({ color:0xffffff });
         var curb = new THREE.Mesh(geometry, material);
         curb.position.y = -14;
