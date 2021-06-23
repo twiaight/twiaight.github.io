@@ -52,6 +52,7 @@
         
         /* ジオメトリー作成用 */
         var geometry, material;
+        const all = new THREE.Group();
         
         /*　小惑星群　*/
         const starry_night = new THREE.Group();
@@ -132,7 +133,8 @@
         parts.rotation.x = -270*(Math.PI/180);
         rings.add(parts);
         
-        scene.add(rings);
+        all.add(rings);
+        // scene.add(rings);
         /*----------------------------------------------------------------------------------------------------*/
         
         
@@ -142,7 +144,8 @@
         var ring = new THREE.Mesh(geometry, material);
         ring.receiveShadow = true;
         ring.castShadow = true;
-        scene.add(ring);
+        all.add(ring);
+        // scene.add(ring);
         
         /*　支柱　*/
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
@@ -152,7 +155,8 @@
         arch.rotation.y = -90*(Math.PI/180);
         arch.receiveShadow = true;
         arch.castShadow = true;
-        scene.add(arch);
+        all.add(arch);
+        // scene.add(arch);
         
         /*　支柱　*/
         geometry = new THREE.TorusGeometry( 7, 0.2, 20, 120, Math.PI );
@@ -161,7 +165,8 @@
         arch.rotation.x = Math.PI;
         arch.receiveShadow = true;
         arch.castShadow = true;
-        scene.add(arch);
+        all.add(arch);
+        // scene.add(arch);
         
         /*　支柱の固定具　*/
         geometry = new THREE.ConeGeometry( 1, 2, 20, 20 );
@@ -170,7 +175,8 @@
         cone.position.y = -7.5;
         cone.receiveShadow = true;
         cone.castShadow = true;
-        scene.add(cone);
+        all.add(cone);
+        // scene.add(cone);
         
         
         /*　台座上方の円錐台　*/
@@ -186,7 +192,8 @@
         cylinder.position.y = -8;
         cylinder.receiveShadow = true;
         cylinder.castShadow = true;
-        scene.add(cylinder);
+        all.add(cylinder);
+        // scene.add(cylinder);
         
         /*　台座下方の円錐台　*/
         // var texture_ring  = tL.load("img/ring_bump.png");
@@ -201,7 +208,8 @@
         cylinder.position.y = -12.5;
         cylinder.receiveShadow = true;
         cylinder.castShadow = true;
-        scene.add(cylinder);
+        all.add(cylinder);
+        // scene.add(cylinder);
         
         /*　台座上方の円柱　*/
         var texture_board = tL.load("img/board_bump_small.png");
@@ -216,7 +224,8 @@
         cylinder.position.y = -9;
         cylinder.receiveShadow = true;
         cylinder.castShadow = true;
-        scene.add(cylinder);
+        all.add(cylinder);
+        // scene.add(cylinder);
       
         /*　台座中央の円柱　*/
         var texture_cylinder = tL.load("img/cylinder_bump.png");
@@ -231,7 +240,8 @@
         cylinder.rotation.y = 60*(Math.PI/180);
         cylinder.receiveShadow = true;
         cylinder.castShadow = true;
-        scene.add(cylinder);
+        all.add(cylinder);
+        // scene.add(cylinder);
         
         /*　台座中央の円柱群　*/
         var texture_pillar = tL.load("img/pillar_bump_long.png");
@@ -246,9 +256,11 @@
           cylinder.position.set( (4.5-0.1)*Math.cos(2*Math.PI/6*i), -10.5, (4.5-0.1)*Math.sin(2*Math.PI/6*i) );
           cylinder.receiveShadow = true;
           cylinder.castShadow = true;
-          scene.add(cylinder);
+          all.add(cylinder);
+          // scene.add(cylinder);
         }
         
+        scene.add(all);
         
         var pointLight1 = new THREE.PointLight(0x9999dd, 2, 30, 1);
         pointLight1.position.set(+10, 5, 10);
