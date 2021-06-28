@@ -14,11 +14,11 @@
     -->
     
     
-    <!-- <canvas id="my_canvas"></canvas> -->
-    <img class="fade" src="./img/diamond.PNG">
+    <canvas id="my_canvas"></canvas>
+    <!-- <img class="fade" src="./img/diamond.PNG"> -->
     
     
-    <!--
+    
     <script>
       window.onload = function() {
         var canvas = document.getElementById("my_canvas");
@@ -36,9 +36,17 @@
         // 指定の色で範囲内を塗りつぶす
         ctx.fillStyle = 'rgb(255,0,255)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        var img = new Image();   // 新たな img 要素を作成
+        img.src = './img/diamond.PNG';
+        
+        img.addEventListener("load", function() {
+          ctx.drawImage(img);
+        }, false);
+      
       }
     </script>
--->
+
   </body>
   
 </html>
