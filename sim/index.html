@@ -21,6 +21,7 @@
       var canvas = document.getElementById("my_canvas");
       var ctx = canvas.getContext('2d');
       var img = new Image();
+      var x, y; //canvas(width, height)
 
 
       function fitCanvasSize() {
@@ -46,6 +47,8 @@
         if (canvas.width  != displayWidth ||　canvas.height != displayHeight) {
           canvas.width  = displayWidth;
           canvas.height = displayHeight;
+          x = canvas.width;
+          y = canvas.height;
         }
       }
       
