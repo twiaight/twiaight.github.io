@@ -21,13 +21,7 @@
       var ctx = canvas.getContext('2d');
       var img = new Image();
       var cx=0, cy=0; //canvas(width, height)
-
-
-      function fitCanvasSize() {
-        // Canvas のサイズをクライアントサイズに合わせる
-        canvas.width = document.documentElement.clientWidth;
-        canvas.height = document.documentElement.clientHeight;
-      }
+      
       
       function paintBackGround() {
         ctx.fillStyle = 'rgb(255,0,255)';
@@ -64,7 +58,6 @@
       
       function main() {
         drawScene();
-        // window.onresize = fitCanvasSize;
         paintBackGround();
         image();
         window.requestAnimationFrame(main);
