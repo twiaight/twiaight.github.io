@@ -42,12 +42,29 @@
         }, false);
       }
       
+      function resize(canvas) {
+        var displayWidth  = canvas.clientWidth;
+        var displayHeight = canvas.clientHeight;
+
+        if (canvas.width  != displayWidth ||　canvas.height != displayHeight) {
+          canvas.width  = displayWidth;
+          canvas.height = displayHeight;
+        }
+      }
       
-      fitCanvasSize();
-      window.onresize = fitCanvasSize;
+      function drawScene() {
+        resize(ctx.canvas);
+      }
       
-      paintBackGround();
-      image();
+      function main() {
+        drawScene();
+        fitCanvasSize();
+        window.onresize = fitCanvasSize;
+        paintBackGround();
+        image();
+      }
+      
+      window.requestAnimationFrame(main);
       
     </script>
 
