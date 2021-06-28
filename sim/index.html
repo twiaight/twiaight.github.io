@@ -20,6 +20,7 @@
     <script>
       var canvas = document.getElementById("my_canvas");
       var ctx = canvas.getContext('2d');
+      var img = new Image();
 
 
       function fitCanvasSize() {
@@ -34,12 +35,8 @@
       }
       
       function image() {
-        var img = new Image();   // 新たな img 要素を作成
         img.src = './img/diamond.PNG';
-
-        img.addEventListener("load", function() {
-          ctx.drawImage(img, 0, 0);
-        }, false);
+        ctx.drawImage(img, 0, 0);
       }
       
       function resize(canvas) {
