@@ -34,8 +34,8 @@
       }
       
       function resize(canvas) {
-        var displayWidth  = document.body.clientWidth;
-        var displayHeight = document.body.clientHeight;
+        var displayWidth  = window.innerWidth;
+        var displayHeight = window.innerHeight;
 
         if (canvas.width != displayWidth ||　canvas.height != displayHeight) {
           canvas.width  = displayWidth;
