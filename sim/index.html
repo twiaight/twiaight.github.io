@@ -16,7 +16,7 @@
     
     
     <canvas id="my_canvas"></canvas>
-
+    <div id="clickEV"></div>
     <script>
       var canvas = document.getElementById("my_canvas");
       var ctx = canvas.getContext('2d');
@@ -62,6 +62,7 @@
         window.onresize = fitCanvasSize;
         paintBackGround();
         image();
+        if ( document.getElementById("clickEV").click() ) console.log(x, y);
         window.requestAnimationFrame(main);
       }
       
