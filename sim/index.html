@@ -55,17 +55,20 @@
         resize(ctx.canvas);
       }
       
+      function log() {
+        console.log(x, y);
+      }
+      
       function main() {
         drawScene();
         fitCanvasSize();
         window.onresize = fitCanvasSize;
         paintBackGround();
         image();
-        if ( document.getElementById("my_canvas").click() ) console.log(x, y);
         window.requestAnimationFrame(main);
       }
       
-      drawScene();
+      canvas.addEventListener('click', log);
       window.requestAnimationFrame(main);
       
     </script>
