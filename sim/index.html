@@ -20,6 +20,12 @@
     
     
     <script>
+      var w = $('.contents').width();
+      var h = $('.contents').height();
+      $('#rader_result').attr('width', w);
+      $('#rader_result').attr('height', h);
+
+      
       window.onload = function() {
         var canvas = document.getElementById("my_canvas");
 
