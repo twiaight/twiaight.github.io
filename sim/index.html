@@ -20,37 +20,42 @@
     
     
     <script>
+      var canvas = document.getElementById("my_canvas");
+      var ctx = canvas.getContext('2d');
+      
       var w = $('.contents').width();
       var h = $('.contents').height();
       $('#rader_result').attr('width', w);
       $('#rader_result').attr('height', h);
 
-      
-      window.onload = function() {
-        var canvas = document.getElementById("my_canvas");
 
-        function fitCanvasSize() {
-          // Canvas のサイズをクライアントサイズに合わせる
-          canvas.width = document.documentElement.clientWidth;
-          canvas.height = document.documentElement.clientHeight;
-        }
-        
-        fitCanvasSize();
-        window.onresize = fitCanvasSize;
-        
-        var ctx = canvas.getContext('2d');
-        // 指定の色で範囲内を塗りつぶす
+      function fitCanvasSize() {
+        // Canvas のサイズをクライアントサイズに合わせる
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = document.documentElement.clientHeight;
+      }
+      
+      function paintBackGround() {
         ctx.fillStyle = 'rgb(255,0,255)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
+      }
+      
+      function image() {
         var img = new Image();   // 新たな img 要素を作成
         img.src = './img/diamond.PNG';
-        
+
         img.addEventListener("load", function() {
           ctx.drawImage(img, 0, 0);
         }, false);
-      
       }
+      
+      
+      fitCanvasSize();
+      window.onresize = fitCanvasSize;
+      
+      paintBackGround();
+      image();
+      
     </script>
 
   </body>
