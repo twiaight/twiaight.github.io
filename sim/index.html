@@ -20,7 +20,7 @@
       var canvas = document.getElementById("my_canvas");
       var ctx = canvas.getContext('2d');
       var img = new Image();
-      var x=0, y=0; //canvas(width, height)
+      var cx=0, cy=0; //canvas(width, height)
 
 
       function fitCanvasSize() {
@@ -36,7 +36,7 @@
       
       function image() {
         img.src = './img/diamond.PNG';
-        ctx.drawImage(img, x/2, y/2);
+        ctx.drawImage(img, cx/2, cy/2);
       }
       
       function resize(canvas) {
@@ -46,8 +46,8 @@
         if (canvas.width  != displayWidth ||　canvas.height != displayHeight) {
           canvas.width  = displayWidth;
           canvas.height = displayHeight;
-          x = canvas.width;
-          y = canvas.height;
+          cx = canvas.width;
+          cy = canvas.height;
         }
       }
       
@@ -56,7 +56,7 @@
       }
       
       function log() {
-        console.log(x, y);
+        console.log(cx, cy);
         console.log(canvas.width, canvas.height);
         console.log(canvas.clientWidth, canvas.clientHeight);
         console.log();
