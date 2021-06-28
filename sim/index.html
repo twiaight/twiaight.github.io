@@ -48,7 +48,6 @@
           canvas.height = displayHeight;
           cx = displayWidth;
           cy = displayHeight;
-          console.log(cx, cy);
         }
       }
       
@@ -65,8 +64,8 @@
       
       function main() {
         drawScene();
-        fitCanvasSize();
-        window.onresize = fitCanvasSize;
+        // fitCanvasSize();
+        // window.onresize = fitCanvasSize;
         paintBackGround();
         image();
         window.requestAnimationFrame(main);
