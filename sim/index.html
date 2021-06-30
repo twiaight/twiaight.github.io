@@ -87,13 +87,14 @@
         if ( DRAW ) {
           window.requestAnimationFrame(main);
           DRAW = Boolean(false);
-        } 
+        } else
+          window.requestAnimationFrame(draw);
       }
       
       canvas.addEventListener('click', main);
       draw();
       
-      window.requestAnimationFrame(main);
+      window.requestAnimationFrame(draw);
       
     </script>
 
