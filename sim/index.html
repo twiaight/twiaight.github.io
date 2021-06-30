@@ -29,7 +29,7 @@
       
       function image() {
         img.src = './img/diamond.PNG';
-        ctx.drawImage(img, cx/2, cy/2);
+        ctx.drawImage(img, cx/2-img.naturalWidth, cy/2-img.naturalHeight);
       }
       
       function resize(canvas) {
