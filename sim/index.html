@@ -85,10 +85,11 @@
         console.log(DRAW);
         
         if ( DRAW ) {
-          window.requestAnimationFrame(main);
+          main();
           DRAW = Boolean(false);
-        } else
-          window.requestAnimationFrame(draw);
+        } 
+        
+        window.requestAnimationFrame(draw);
       }
       
       canvas.addEventListener('click', main);
