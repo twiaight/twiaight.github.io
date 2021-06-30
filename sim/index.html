@@ -33,13 +33,12 @@
       }
       
       function resize(canvas) {
-        var displayWidth  = window.innerWidth + 'px';
-            //document.documentElement.clientWidth;
-        var displayHeight = window.innerHeight + 'px';
+        var displayWidth  = document.documentElement.clientWidth;
+        var displayHeight = document.documentElement.clientHeight;
 
         if (canvas.width != displayWidth ||　canvas.height != displayHeight) {
-          canvas.style.width  = displayWidth;
-          canvas.style.height = displayHeight;
+          canvas.width  = displayWidth;
+          canvas.height = displayHeight;
           cx = displayWidth;
           cy = displayHeight;
         }
