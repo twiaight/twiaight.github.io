@@ -1,8 +1,9 @@
-/*
+
 html,body{
   overflow: hidden
+  margin: 0;
 }
-
+/*
 .fade{
 
   animation: fadeIn 2.0s ease 0.2s 1 normal;
