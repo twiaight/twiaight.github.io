@@ -41,10 +41,10 @@
       }
       
       function drawScene() {
-        resize(ctx.canvas);
+        resize(/*ctx.canvas*/);
       }
       
-      function resize(canvas) {
+      function resize(/*canvas*/) {
         var displayWidth  = document.documentElement.clientWidth;
         var displayHeight = document.documentElement.clientHeight;
 
@@ -56,7 +56,7 @@
         }
       }
       
-      function resize_ch(canvas) {
+      function resize_ch(/*canvas*/) {
         var displayWidth  = document.documentElement.clientWidth;
         var displayHeight = document.documentElement.clientHeight;
 
@@ -64,12 +64,18 @@
           DRAW = Boolean(true);
         }
       }
+      
+      function clicked() {
+        
+      }
      
       
+      /* 中央 */
       function log() {
         console.log(cx, cy);
         console.log(canvas.width, canvas.height);
         console.log(canvas.clientWidth, canvas.clientHeight);
+        console.log(clientX, clientY)
         console.log();
       }
       
@@ -81,7 +87,7 @@
       }
       
       function draw() {
-        resize_ch(ctx.canvas);
+        resize_ch(/*ctx.canvas*/);
         
         if ( DRAW ) {
           main();
@@ -90,8 +96,9 @@
         
         window.requestAnimationFrame(draw);
       }
+      /* 中央 */
       
-      canvas.addEventListener('click', main);
+      canvas.addEventListener('click', clicked);
       
       window.requestAnimationFrame(draw);
       
