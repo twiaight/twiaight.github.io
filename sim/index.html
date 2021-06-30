@@ -20,6 +20,8 @@
       var img = new Image();
       var cx=0, cy=0; //canvas(width, height)
       
+      var DRAW = new Boolean(false);
+      
       
       function paintBackGround() {
         ctx.fillStyle = 'rgb(255,255,255)';
@@ -37,6 +39,10 @@
         ctx.fillText("Hello world", 100, 100);
       }
       
+      function drawScene() {
+        resize(ctx.canvas);
+      }
+      
       function resize(canvas) {
         var displayWidth  = document.documentElement.clientWidth;
         var displayHeight = document.documentElement.clientHeight;
@@ -46,12 +52,19 @@
           canvas.height = displayHeight;
           cx = displayWidth;
           cy = displayHeight;
+          DRAW = true;
         }
       }
       
-      function drawScene() {
-        resize(ctx.canvas);
+      function resize_ch(canvas) {
+        var displayWidth  = document.documentElement.clientWidth;
+        var displayHeight = document.documentElement.clientHeight;
+
+        if (canvas.width != displayWidth ||　canvas.height != displayHeight) {
+          DRAW = true;
+        }
       }
+     
       
       function log() {
         console.log(cx, cy);
@@ -72,6 +85,9 @@
       }
       
       canvas.addEventListener('click', draw);
+      resize_ch(ctx.canvas);
+      
+      if ( DRAW ) draw();
       window.requestAnimationFrame(main);
       
     </script>
