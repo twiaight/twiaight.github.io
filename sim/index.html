@@ -17,7 +17,6 @@
     <script>
       var canvas = document.getElementById("my_canvas");
       var ctx = canvas.getContext('2d');
-      ctx.font = "30px 'ＭＳ ゴシック'";
       var img = new Image();
       var cx=0, cy=0; //canvas(width, height)
       
@@ -29,7 +28,13 @@
       
       function image() {
         img.src = './img/diamond.PNG';
-        ctx.drawImage(img, cx/2-img.naturalWidth, cy/2-img.naturalHeight);
+        ctx.drawImage(img, cx/2-img.naturalWidth/2, cy/2-img.naturalHeight/2);
+      }
+      
+      function text() {
+        ctx.font = "30px 'ＭＳ ゴシック'";
+        ctx.fillStyle = "black";
+        ctx.fillText("Hello world", 100, 100);
       }
       
       function resize(canvas) {
@@ -59,12 +64,11 @@
         drawScene();
         paintBackGround();
         image();
-        ctx.font = "30px 'ＭＳ ゴシック'"; 
-        ctx.fillText("Hello world", 100, 100);
-        window.requestAnimationFrame(main);
+        text();
+        // window.requestAnimationFrame(main);
       }
       
-      canvas.addEventListener('click', log);
+      canvas.addEventListener('click', window.requestAnimationFrame(main));
       window.requestAnimationFrame(main);
       
     </script>
