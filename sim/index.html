@@ -52,7 +52,6 @@
           canvas.height = displayHeight;
           cx = displayWidth;
           cy = displayHeight;
-          DRAW = true;
         }
       }
       
@@ -61,7 +60,7 @@
         var displayHeight = document.documentElement.clientHeight;
 
         if (canvas.width != displayWidth ||　canvas.height != displayHeight) {
-          DRAW = true;
+          DRAW = Boolean(true);
         }
       }
      
@@ -87,7 +86,7 @@
       canvas.addEventListener('click', draw);
       resize_ch(ctx.canvas);
       
-      if ( DRAW ) draw();
+      if ( DRAW ) { draw(); DRAW = Boolean(false); }
       window.requestAnimationFrame(main);
       
     </script>
