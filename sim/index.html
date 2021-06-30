@@ -41,10 +41,10 @@
       }
       
       function drawScene() {
-        resize(/*ctx.canvas*/);
+        resize(ctx.canvas);
       }
       
-      function resize(/*canvas*/) {
+      function resize(canvas) {
         var displayWidth  = document.documentElement.clientWidth;
         var displayHeight = document.documentElement.clientHeight;
 
@@ -56,7 +56,7 @@
         }
       }
       
-      function resize_ch(/*canvas*/) {
+      function resize_ch(canvas) {
         var displayWidth  = document.documentElement.clientWidth;
         var displayHeight = document.documentElement.clientHeight;
 
@@ -87,7 +87,7 @@
       }
       
       function draw() {
-        resize_ch(/*ctx.canvas*/);
+        resize_ch(ctx.canvas);
         
         if ( DRAW ) {
           main();
