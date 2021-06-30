@@ -81,17 +81,18 @@
       
       function draw() {
         resize_ch(ctx.canvas);
+        console.log(DRAW);
         
         if ( DRAW ) {
           window.requestAnimationFrame(main);
           DRAW = Boolean(false);
-        } else
-          window.requestAnimationFrame(draw);
+        } 
       }
       
       canvas.addEventListener('click', main);
+      draw();
       
-      window.requestAnimationFrame(draw);
+      window.requestAnimationFrame(main);
       
     </script>
 
