@@ -65,8 +65,8 @@
         }
       }
       
-      function clicked() {
-        
+      function clicked(e) {
+        console.log(e.clientX, e.clientY);
       }
      
       
@@ -75,7 +75,6 @@
         console.log(cx, cy);
         console.log(canvas.width, canvas.height);
         console.log(canvas.clientWidth, canvas.clientHeight);
-        console.log(canvas.clientX, canvas.clientY);
         console.log();
       }
       
@@ -98,7 +97,7 @@
       }
       /* 中央 */
       
-      canvas.addEventListener('click', log);
+      canvas.addEventListener('click', clicked, false);
       
       window.requestAnimationFrame(draw);
       
