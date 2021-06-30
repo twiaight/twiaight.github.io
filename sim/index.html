@@ -65,10 +65,13 @@
         paintBackGround();
         image();
         text();
-        // window.requestAnimationFrame(main);
       }
       
-      canvas.addEventListener('click', window.requestAnimationFrame(main));
+      function draw() {
+        window.requestAnimationFrame(main);
+      }
+      
+      canvas.addEventListener('click', draw);
       window.requestAnimationFrame(main);
       
     </script>
