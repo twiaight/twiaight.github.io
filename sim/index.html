@@ -80,13 +80,17 @@
       }
       
       function draw() {
-        window.requestAnimationFrame(main);
+        resize_ch(ctx.canvas);
+        
+        if ( DRAW ) {
+          window.requestAnimationFrame(main);
+          DRAW = Boolean(false);
+        } else
+          window.requestAnimationFrame(draw);
       }
       
-      canvas.addEventListener('click', draw);
-      resize_ch(ctx.canvas);
+      canvas.addEventListener('click', main);
       
-      if ( DRAW ) { draw(); DRAW = Boolean(false); }
       window.requestAnimationFrame(main);
       
     </script>
