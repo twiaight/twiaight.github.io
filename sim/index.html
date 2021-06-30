@@ -31,7 +31,7 @@
       
       function image() {
         img.src = './img/diamond.PNG';
-        ctx.drawImage(img, cx/2-img.naturalWidth/2, cy/2-img.naturalHeight/2);
+        ctx.drawImage(img, cx-img.naturalWidth/2, cy-img.naturalHeight/2);
       }
       
       function text() {
@@ -51,8 +51,8 @@
         if (canvas.width != displayWidth ||　canvas.height != displayHeight) {
           canvas.width  = displayWidth;
           canvas.height = displayHeight;
-          cx = displayWidth;
-          cy = displayHeight;
+          cx = displayWidth /2;
+          cy = displayHeight/2;
         }
       }
       
@@ -82,7 +82,6 @@
       
       function draw() {
         resize_ch(ctx.canvas);
-        console.log(DRAW);
         
         if ( DRAW ) {
           main();
