@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
 
 class UI {
   var count;
+  var result1 = [];
+  var result2 = [];
 
   constructor(start) {
     this.start = start;
@@ -45,6 +47,7 @@ class UI {
       b = a - func_y(a) / func_z(a); // 式(1.9)
       count++;
       console.log(b);
+      result1.push(b);
       if (Math.abs(a - b) < EPS) break;  // 収束判定
       else a = b;
 
@@ -102,6 +105,7 @@ class UI {
     do {
       c = (a + b) / 2.0; // 2分計算
       console.log(c);
+      result2.push(c);
       if (func_y(c) * func_y(a) < 0) b = c; // 式(1.2)
       else a = c; // 式(1.3)
 
