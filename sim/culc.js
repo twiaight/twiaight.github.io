@@ -12,7 +12,7 @@ class UI {
     var result1 = [];
     var result2 = [];
     
-    this.start.addEventlistener("click", () => {
+    this.start.addEventistener("click", () => {
       var EPS = 0.0001; // 許容誤差
       console.log('\n' + "0.0001");
       Newton();
