@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
   var ui = new UI(
-    document.querySelector(#start)
+    document.querySelector("#start")
   );
 });
 
