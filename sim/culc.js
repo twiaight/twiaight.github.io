@@ -5,12 +5,12 @@ window.addEventListener("load", () => {
 });
 
 class UI {
-  var count;
-  var result1 = [];
-  var result2 = [];
 
   constructor(start) {
     this.start = start;
+    var count;
+    var result1 = [];
+    var result2 = [];
     
     this.start.addEventlistener("click", () => {
       var EPS = 0.0001; // 許容誤差
