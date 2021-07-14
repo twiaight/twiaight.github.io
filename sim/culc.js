@@ -28,14 +28,14 @@ class UI {
       EPS = 0.000000001;
       console.log('\n' + "0.000000001");
       Newton();
-      Bisection();)
+      Bisection();
     });
   }
 
   /**
    * ニュートン法による根の計算
    */
-  function Newton() {
+  Newton() {
     console.log("x^3 + x - 1 のニュートン法による数値計算");
 
     count = 0;
@@ -62,7 +62,7 @@ class UI {
    * @param {number} x X座標
    * @return {number} Y座標
    */
-  function func_y(x) {
+  func_y(x) {
     return Math.pow(x, 3.0) + x - 1.0;
   }
 
@@ -71,7 +71,7 @@ class UI {
    * @param {number} x X座標
    * @return {number} Y座標
    */
-  function func_z(x) {
+  func_z(x) {
     return 3.0 * Math.pow(x, 2.0) + 1.0;
   }
 
@@ -80,7 +80,7 @@ class UI {
   /**
    * 2分法による根の計算
    */
-  function Bisection() {
+  Bisection() {
     let a = 0.0,
       b = 1.0; // 初期値
 
@@ -99,7 +99,7 @@ class UI {
    * @param {number} b 計算範囲
    * @return {number} 近似解
    */
-  function nibun(a, b) {
+  nibun(a, b) {
     let c;
 
     do {
@@ -119,7 +119,7 @@ class UI {
    * @param {number} x X座標
    * @return {number} Y座標
    */
-  function func_y(x) {
+  func_y(x) {
     return Math.pow(x, 3.0) + x - 1.0;
   }
 }
