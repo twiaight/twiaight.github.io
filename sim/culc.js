@@ -1,5 +1,3 @@
-var count;
-
 window.addEventListener("load", () => {
   var ui = new UI(
     document.querySelector(#start)
@@ -10,6 +8,7 @@ class UI {
   
   constructor(start) {
     this.start = start;
+    var count;
     
     this.start.addEventlistener("click", () => {
       var EPS = 0.0001; // 許容誤差
