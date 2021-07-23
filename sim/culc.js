@@ -91,7 +91,7 @@ class UI {
     console.log("初期値 b=" + b);
     let x = this.nibun(a, b); // 解
     document.write("近似解 x = " + x + "<br>");
-    console.log("計算回数:" + count + "<br>");
+    document.write("計算回数:" + count + "<br>");
   }
 
   /**
