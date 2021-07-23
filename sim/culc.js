@@ -48,15 +48,15 @@ class UI {
     while (1) {
       b = a - this.func_y(a) / this.func_z(a); // 式(1.9)
       this.count++;
-      document.write(b);
+      document.write(b + "<br>");
       this.result1.push(b);
       if (Math.abs(a - b) < this.EPS) break;  // 収束判定
       else a = b;
 
       if ( this.count > 100 ) break;
     }
-    document.write("近似解 x = " + b);
-    document.write("計算回数:" + this.count);
+    document.write("近似解 x = " + b + "<br>");
+    document.write("計算回数:" + this.count + "<br>");
   }
 
   /**
@@ -90,8 +90,8 @@ class UI {
     console.log("初期値 a=" + a);
     console.log("初期値 b=" + b);
     let x = this.nibun(a, b); // 解
-    document.write("近似解 x = " + x);
-    console.log("計算回数:" + count);
+    document.write("近似解 x = " + x + "<br>");
+    console.log("計算回数:" + count + "<br>");
   }
 
   /**
@@ -105,7 +105,7 @@ class UI {
 
     do {
       c = (a + b) / 2.0; // 2分計算
-      document.write(c);
+      document.write(c + "<br>");
       this.result2.push(c);
       if (this.func_y(c) * this.func_y(a) < 0) b = c; // 式(1.2)
       else a = c; // 式(1.3)
