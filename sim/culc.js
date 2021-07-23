@@ -8,27 +8,29 @@ class UI {
 
   constructor(start) {
     this.start = start;
-    var count;
-    var result1 = [];
-    var result2 = [];
+
+    this.EPS = 0; // 許容誤差
+    this.count = 0;
+    this.result1 = [];
+    this.result2 = [];
     
     this.start.addEventListener("click", () => {
-      var EPS = 0.0001; // 許容誤差
+      this.EPS = 0.0001;
       console.log('\n' + "0.0001");
-      Newton();
-      Bisection();
+      this.Newton();
+      this.Bisection();
 
 
-      EPS = 0.0000001;
+      this.EPS = 0.0000001;
       console.log('\n' + "0.0000001");
-      Newton();
-      Bisection();
+      this.Newton();
+      this.Bisection();
 
 
-      EPS = 0.000000001;
+      this.EPS = 0.000000001;
       console.log('\n' + "0.000000001");
-      Newton();
-      Bisection();
+      this.Newton();
+      this.Bisection();
     });
   }
 
@@ -38,23 +40,23 @@ class UI {
   Newton() {
     console.log("x^3 + x - 1 のニュートン法による数値計算");
 
-    count = 0;
+    this.count = 0;
     let a = 1.0;
     let b;
     console.log("初期値 a=" + a);
 
     while (1) {
-      b = a - func_y(a) / func_z(a); // 式(1.9)
-      count++;
-      console.log(b);
-      result1.push(b);
-      if (Math.abs(a - b) < EPS) break;  // 収束判定
+      b = a - this.func_y(a) / this.func_z(a); // 式(1.9)
+      this.count++;
+      document.write(b);
+      this.result1.push(b);
+      if (Math.abs(a - b) < this.EPS) break;  // 収束判定
       else a = b;
 
-      if ( count > 100 ) break;
+      if ( this.count > 100 ) break;
     }
-    console.log("近似解 x = " + b);
-    console.log("計算回数:" + count);
+    document.write("近似解 x = " + b);
+    document.write("計算回数:" + this.count);
   }
 
   /**
@@ -63,7 +65,7 @@ class UI {
    * @return {number} Y座標
    */
   func_y(x) {
-    return Math.pow(x, 3.0) + x - 1.0;
+    return Math.pow(x, 3.0) + x -  1.0;
   }
 
   /**
@@ -81,15 +83,14 @@ class UI {
    * 2分法による根の計算
    */
   Bisection() {
-    let a = 0.0,
-      b = 1.0; // 初期値
+    let a = 0.0, b = 1.0; // 初期値
 
-    count = 0;
+    this.count = 0;
     console.log("x^3 + x - 1 の2分法による数値計算");
     console.log("初期値 a=" + a);
     console.log("初期値 b=" + b);
-    let x = nibun(a, b); // 解
-    console.log("近似解 x = " + x);
+    let x = this.nibun(a, b); // 解
+    document.write("近似解 x = " + x);
     console.log("計算回数:" + count);
   }
 
@@ -104,13 +105,13 @@ class UI {
 
     do {
       c = (a + b) / 2.0; // 2分計算
-      console.log(c);
-      result2.push(c);
-      if (func_y(c) * func_y(a) < 0) b = c; // 式(1.2)
+      document.write(c);
+      this.result2.push(c);
+      if (this.func_y(c) * this.func_y(a) < 0) b = c; // 式(1.2)
       else a = c; // 式(1.3)
 
-      count++;
-    } while (Math.abs(a - b) > EPS); // 収束判別　式(1.4)の変形
+      this.count++;
+    } while (Math.abs(a - b) > this.EPS); // 収束判別　式(1.4)の変形
     return c;
   }
 
