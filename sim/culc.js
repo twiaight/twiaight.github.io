@@ -1,13 +1,17 @@
 window.addEventListener("load", () => {
   var ui = new UI(
-    document.querySelector("#start")
+    document.querySelector("#start"),
+    document.querySelector("#graph")
   );
 });
 
 class UI {
 
-  constructor(start) {
+  constructor(start, canvas) {
     this.start = start;
+    
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d");
 
     this.EPS = 0; // 許容誤差
     this.count = 0;
@@ -19,18 +23,8 @@ class UI {
       console.log('\n' + "0.0001");
       this.Newton();
       this.Bisection();
-
-
-      this.EPS = 0.0000001;
-      console.log('\n' + "0.0000001");
-      this.Newton();
-      this.Bisection();
-
-
-      this.EPS = 0.000000001;
-      console.log('\n' + "0.000000001");
-      this.Newton();
-      this.Bisection();
+      this.axis();
+      this.Graph();
     });
   }
 
@@ -123,6 +117,14 @@ class UI {
   func_y(x) {
     return Math.pow(x, 3.0) + x - 1.0;
   }
+  
+  axis() {
+    let ctx2 = this.canvas.getContext('2d');
+    ctx2.beginPath();
+    ctx2.moveTo(0,this.canvas.height/2);
+    ctx2.lineTo(this.canvas.width,this.canvas.height/2);
+    ctx2.moveTo(this.canvas.width/2,0);
+    ctx2.lineTo(this.canvas.width/2,this.canvas.height);
+    ctx2.stroke();
+  }
 }
-
-
