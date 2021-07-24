@@ -35,7 +35,7 @@ function nibun(a, b) {
     return c;
 }
 
-Bisection() {
+function Bisection() {
     let a = 0.0, b = 1.0; // 初期値
 
     count = 0;
@@ -82,9 +82,11 @@ function draw() {
   
   time++;
   if( time >= 60 ) {
-    // document.write("0");
+    document.write( result2.pop() );
     time = 0;
   }
+    
+  requestAnimationFrame(draw);
 }
 
 function axis() {
