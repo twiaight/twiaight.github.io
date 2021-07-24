@@ -16,7 +16,16 @@ function main() {
   requestAnimationFrame(main);
 }
 
-//window.addEventListener("load", axis);
+function axis() {
+  ctx_b1.beginPath();
+  ctx_b1.moveTo(0, b1.height/2);
+  ctx_b1.lineTo(b1.width, b1.height/2);
+  ctx_b1.moveTo(b1.width/2,0);
+  ctx_b1.lineTo(b1.width/2, b1.height);
+  ctx_b1.stroke();
+}
+
+window.addEventListener("load", axis);
 start.addEventLitener("click", main);
 
 
