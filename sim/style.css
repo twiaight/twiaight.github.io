@@ -1,0 +1,13 @@
+.area {
+    position: relative;
+}
+
+.area canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#graph1b {
+  color:gray;
+}
