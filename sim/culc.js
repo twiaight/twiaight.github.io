@@ -1,17 +1,20 @@
 window.addEventListener("load", () => {
   var ui = new UI(
     document.querySelector("#start"),
-    document.querySelector("#graph1")
+    document.querySelector("#graph1"),
+    document.querySelector("#graph1b")
   );
 });
 
 class UI {
 
-  constructor(start, canvas) {
+  constructor(start, c1, b1) {
     this.start = start;
     
-    this.canvas = canvas;
-    this.ctx = canvas.getContext("2d");
+    this.c1 = c1;
+    this.ctxc1 = this.c1.getContext("2d");
+    this.b1 = b1;
+    this.ctxb1 = this.b1.getContext("2d");
 
     this.EPS = 0; // 許容誤差
     this.count = 0;
@@ -120,12 +123,11 @@ class UI {
   }
   
   axis() {
-    let ctx2 = this.canvas.getContext('2d');
-    ctx2.beginPath();
-    ctx2.moveTo(0,this.canvas.height/2);
-    ctx2.lineTo(this.canvas.width,this.canvas.height/2);
-    ctx2.moveTo(this.canvas.width/2,0);
-    ctx2.lineTo(this.canvas.width/2,this.canvas.height);
-    ctx2.stroke();
+    this.ctxb1.beginPath();
+    this.ctxb1.moveTo(0,this.b1.height/2);
+    this.ctxb1.lineTo(this.b1.width,this.b1.height/2);
+    this.ctxb1.moveTo(this.b1.width/2,0);
+    this.ctxb1.lineTo(this.b1.width/2,this.b1.height);
+    this.ctxb1.stroke();
   }
 }
