@@ -4,6 +4,9 @@ window.addEventListener("load", () => {
     document.querySelector("#graph1"),
     document.querySelector("#graph1b")
   );
+  
+  this.axis();
+  
 });
 
 class UI {
