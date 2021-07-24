@@ -1,17 +1,26 @@
-window.addEventListener("load", () => {
-  var ui = new UI(
-    document.querySelector("#start"),
-    document.querySelector("#graph1"),
-    document.querySelector("#graph1b")
-  );
-  
-  this.axis();
-  
-});
+const start = document.querySelector("#start");
+const c1 = document.querySelector("#graph1");
+const b1 = document.querySelector("#graph1b");
+
+const ctx_c1 = c1.getContext('2d');
+const ctx_b1 = b1.getContext('2d');
+
+var count = 0;
+
+function main() {
+  count++;
+  if( count >= 60 ) {
+    document.write("0");
+    count = 0;
+  }
+  requestAnimationFrame(main);
+}
+
+//window.addEventListener("load", axis);
+start.addEventLitener("click", main);
 
 
-requestAnimationFrame(main);
-
+/*
 class UI {
 
   constructor(start, c1, b1) {
@@ -37,10 +46,11 @@ class UI {
       this.Graph();
     });
   }
-
+*/
   /**
    * ニュートン法による根の計算
    */
+/*
   Newton() {
     console.log("x^3 + x - 1 のニュートン法による数値計算");
 
@@ -62,30 +72,33 @@ class UI {
     document.write("近似解 x = " + b + "<br>");
     document.write("計算回数:" + this.count + "<br>");
   }
-
+*/
   /**
    * 根を求めたい関数
    * @param {number} x X座標
    * @return {number} Y座標
    */
+/*
   func_y(x) {
     return Math.pow(x, 3.0) + x -  1.0;
   }
-
+*/
   /**
    * 根を求めたい関数の微分関数
    * @param {number} x X座標
    * @return {number} Y座標
    */
+/*
   func_z(x) {
     return 3.0 * Math.pow(x, 2.0) + 1.0;
   }
-
+*/
   //////////////////////////
 
   /**
    * 2分法による根の計算
    */
+/*
   Bisection() {
     let a = 0.0, b = 1.0; // 初期値
 
@@ -97,13 +110,14 @@ class UI {
     document.write("近似解 x = " + x + "<br>");
     document.write("計算回数:" + count + "<br>");
   }
-
+*/
   /**
    * 実際の計算部分
    * @param {number} a 計算範囲
    * @param {number} b 計算範囲
    * @return {number} 近似解
    */
+/*
   nibun(a, b) {
     let c;
 
@@ -118,12 +132,13 @@ class UI {
     } while (Math.abs(a - b) > this.EPS); // 収束判別　式(1.4)の変形
     return c;
   }
-
+*/
   /**
    * 根を求めたい関数
    * @param {number} x X座標
    * @return {number} Y座標
    */
+/*
   func_y(x) {
     return Math.pow(x, 3.0) + x - 1.0;
   }
@@ -137,3 +152,4 @@ class UI {
     this.ctxb1.stroke();
   }
 }
+*/
