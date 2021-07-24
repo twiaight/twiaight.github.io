@@ -9,6 +9,9 @@ window.addEventListener("load", () => {
   
 });
 
+
+requestAnimationFrame(main);
+
 class UI {
 
   constructor(start, c1, b1) {
