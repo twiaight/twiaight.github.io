@@ -18,12 +18,13 @@ class UI {
     this.result1 = [];
     this.result2 = [];
     
+    this.axis();  
+    
     this.start.addEventListener("click", () => {
       this.EPS = 0.0001;
       console.log('\n' + "0.0001");
       this.Newton();
       this.Bisection();
-      this.axis();
       this.Graph();
     });
   }
