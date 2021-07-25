@@ -16,29 +16,143 @@
     <div id="panel">
       <div>
         <button id="start" class="normal">Start</button>
+          <button id="clear" class="normal">Clear</button>
+          <button id="next" class="normal">Next</button>
       </div>
       <div id="panel2">
         <p>許容誤差</p>
-        <button id="b01" class="size" number=0.0001>0.0001</button>
-        <button id="b01" class="size" number=0.0000001>0.0000001</button>
-        <button id="b01" class="size" number=0.000000001>0.000000001</button>
+        <input type="radio" name="b00" id="b01" value="0.0001" checked="checked">0.0001
+        <input type="radio" name="b00" id="b02" value="0.0000001">0.0000001
+        <input type="radio" name="b00" id="b03" value="0.000000001">0.000000001
       </div>
     </div>
     
     <div id="view">
       
+      <div id="c1">
     <div id="area1" class="area">
       <p>ニュートン法のグラフ</p>
-      <canvas class="myCanvas" id="graph1"  width="460" height="460"></canvas>
-      <canvas class="myCanvas" id="graph1b" width="460" height="460"></canvas>
-      <div id="comp1"></div>
+      <canvas class="myCanvas" id="graph1b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph1" width="460" height="460"></canvas>
     </div>
-    
+    <div id="comp1"></div>
+    </div>
+
+    <div id="c2">
     <div id="area2" class="area">
       <p>二分法のグラフ</p>
-      <canvas class="myCanvas" id="graph2"  width="460" height="460"></canvas>
-      <canvas class="myCanvas" id="graph2b" width="460" height="460"></canvas>
-      <div id="comp2"></div>
+      <canvas class="myCanvas" id="graph2b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph2" width="460" height="460"></canvas>
+    </div>
+    <div id="comp2"></div>
+    </div>
+
+    </div>
+  
+    <script src="program.js"></script>
+
+  </body>
+  
+</html><!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>教材(仮)</title>
+  </head>
+  <body>
+    
+    <!--
+    参考文献
+    https://labo.nari-suke.com/?p=284
+    https://qiita.com/TR246/items/4b84deadb26f1c450722
+    -->
+    
+    <div id="panel">
+      <div>
+        <button id="start" class="normal">Start</button>
+          <button id="clear" class="normal">Clear</button>
+      </div>
+      <div id="panel2">
+        <p>許容誤差</p>
+        <input type="radio" name="b00" id="b01" value="0.0001">0.0001
+        <input type="radio" name="b00" id="b02" value="0.0000001">0.0000001
+        <input type="radio" name="b00" id="b03" value="0.000000001">0.000000001
+      </div>
+    </div>
+    
+    <div id="view">
+      
+      <div id="c1">
+    <div id="area1" class="area">
+      <p>ニュートン法のグラフ</p>
+      <canvas class="myCanvas" id="graph1b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph1" width="460" height="460"></canvas>
+    </div>
+    <div id="comp1"></div>
+    </div>
+
+    <div id="c2">
+    <div id="area2" class="area">
+      <p>二分法のグラフ</p>
+      <canvas class="myCanvas" id="graph2b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph2" width="460" height="460"></canvas>
+    </div>
+    <div id="comp2"></div>
+    </div>
+
+    </div>
+  
+    <script src="program.js"></script>
+
+  </body>
+  
+</html><!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>教材(仮)</title>
+  </head>
+  <body>
+    
+    <!--
+    参考文献
+    https://labo.nari-suke.com/?p=284
+    https://qiita.com/TR246/items/4b84deadb26f1c450722
+    -->
+    
+    <div id="panel">
+      <div>
+        <button id="start" class="normal">Start</button>
+          <button id="clear" class="normal">Clear</button>
+      </div>
+      <div id="panel2">
+        <p>許容誤差</p>
+        <input type="radio" name="b00" id="b01" value="0.0001">0.0001
+        <input type="radio" name="b00" id="b02" value="0.0000001">0.0000001
+        <input type="radio" name="b00" id="b03" value="0.000000001">0.000000001
+      </div>
+    </div>
+    
+    <div id="view">
+      
+      <div id="c1">
+    <div id="area1" class="area">
+      <p>ニュートン法のグラフ</p>
+      <canvas class="myCanvas" id="graph1b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph1" width="460" height="460"></canvas>
+    </div>
+    <div id="comp1"></div>
+    </div>
+
+    <div id="c2">
+    <div id="area2" class="area">
+      <p>二分法のグラフ</p>
+      <canvas class="myCanvas" id="graph2b"  width="460" height="460"></canvas>
+      <canvas class="myCanvas" id="graph2" width="460" height="460"></canvas>
+    </div>
+    <div id="comp2"></div>
     </div>
 
     </div>
