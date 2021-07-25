@@ -15,6 +15,9 @@ var EPS = 0.0001; // 許容誤差
 var result1 = [];
 var result2 = [];
 
+var output1 = [];
+var output2 = [];
+
 function func_y(x) {
     return Math.pow(x, 3.0) + x -  1.0;
 }
@@ -35,6 +38,11 @@ function nibun(a, b) {
 
       count2++;
     } while (Math.abs(a - b) > EPS); // 収束判別　式(1.4)の変形
+    
+    for (var now=result2.pop(); now!=undefined; now=result2.pop()) {
+        output.push(now);
+    }
+    
     return c;
 }
 
@@ -68,6 +76,11 @@ function Newton() {
 
       if ( count1 > 100 ) break;
     }
+    
+    for (var now=result1.pop(); now!=undefined; now=result1.pop()) {
+      output.push(now);
+    }
+    
     // document.write("近似解 x = " + b + "<br>");
     // document.write("計算回数:" + count + "<br>");
 }
@@ -85,7 +98,7 @@ function draw() {
   
   time++;
   if( time >= 60 ) {
-    comp1.innerHTML += result1.pop() + "<br>";
+    comp1.innerHTML += output1.pop() + "<br>";
     time = 0;
   }
     
