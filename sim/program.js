@@ -1,11 +1,16 @@
 const start = document.querySelector("#start");
 const c1 = document.querySelector("#graph1");
 const b1 = document.querySelector("#graph1b");
+const c2 = document.querySelector("#graph2");
+const b2 = document.querySelector("#graph2b");
 
-const comp1 = document.querySelector("#comp");
+const comp1 = document.querySelector("#comp1");
+const comp2 = document.querySelector("#comp2");
 
 const ctx_c1 = c1.getContext('2d');
 const ctx_b1 = b1.getContext('2d');
+const ctx_c2 = c2.getContext('2d');
+const ctx_b2 = b2.getContext('2d');
 
 var time = 0;
 var count1 = 0;
@@ -107,6 +112,11 @@ function draw() {
     if ( flag1 == 0 ) text1 = output1.pop()
     if ( text1 != undefined ) comp1.innerHTML += text1 + "<br>";
     else flag1 = 1;
+      
+    if ( flag2 == 0 ) text2 = output2.pop()
+    if ( text2 != undefined ) comp2.innerHTML += text2 + "<br>";
+    else flag2 = 2;  
+      
     time = 0;
   }
     
@@ -120,6 +130,13 @@ function axis() {
   ctx_b1.moveTo(b1.width/2,0);
   ctx_b1.lineTo(b1.width/2, b1.height);
   ctx_b1.stroke();
+    
+  ctx_b2.beginPath();
+  ctx_b2.moveTo(0, b2.height/2);
+  ctx_b2.lineTo(b2.width, b2.height/2);
+  ctx_b2.moveTo(b2.width/2,0);
+  ctx_b2.lineTo(b2.width/2, b2.height);
+  ctx_b2.stroke();
 }
 
 window.addEventListener("load", axis);
