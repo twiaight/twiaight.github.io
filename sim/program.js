@@ -46,7 +46,7 @@ function nibun(a, b) {
     } while (Math.abs(a - b) > EPS); // 収束判別　式(1.4)の変形
     
     for (var now=result2.pop(); now!=undefined; now=result2.pop()) {
-        output.push(now);
+        output2.push(now);
     }
     
     return c;
@@ -84,7 +84,7 @@ function Newton() {
     }
     
     for (var now=result1.pop(); now!=undefined; now=result1.pop()) {
-      output.push(now);
+      output1.push(now);
     }
     
     // document.write("近似解 x = " + b + "<br>");
