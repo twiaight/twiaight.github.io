@@ -1,3 +1,7 @@
+body {
+    display: flex;
+}
+
 .area {
     position: relative;
 }
@@ -9,5 +13,5 @@
 }
 
 #graph1b {
-  color:gray;
+  color: gray;
 }
