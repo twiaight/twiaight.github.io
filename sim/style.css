@@ -2,11 +2,21 @@ body {
     display: flex;
 }
 
-.area {
+#area1 {
     position: relative;
 }
 
-.area canvas {
+#area1 canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#area2 {
+    position: relative;
+}
+
+#area2 canvas {
     position: absolute;
     top: 0;
     left: 0;
