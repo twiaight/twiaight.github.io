@@ -85,7 +85,7 @@ function draw() {
   
   time++;
   if( time >= 60 ) {
-    comp1.textContent += result1.pop() + "<br>";
+    comp1.innerHTML += result1.pop() + "<br>";
     time = 0;
   }
     
