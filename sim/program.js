@@ -18,6 +18,12 @@ var result2 = [];
 var output1 = [];
 var output2 = [];
 
+var flag1 = 0;
+var flag2 = 0;
+
+var text1;
+var text2;
+
 function func_y(x) {
     return Math.pow(x, 3.0) + x -  1.0;
 }
@@ -98,7 +104,9 @@ function draw() {
   
   time++;
   if( time >= 60 ) {
-    comp1.innerHTML += output1.pop() + "<br>";
+    if ( flag1 == 0 ) text1 = output1.pop()
+    if ( text1 != undefined ) comp1.innerHTML += text1 + "<br>";
+    else flag1 = 1;
     time = 0;
   }
     
