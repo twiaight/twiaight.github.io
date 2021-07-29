@@ -119,6 +119,8 @@ function update() {
       sphere.material.color.setHex(0xffffff);
     }
   });
+  
+  console.log(controls.movementX, controls.movementY);
  
   renderer.render(scene, camera);
 };
