@@ -97,6 +97,8 @@ function init() {
   sphere.position.x = +2;
   scene.add(sphere);
   sphereList.push(sphere);
+  
+  PresetStage();
 
   var directionalLight = new THREE.DirectionalLight(0xffffff);
   directionalLight.position.set(0, 0, 10);
@@ -125,4 +127,12 @@ function update() {
   renderer.render(scene, camera);
 };
 
-
+function PresetStage() {
+  var plane;
+  
+  geometry = new THREE.PlaneGeomrtry(5, 5);
+  material = new THREE.MeshBasicMaterial( {color:0xffffff} );
+  plane = new THREE.Mesh(geometry, material);
+  plane.position.z = -5;
+  scene.add(plane);
+}
