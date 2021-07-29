@@ -6,13 +6,18 @@ import { PointerLockControls } from './Lib/PointerLockControls.js';
 let scene, camera, renderer;
 const canvas = document.querySelector('#mC');
 
-const mouse = new THREE.Vector2();
+var mouse = new THREE.Vector2(0, 0);
+
+/* 基礎設定用 */
 var width = 800, height = 600;
+var geometry, material;
+
 var prevTime = 0;
 var controls;
 const ray = new THREE.Raycaster();
 var velocity = new THREE.Vector3();
 
+/* 的 */
 var sphere;
 const sphereList = [];
 
@@ -48,7 +53,6 @@ function init() {
   camera.position.z = 2.5;
   camera.position.y = 0.5;
 
-  var mouse = new THREE.Vector2(0, 0);
   mouse.x = 0;
   mouse.y = 0;
 
@@ -67,51 +71,28 @@ function init() {
     } );
 
   scene.add( controls.getObject() );
-
-
-  // canvas.addEventListener( 'mousemove', handleMouseMove );
-
-
-  //document.getElementById('myCanvas').addEventListener('click', function() { controls.lock(); });
-
-  /*
-  var clock = new THREE.Clock();
-  var delta = 0;
-  var fps = new FirstPersonControls(camera, renderer.domElement);
-
-
-  fps.noFly = true;
-  fps.lookVertical = true;
-  fps.enables = true;
-  fps.lookSpeed = 1;
-
-  fps.lookSpeed = 0.1;
-  fps.movementSpeed = 1;
-  fps.noFly = true;
-  fps.lookVertical = true;
-  fps.constrainVertical = false;
-  */
+  
 
   /* Axis -> x:RED / y:GREEN / z:BLUE */
   var axes = new THREE.AxesHelper(20);
   scene.add(axes);
 
 
-  var geometry = new THREE.SphereGeometry(1, 20, 20);
-  var material = new THREE.MeshPhongMaterial({ color:0xffffff });
-
+  geometry = new THREE.SphereGeometry(1, 20, 20);
+  
+  material = new THREE.MeshPhongMaterial({ color:0xffffff });
   sphere = new THREE.Mesh(geometry, material);
   sphere.position.x = -2;
   scene.add(sphere);
   sphereList.push(sphere);
 
-  var material = new THREE.MeshPhongMaterial({ color:0xffffff });
+  material = new THREE.MeshPhongMaterial({ color:0xffffff });
   sphere = new THREE.Mesh(geometry, material);
   sphere.position.x = +0;
   scene.add(sphere);
   sphereList.push(sphere);
 
-  var material = new THREE.MeshPhongMaterial({ color:0xffffff });
+  material = new THREE.MeshPhongMaterial({ color:0xffffff });
   sphere = new THREE.Mesh(geometry, material);
   sphere.position.x = +2;
   scene.add(sphere);
@@ -138,7 +119,7 @@ function update() {
       sphere.material.color.setHex(0xffffff);
     }
   });
-  // console.log(movement.x, movement.y);
+ 
   renderer.render(scene, camera);
 };
 
