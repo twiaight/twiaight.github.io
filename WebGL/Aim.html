@@ -146,7 +146,7 @@
       
       ray.setFromCamera(mouse, camera);
       const intersects = ray.intersectObjects(sphereList);
-      
+      console.log(intersects);
       sphereList.map( (sphere) => {
         if (intersects.length > 0 && sphere === intersects[0].object ) {
           sphere.material.color.setHex(0xff0000);
