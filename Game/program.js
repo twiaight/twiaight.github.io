@@ -122,7 +122,7 @@ function update() {
     }
   });
   
-  console.log(controls.movementX, controls.movementY);
+  console.log(controls.onMouseMove.movementX, controls.onMouseMove.movementY);
  
   renderer.render(scene, camera);
 };
