@@ -23,8 +23,13 @@ const sphereList = [];
 
 var clock = new THREE.Clock();
 
+var shoot = 0;
+
 init();
 update();
+
+canvas.addEventListener('mousedown', {shoot=1});
+canvas.addEventListener( 'mouseup' , {shoot=0}):
 
 
 function init() {
@@ -121,6 +126,8 @@ function update() {
       sphere.material.color.setHex(0xffffff);
     }
   });
+  
+  if ( shoot == 1 ) console.log("Click");
   
   // console.log(controls.onMouseMove.movementX, controls.onMouseMove.movementY);
  
