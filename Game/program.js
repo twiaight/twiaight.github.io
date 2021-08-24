@@ -29,7 +29,7 @@ init();
 update();
 
 canvas.addEventListener('mousedown', function(){shoot=1});
-canvas.addEventListener( 'mouseup' , function(){shoot=0}):
+canvas.addEventListener( 'mouseup' , function(){shoot=0});
 
 
 function init() {
