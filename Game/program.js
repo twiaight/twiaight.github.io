@@ -130,7 +130,7 @@ function update() {
 function PresetStage() {
   var plane;
   
-  geometry = new THREE.PlaneGeomrtry(5, 5);
+  geometry = new THREE.PlaneGeometry(5, 5);
   material = new THREE.MeshBasicMaterial( {color:0xffffff} );
   plane = new THREE.Mesh(geometry, material);
   plane.position.z = -5;
