@@ -28,10 +28,6 @@ var shoot = 0;
 init();
 update();
 
-canvas.addEventListener('mousedown', function(){shoot=1});
-canvas.addEventListener( 'mouseup' , function(){shoot=0});
-
-
 function init() {
 
   /* 参考文献
@@ -127,6 +123,8 @@ function update() {
     }
   });
   
+  canvas.addEventListener('mousedown', function(){shoot=1});
+  canvas.addEventListener( 'mouseup' , function(){shoot=0})
   if ( shoot == 1 ) console.log("Click");
   
   // console.log(controls.onMouseMove.movementX, controls.onMouseMove.movementY);
