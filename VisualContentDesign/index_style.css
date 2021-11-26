@@ -12,6 +12,7 @@ header {
 
 .menu-nav__lists {
   display: flex;
+  list-style: none;
 }
 
 .menu-nav__list {
