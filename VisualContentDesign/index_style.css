@@ -1,6 +1,6 @@
 header {
   display: flex;
-  flex-grow: 1 1;
+  flex: 1 1;
 }
 
 .logo {
