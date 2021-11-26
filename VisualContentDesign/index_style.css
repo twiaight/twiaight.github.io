@@ -1,12 +1,19 @@
 header {
   display: flex;
-  flex: 1 1;
 }
 
 .logo {
-  
+  flex: 1 1 auto;
+}
+
+.menu {
+  flex: 1 1 auto;
 }
 
 .menu-nav__lists {
   display: flex;
+}
+
+.menu-nav__list {
+  flex: 1 1 auto;
 }
