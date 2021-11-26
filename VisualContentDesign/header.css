@@ -5,11 +5,12 @@ header {
 
 .logo {
   flex: 1 1 auto;
+  min-height: 80px;
+  max-height: 120px;
+  margin: auto;
 }
 
 .logo__link {
-  min-height: 80px;
-  max-height: 120px;
 }
 
 .menu {
