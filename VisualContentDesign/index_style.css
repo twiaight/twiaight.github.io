@@ -6,6 +6,10 @@ header {
   flex: 1 1 auto;
 }
 
+.logo__image {
+  min-height: 80px; 
+}
+
 .menu {
   flex: 1 1 auto;
 }
