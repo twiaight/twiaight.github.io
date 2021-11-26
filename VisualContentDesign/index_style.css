@@ -1,3 +1,6 @@
+header {
+  diaplay: flex; 
+}
 
 .menu-nav__lists {
    display: flex;
