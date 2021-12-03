@@ -1,3 +1,7 @@
 .movie {
   display: flex;
 }
+
+.movie__oniku {
+  flex: 1 auto;
+}
