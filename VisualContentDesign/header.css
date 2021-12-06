@@ -8,6 +8,8 @@ body {
 header {
   display: flex;
   max-height: 120px;
+  grid-column-start: 1;
+  grid-column-end: 13;
 }
 
 .logo {
