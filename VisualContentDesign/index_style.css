@@ -1,11 +1,24 @@
+.container {
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
 .movies {
-  display: flex;
   grid-column-start: 1;
   grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
 .movie__oniku {
   width: 100%;
+}
+
+.motto {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .motto__image {
