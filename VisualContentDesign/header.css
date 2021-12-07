@@ -1,15 +1,11 @@
 body {
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
 }
 
 header {
   display: flex;
   max-height: 120px;
-  grid-column-start: 1;
-  grid-column-end: 13;
 }
 
 .logo {
