@@ -1,9 +1,9 @@
 footer {
-  display: flex;
-  max-height: 120px;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: black;
+  display         : flex;
+  max-height      : 120px;
+  flex-wrap       : wrap;
+  justify-content : center;
+  background      : black;
 }
 
 footer h3 {
@@ -17,17 +17,17 @@ footer p {
 }
 
 .info { 
-  margin: auto 0 auto 0;
+  margin : auto 0 auto 0;
 }
 
 .address {
-  padding: 2.5px 0 2.5px 0;
+  padding : 2.5px 0 2.5px 0;
 }
 
 .tel {
-  padding: 2.5px 0 2.5px 0;
+  padding : 2.5px 0 2.5px 0;
 }
 
 .mail {
-  padding: 2.5px 0 2.5px 0;
+  padding : 2.5px 0 2.5px 0;
 }
