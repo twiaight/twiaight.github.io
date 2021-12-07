@@ -58,6 +58,15 @@
   border            : solid;
 }
 
+.detail h2 {
+  margin    : 0 0 1em 0;
+  font-size : 4vw;
+}
+
+.detail p {
+  font-size : 3vw;
+}
+
 .detail__title {
   font-size  : 1vw;
   text-align : center;
