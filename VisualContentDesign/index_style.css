@@ -16,7 +16,6 @@
 }
 
 .motto {
-  position: absolute;
   grid-column-start: 1;
   grid-column-end: 13;
   grid-row-start: 2;
@@ -24,7 +23,7 @@
 }
 
 .motto__image {
-  position: relative;
+  position: absolute;
   width: 100%;
 }
 
