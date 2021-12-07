@@ -1,6 +1,8 @@
 footer {
   display: flex;
   max-height: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 footer h3 {
@@ -13,4 +15,16 @@ footer p {
 
 .info {
   flex: 1 1 auto;
+}
+
+.address {
+  padding: 2.5px 0 2.5px 0;
+}
+
+.tel {
+  padding: 2.5px 0 2.5px 0;
+}
+
+.mail {
+  padding: 2.5px 0 2.5px 0;
 }
