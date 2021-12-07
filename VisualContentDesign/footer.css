@@ -6,8 +6,9 @@ footer {
 }
 
 footer h3 {
-  margin : 0;
-  color  : white;
+  margin         : 0;
+  color          : white;
+  padding-bottom : 10px;
 }
 
 footer p {
