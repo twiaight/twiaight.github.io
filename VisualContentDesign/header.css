@@ -1,44 +1,48 @@
 body {
-  margin: auto;
+  margin : auto;
 }
 
 header {
-  display: flex;
-  max-height: 120px;
+  display    : flex;
+  max-height : 120px;
+}
+
+a {
+  text-decoration : none; 
 }
 
 .logo {
-  margin: auto 0 auto 0;
+  margin : auto 0 auto 0;
 }
 
 .logo__image {
-  min-height: 80px;
-  max-height: 120px;
+  min-height : 80px;
+  max-height : 120px;
 }
 
 .menu {
-  flex: 1 1 auto;
-  margin: auto;
+  flex   : 1 1 auto;
+  margin : auto;
 }
 
 .menu-nav {
-  text-align: center;
+  text-align : center;
 }
 
 .menu-nav__title {
-  font-weight: bold;
-  font-size: 4vw;
+  font-weight : bold;
+  font-size   : 4vw;
 }
 
 .menu-nav__lists {
-  display: flex;
-  list-style: none;
-  margin: auto;
-  padding: 0;
-  font-size: 3.5vw;
+  display    : flex;
+  list-style : none;
+  margin     : auto;
+  padding    : 0;
+  font-size  : 3.5vw;
 }
 
 .menu-nav__list {
-  flex: 1 1 auto;
-  font-family     : serif;
+  flex        : 1 1 auto;
+  font-family : serif;
 }
