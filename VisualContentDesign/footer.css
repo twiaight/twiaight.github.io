@@ -3,6 +3,14 @@ footer {
   max-height: 120px;
 }
 
+footer > h3 {
+  margin: 0;
+}
+
+footer > p {
+  margin: 0;
+}
+
 .info {
   flex: 1 1 auto;
 }
