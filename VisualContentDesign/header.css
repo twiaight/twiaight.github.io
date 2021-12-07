@@ -31,7 +31,7 @@ a {
 
 .menu-nav__title {
   font-weight : bold;
-  font-size   : 4vw;
+  font-size: max(3.5vw, 20px);
 }
 
 .menu-nav__lists {
@@ -39,7 +39,7 @@ a {
   list-style : none;
   margin     : auto;
   padding    : 0;
-  font-size  : 3.5vw;
+  font-size  : max(3vw, 15px);
 }
 
 .menu-nav__list {
