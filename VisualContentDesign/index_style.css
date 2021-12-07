@@ -48,3 +48,21 @@
       -3px  0px 2px rgba(0, 0, 0, 0.75),
        0px -3px 2px rgba(0, 0, 0, 0.75);
 }
+
+.detail {
+  grid-column-start : 3;
+  grid-column-end   : 11;
+  grid-row-start    : 2;
+  grid-row-end      : 3;
+  padding           : 20px;
+}
+
+.detail__title {
+  font-size  : 1vw;
+  text-align : center;
+}
+
+.detail__content {
+  font-size  : 1vw;
+  text-align : center;
+}
