@@ -1,6 +1,5 @@
 footer {
   display         : flex;
-  max-height      : 120px;
   flex-wrap       : wrap;
   justify-content : center;
   background      : black;
