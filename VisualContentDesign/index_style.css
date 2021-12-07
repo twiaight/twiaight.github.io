@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .movies {
@@ -16,6 +16,7 @@
 }
 
 .motto {
+  position: absolute;
   grid-column-start: 1;
   grid-column-end: 13;
   grid-row-start: 2;
@@ -23,9 +24,11 @@
 }
 
 .motto__image {
+  position: relative;
   width: 100%;
 }
 
 .motto__text {
+  position: relative;
   text-align: center;
 }
