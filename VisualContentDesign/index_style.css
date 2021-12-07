@@ -1,42 +1,43 @@
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
+  display               : grid;
+  grid-template-columns : repeat(12, 1fr);
+  grid-template-rows    : auto;
 }
 
 .movies {
-  grid-column-start: 1;
-  grid-column-end: 13;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-column-start : 1;
+  grid-column-end   : 13;
+  grid-row-start    : 1;
+  grid-row-end      : 2;
 }
 
 .movie__oniku {
-  width: 100%;
+  width : 100%;
 }
 
 .motto {
-  grid-column-start: 1;
-  grid-column-end: 13;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  position: relative;
+  grid-column-start : 1;
+  grid-column-end   : 13;
+  grid-row-start    : 2;
+  grid-row-end      : 3;
+  position          : relative;
 }
 
 .motto__image {
-  width: 100%;
+  width : 100%;
 }
 
 .motto__text {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  display        : inline-block;
-  color          : #ffffff;
-  font-size      : 5vw;
-  letter-spacing : 2px;
-  text-shadow    : 
+  position        : absolute;
+  top             : 20%;
+  left            : 50%;
+  transform       : translateX(-50%);
+  display         : inline-block;
+  color           : #ffffff;
+  font-size       : 5vw;  
+  font-family     : serif;
+  letter-spacing  : 2px;
+  text-shadow     : 
        3px  3px 2px rgba(0, 0, 0, 0.75),
       -3px  3px 2px rgba(0, 0, 0, 0.75),
        3px -3px 2px rgba(0, 0, 0, 0.75),
