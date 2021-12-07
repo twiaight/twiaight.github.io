@@ -52,8 +52,8 @@
 .detail {
   grid-column-start : 3;
   grid-column-end   : 11;
-  grid-row-start    : 2;
-  grid-row-end      : 3;
+  grid-row-start    : 3;
+  grid-row-end      : 4;
   padding           : 20px;
   border            : solid;
 }
