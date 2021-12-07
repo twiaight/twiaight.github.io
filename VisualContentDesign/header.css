@@ -21,8 +21,8 @@ a {
 }
 
 .menu {
-  flex   : 1 1 auto;
-  margin : auto;
+  flex       : 1 1 auto;
+  background : rgb(140, 50, 70);
 }
 
 .menu-nav {
@@ -45,4 +45,5 @@ a {
 .menu-nav__list {
   flex        : 1 1 auto;
   font-family : serif;
+  color       : white;
 }
