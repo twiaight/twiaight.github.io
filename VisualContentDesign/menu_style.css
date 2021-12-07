@@ -13,6 +13,7 @@
 
 .item {
   margin : auto;
+  border : solid;
 }
 
 .item__image {
