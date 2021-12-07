@@ -8,12 +8,13 @@ footer {
 footer h3 {
   margin         : 0;
   color          : white;
-  padding-bottom : 10px;
+  font-size      : 2vw;
 }
 
 footer p {
-  margin : 0;
-  color  : white;
+  margin    : 0;
+  color     : white;
+  font-size : 1.75vw;
 }
 
 .info { 
@@ -21,13 +22,13 @@ footer p {
 }
 
 .address {
-  padding : 2.5px 0 2.5px 0;
+  padding : 5px 0 5px 0;
 }
 
 .tel {
-  padding : 2.5px 0 2.5px 0;
+  padding : 5px 0 5px 0;
 }
 
 .mail {
-  padding : 2.5px 0 2.5px 0;
+  padding : 5px 0 5px 0;
 }
