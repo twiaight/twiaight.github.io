@@ -5,6 +5,7 @@ body {
 header {
   display    : flex;
   max-height : 120px;
+  position   : sticky;
 }
 
 a {
