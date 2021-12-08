@@ -6,6 +6,8 @@ header {
   display    : flex;
   max-height : 120px;
   position   : sticky;
+  top        : 0px;
+  z-index    : 10;
 }
 
 a {
@@ -14,6 +16,10 @@ a {
 
 .logo {
   margin : auto 0 auto 0;
+}
+
+header > .logo {
+  background : white;
 }
 
 .logo__image {
