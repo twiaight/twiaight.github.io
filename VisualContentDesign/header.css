@@ -21,8 +21,8 @@ a {
 
 header > .logo {
   background : white;
-  margin: 0;
-  padding: 5px;
+  margin     : 0;
+  padding    : 5px;
 }
 
 .logo__image {
@@ -41,7 +41,7 @@ header > .logo {
 
 .menu-nav__title {
   font-weight : bold;
-  font-size: clamp(22.5px, 3vw, 35px);
+  font-size   : clamp(22.5px, 3vw, 35px);
 }
 
 .menu-nav__lists {
