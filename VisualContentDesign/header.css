@@ -40,7 +40,7 @@ a {
   list-style : none;
   margin     : auto;
   padding    : 0;
-  font-size  : max(2.5vw, 17.5px);
+  font-size  : clamp(17.5px, 2.4vw, 30px);
 }
 
 .menu-nav__list {
