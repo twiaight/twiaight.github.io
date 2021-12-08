@@ -3,6 +3,7 @@
   grid-template-columns : repeat(12, 1fr);
   grid-template-rows    : auto;
   padding-bottom        : 20px;
+  background            : rgba(230, 120, 40, 0.75)
 }
 
 .movies {
