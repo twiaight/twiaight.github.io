@@ -20,6 +20,8 @@ a {
 
 header > .logo {
   background : white;
+  margin: 0;
+  padding: 5px;
 }
 
 .logo__image {
