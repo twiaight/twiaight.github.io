@@ -54,3 +54,7 @@ header > .logo {
   font-family : serif;
   color       : white;
 }
+
+.menu-nav__list > a {
+  color : white;
+}
