@@ -58,6 +58,7 @@
   padding           : 20px;
   border            : solid;
   text-align        : center;
+  background        : rgba(255, 255, 255, 0.40);
 }
 
 .detail h2 {
@@ -67,4 +68,15 @@
 
 .detail p {
   font-size : 3vw;
+}
+
+.image {
+  grid-column-start : 1;
+  grid-column-end   : 13;
+  grid-row-start    : 3;
+  grid-row-end      : 4;
+}
+
+.image__sumi {
+  width : 100%;
 }
